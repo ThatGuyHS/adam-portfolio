@@ -1,5 +1,7 @@
 import userData from "@constants/data";
 import React from "react";
+import { useTheme } from "next-themes";
+import { darkMode } from "tailwind.config";
 
 export default function Experience() {
   return (
@@ -39,9 +41,15 @@ export default function Experience() {
 }
 
 const ExperienceCard = ({ title, desc, year, company, companyLink }) => {
+  const { theme } = useTheme();
+  console.log(theme);
   return (
     <div className="relative experience-card border p-4 rounded-md shadow-xl bg-white dark:bg-gray-800 z-10 mx-4">
-      <h1 className="absolute -top-10 md:-left-10 md:-top-10 text-4xl text-gray-200 font-bold dark:text-gray-800">
+      <h1
+        className={`absolute -top-10 md:-left-10 md:-top-10 text-4xl ${
+          theme === "dark" ? "text-white" : "text-black"
+        }  font-bold `}
+      >
         {year}
       </h1>
       <h1 className="font-semibold text-xl">{title}</h1>
