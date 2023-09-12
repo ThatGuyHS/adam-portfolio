@@ -24,12 +24,12 @@ const userData = {
     },
     {
       title: "Stryda",
-      link: "https://covidrescue.co.in",
+      link: "https://play.stryda.gg",
       imgUrl: "/covidrescue.png",
     },
     {
       title: "Phoenix Blue",
-      link: "https://algochurn.com",
+      link: "https://pxb.gg",
       imgUrl: "/algochurn.png",
     },
     {
@@ -52,12 +52,10 @@ const userData = {
     title:
       "I'm a software developer that loves building products and web applications that impact millions of lives",
     description: [
-      "I've been developing full-stack application since I was 10 years old. I didn't know what full-stack meant at that time because the term was not coined back then. I'm so out of content right now that I'm literally crying writing this text since lorem text is so 2012 now.",
-      "After learning HTML and struggling with CSS, I came up with a brilliant idea of using bootstrap so that I don't have to style everything by myself and - for obvious reasons - if you knew bootstrap, you were cool.",
-      "But now, I'm a legend. I've been coding in React, Angular, Vue, Svelte, Node.js, Express, Fastify, MongoDB, MySQL, Bootstrap, Tailwind, C, C++, C#, Rust, Haskell, Perl, PHP, Assembly, Logo and YouDontKnowShit programming language etc to name a few. Although I barely know the syntax (Psst, Stack overflow!), I consider myself a Ninja developer I'm laughing right now.",
+      "I began my journey in the esports and tech industry as a Tournament Administrator, diving deep into the competitive gaming world. My passion for technology led me to roles in QA testing, where I honed my skills in test automation and manual testing, ensuring the best user experience for gaming platforms. Transitioning to a Frontend Developer role, I've mastered tools and languages like Typescript, Next.JS, JavaScript, and React.js. My experience isn't just limited to coding; I've been a pivotal part of teams, advising on testing strategies and ensuring the seamless operation of platforms like G-Loot. In addition to my technical roles, I've been involved in the growth and success of organizations like Phoenix Blue, contributing to the esports community and helping broadcast events. My diverse experience in both the technical and administrative aspects of the esports world has given me a unique perspective, allowing me to bridge the gap between technology and gaming. Today, I'm not just a developer; I'm an esports enthusiast, a tech aficionado, and a dedicated professional committed to enhancing the gaming experience for all.",
     ],
-    currentProject: "Tailwind Master Kit",
-    currentProjectUrl: "https://tailwindmasterkit.com",
+    currentProject: "Stryda - The home of everything esports",
+    currentProjectUrl: "https://play.stryda.gg",
   },
   experience: [
     {
@@ -106,12 +104,10 @@ const userData = {
   resumeUrl:
     "https://drive.google.com/file/d/1xmE3BOmgM7TAOOgVp36xQIQvYDntDYoo/view?usp=sharing",
   socialLinks: {
-    instagram: "https://instagram.com/maninthere",
-    twitter: "https://twitter.com/mannupaaji",
-    linkedin: "https://linkedin.com/in/manuarora28",
-    github: "https://github.com/manuarora700",
-    facebook: "https://facebook.com/",
-    peerlist: "https://peerlist.io/manuarora",
+    instagram: "https://instagram.com/adampeleback",
+    twitter: "https://twitter.com/ThatGuy_HS",
+    linkedin: "https://www.linkedin.com/in/adam-p-507593113/",
+    github: "https://github.com/ThatGuyHS",
   },
 };
 
