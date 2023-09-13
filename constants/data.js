@@ -15,7 +15,7 @@ const userData = {
     {
       title: "Best Travel Route",
       link: "https://besttravelroute.com",
-      imgUrl: "/placeholdertech.png",
+      imgUrl: "/in-progress.jpeg",
     },
     {
       title: "Portfolio",
