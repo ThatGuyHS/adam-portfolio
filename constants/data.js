@@ -3,8 +3,8 @@ const userData = {
   name: "Adam Peleback",
   designation: "Frontend Developer, Esports Tournament Organizer",
   avatarUrl: "/adam.png",
-  email: "adampeleback[at]gmail.com",
-  phone: "+46 70 768 5504",
+  email: "adampeleback@gmail.com",
+  phone: "-",
   address: "Stockholm, Sweden",
   projects: [
     {
@@ -19,7 +19,7 @@ const userData = {
     },
     {
       title: "Portfolio",
-      link: "https://adampeleback.me",
+      link: "https://adampeleback.com",
       imgUrl: "/portfolio.png",
     },
     {
