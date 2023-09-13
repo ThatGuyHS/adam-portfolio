@@ -101,8 +101,7 @@ const userData = {
       desc: "Responsible for producing written content on event pages, writing summaries, news articles, and recaps.",
     },
   ],
-  resumeUrl:
-    "https://drive.google.com/file/d/1xmE3BOmgM7TAOOgVp36xQIQvYDntDYoo/view?usp=sharing",
+  resumeUrl: "insert resume url",
   socialLinks: {
     instagram: "https://instagram.com/adampeleback",
     twitter: "https://twitter.com/ThatGuy_HS",
