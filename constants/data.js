@@ -10,7 +10,7 @@ const userData = {
     {
       title: "Remote Work Radar",
       link: "https://remoteworkradar.com",
-      imgUrl: "/tmk.jpg",
+      imgUrl: "/remoteworkradar.png",
     },
     {
       title: "Best Travel Route",
@@ -25,27 +25,12 @@ const userData = {
     {
       title: "Stryda",
       link: "https://play.stryda.gg",
-      imgUrl: "/covidrescue.png",
+      imgUrl: "/stryda.png",
     },
     {
       title: "Phoenix Blue",
       link: "https://pxb.gg",
-      imgUrl: "/algochurn.png",
-    },
-    {
-      title: "Playground",
-      link: "https://play.placeholdertech.in",
-      imgUrl: "/playground.png",
-    },
-    {
-      title: "Feedmeback",
-      link: "https://feedmeback.vercel.app",
-      imgUrl: "/feedmeback.png",
-    },
-    {
-      title: "Devmedium",
-      link: "https://devmedium.vercel.app",
-      imgUrl: "/devmedium.png",
+      imgUrl: "/pxb.png",
     },
   ],
   about: {
