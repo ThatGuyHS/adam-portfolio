@@ -141,7 +141,12 @@ export default function Contact() {
               </a>
             </div>
           </div>
-          <form className="form rounded-lg bg-white p-4 flex flex-col">
+          <form
+            action="https://public.herotofu.com/v1/415b4140-5268-11ee-be6e-c34ffd625ead"
+            method="post"
+            accept-charset="UTF-8"
+            className="form rounded-lg bg-white p-4 flex flex-col"
+          >
             <label htmlFor="name" className="text-sm text-gray-600 mx-4">
               {" "}
               Your Name
