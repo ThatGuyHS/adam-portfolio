@@ -86,7 +86,7 @@ const userData = {
       desc: "Responsible for producing written content on event pages, writing summaries, news articles, and recaps.",
     },
   ],
-  resumeUrl: "insert resume url",
+  resumeUrl: "adampeleback.com/experience",
   socialLinks: {
     instagram: "https://instagram.com/adampeleback",
     twitter: "https://twitter.com/ThatGuy_HS",
