@@ -49,13 +49,15 @@ export default function AboutMe() {
                 Job Opportunities
               </h1>
               <p className="text-lg text-gray-500 mt-4 dark:text-gray-300">
-                While I am not actively looking for new opportunities, my inbox
-                is always open. Have a look at some of my experience.
+                I am looking for a full-time job opportunity in the field of
+                Software Development. Please check out my{" "}
                 <a
                   href={userData.resumeUrl}
                   target="__blank"
                   className="text-gray-800 border-b-2 border-gray-800 dark:border-gray-300 font-bold dark:text-gray-300"
-                ></a>{" "}
+                >
+                  resume
+                </a>
                 and reach out if you want to know more.
               </p>
             </div>
