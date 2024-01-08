@@ -89,7 +89,6 @@ const userData = {
   resumeUrl: "/experience",
   socialLinks: {
     instagram: "https://instagram.com/adampeleback",
-    twitter: "https://twitter.com/ThatGuy_HS",
     linkedin: "https://www.linkedin.com/in/adam-p-507593113/",
     github: "https://github.com/ThatGuyHS",
   },
