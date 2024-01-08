@@ -13,10 +13,16 @@ const userData = {
       imgUrl: "/remoteworkradar.png",
     },
     {
+      title: "Nexus Collegiate",
+      link: "https://nexuscollegiate.com",
+      imgUrl: "/nexus-collegiate.png",
+    },
+    {
       title: "Best Travel Route",
       link: "https://besttravelroute.com",
       imgUrl: "/in-progress.jpeg",
     },
+
     {
       title: "Portfolio",
       link: "https://adampeleback.com",
