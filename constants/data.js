@@ -50,6 +50,12 @@ const userData = {
   },
   experience: [
     {
+      title: "Frontend Engineer",
+      company: "Zaver",
+      year: "feb. 2024–april 2024",
+      desc: "Skills: Typescript, Angular",
+    },
+    {
       title: "Frontend Developer",
       company: "G-Loot",
       year: "oct. 2022–now",
