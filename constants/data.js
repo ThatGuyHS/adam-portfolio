@@ -8,6 +8,11 @@ const userData = {
   address: "Stockholm, Sweden",
   projects: [
     {
+      title: "Svenska Esportförbundet",
+      link: "https://svenskesport.se",
+      imgUrl: "/sesf.png",
+    },
+    {
       title: "Remote Work Radar",
       link: "https://remoteworkradar.com",
       imgUrl: "/remoteworkradar.png",
