@@ -8,6 +8,11 @@ const userData = {
   address: "Stockholm, Sweden",
   projects: [
     {
+title: "PXB Media", 
+link: "https://pxbmedia.com",
+imgUrl: "/pxbmedia.png",
+    },
+    {
       title: "Svenska Esportförbundet",
       link: "https://svenskesport.se",
       imgUrl: "/sesf.png",
@@ -54,6 +59,12 @@ const userData = {
     currentProjectUrl: "https://play.stryda.gg",
   },
   experience: [
+    {
+      title: "Web Developer for non profit organization",
+      company: "PXB",
+      year: "may. 2024–ongoing",
+      desc: "Skills: Typescript, React, Next.JS",
+    },
     {
       title: "Frontend Engineer",
       company: "Zaver",
