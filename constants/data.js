@@ -10,7 +10,7 @@ const userData = {
     {
       title: "PXB Media",
       link: "https://pxbmedia.com",
-      imgUrl: "/pxbmedia.png",
+      imgUrl: "/pxbmedia1.png",
     },
     {
       title: "Svenska Esportförbundet",
