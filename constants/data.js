@@ -8,9 +8,9 @@ const userData = {
   address: "Stockholm, Sweden",
   projects: [
     {
-title: "PXB Media", 
-link: "https://pxbmedia.com",
-imgUrl: "/pxbmedia.png",
+      title: "PXB Media",
+      link: "https://pxbmedia.com",
+      imgUrl: "/pxbmedia.png",
     },
     {
       title: "Svenska Esportförbundet",
