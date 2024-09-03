@@ -20,7 +20,7 @@ const userData = {
     {
       title: "Weekend in Paris", 
       link: "https://weekendparis.com",
-      imgUrl: "/weekendparis.png",
+      imgUrl: "/weekendparis.PNG",
     },
     {
       title: "Svenska Esportförbundet",
