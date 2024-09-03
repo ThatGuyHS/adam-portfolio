@@ -18,6 +18,11 @@ const userData = {
       imgUrl: "/pxbmedia1.png",
     },
     {
+      title: "Weekends in Paris", 
+      link: "https://weekendparis.com",
+      imgUrl: "/weekendparis.png",
+    },
+    {
       title: "Svenska Esportförbundet",
       link: "https://svenskesport.se",
       imgUrl: "/sesf.png",
