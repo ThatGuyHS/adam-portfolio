@@ -18,7 +18,7 @@ const userData = {
       imgUrl: "/pxbmedia1.png",
     },
     {
-      title: "Weekends in Paris", 
+      title: "Weekend in Paris", 
       link: "https://weekendparis.com",
       imgUrl: "/weekendparis.png",
     },
