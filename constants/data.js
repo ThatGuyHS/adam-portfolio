@@ -18,6 +18,11 @@ const userData = {
       imgUrl: "/pxbmedia1.png",
     },
     {
+      title: "Cookbok generator",
+      link: "https://cookbokgenerator.com",
+      imgUrl: "/cookbokgenerator.png",
+    },
+    {
       title: "Weekend in Paris", 
       link: "https://weekendparis.com",
       imgUrl: "/weekendparis.PNG",
