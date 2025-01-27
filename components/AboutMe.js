@@ -2,6 +2,30 @@ import React from "react";
 import userData from "@constants/data";
 
 export default function AboutMe() {
+  const handleResumeDownload = async () => {
+    try {
+      // Fetch the PDF file
+      const response = await fetch('/Adam-Peleback-Resume.pdf'); // Adjust the path to where your PDF is stored
+      const blob = await response.blob();
+      
+      // Create a URL for the blob
+      const url = window.URL.createObjectURL(blob);
+      
+      // Create a temporary anchor element
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = "resume.pdf"; // Name for the downloaded file
+      
+      // Append to document, click, and cleanup
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Error downloading resume:', error);
+      alert('Sorry, there was an error downloading the resume. Please try again later.');
+    }
+  };
   return (
     <section className="bg-white dark:bg-gray-800">
       <div className="max-w-6xl mx-auto h-48 bg-white dark:bg-gray-800">
@@ -44,14 +68,13 @@ export default function AboutMe() {
               </h1>
               <p className="text-lg text-gray-500 mt-4 dark:text-gray-300">
                 I am looking for a full-time job opportunity in the field of
-                Software Development. Please check out my{"   "}
-                <a
-                  href={userData.resumeUrl}
-                  target="__blank"
-                  className="text-gray-800 border-b-2 border-gray-800 dark:border-gray-300 font-bold dark:text-gray-300"
+                Software Development. Please check out my{"      "}
+                <button
+                  onClick={handleResumeDownload}
+                  className="text-gray-800 border-b-2 border-gray-800 dark:border-gray-300 font-bold dark:text-gray-300 hover:text-gray-600 dark:hover:text-gray-400 transition-colors cursor-pointer pr-2"
                 >
-                  resume{" "}
-                </a>
+                  resume {"   "}
+                </button>
                 and reach out if you want to know more.
               </p>
             </div>
