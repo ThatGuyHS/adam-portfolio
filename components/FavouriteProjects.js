@@ -55,7 +55,7 @@ export default function FavouriteProjects() {
           </a>
 
           <a
-            href="https://pxg.gg"
+            href="https://pxb.gg"
             className="w-full block col-span-3 shadow-2xl"
           >
             <div className="relative overflow-hidden">
@@ -94,6 +94,26 @@ export default function FavouriteProjects() {
           </a>
           {/* Single card */}
           <a
+            href="https://cookbookgenerator.com"
+            className="w-full block col-span-3 sm:col-span-1  object-cover"
+          >
+            <div className="relative overflow-hidden shadow-2xl">
+              {/* <div className="overlay absolute inset-0 bg-black bg-opacity-70 z-10"></div> */}
+              <img
+                src="/cookbookgenerator.png"
+                alt="portfolio"
+                className="transform hover:scale-125 transition duration-2000 ease-out object-cover shadow-2xl"
+              />
+              <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
+                Cookbook Generator
+              </h1>
+              <h1 className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
+                04
+              </h1>
+            </div>
+          </a>
+          {/* Single card */}
+          <a
             href="https://adampeleback.com"
             className="w-full block col-span-3 sm:col-span-1  object-cover"
           >
@@ -108,7 +128,7 @@ export default function FavouriteProjects() {
                 Portfolio
               </h1>
               <h1 className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
-                04
+                05
               </h1>
             </div>
           </a>
