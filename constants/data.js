@@ -77,7 +77,7 @@ const userData = {
     {
       title: "Freelance Web Developer",
       company: "Self-employed",
-      year: "april 2024–january 2025",
+      year: "april 2024–april 2025",
       desc: "Developed new solutions and internal tools using Nest.js at Clutch Group. Created the PXB Media brand website using Next.js. Developed the first iteration of the Swedish Esports Association website, including a custom CMS solution.",
     },
     {
