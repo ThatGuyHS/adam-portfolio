@@ -23,6 +23,11 @@ const userData = {
       imgUrl: "/cookbookgenerator.png",
     },
     {
+      title: "Adluelno",
+      link: "https://adluelno.se",
+      imgUrl: "/adluelno.png"
+    },
+    {
       title: "Weekend in Paris", 
       link: "https://weekendparis.com",
       imgUrl: "/weekendparis.PNG",
