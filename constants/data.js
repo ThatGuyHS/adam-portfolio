@@ -30,7 +30,7 @@ const userData = {
     {
       title: "Webbdoktorn", 
       link: "https://webbdoktorn.se", 
-      imgUrl: "./webbdoktorn.png"
+      imgUrl: "./webbdoktorn.PNG"
     },
     {
       title: "Weekend in Paris", 
