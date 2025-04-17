@@ -5,7 +5,7 @@ export default function AboutMe() {
   const handleResumeDownload = async () => {
     try {
       // Fetch the PDF file
-      const response = await fetch('/Adam-Peleback-Resume.pdf'); // Adjust the path to where your PDF is stored
+      const response = await fetch('/Adam_Peleback_Frontend_Engineer.pdf'); // Adjust the path to where your PDF is stored
       const blob = await response.blob();
       
       // Create a URL for the blob
