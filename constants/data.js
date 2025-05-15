@@ -30,7 +30,7 @@ const userData = {
     {
       title: "Book Report Template",
       link: "https://bookreporttemplate.com",
-      imgUrl: "/bookreporttemplate.png",
+      imgUrl: "/bookreporttemplate.PNG",
     },
     {
       title: "Webbdoktorn", 
