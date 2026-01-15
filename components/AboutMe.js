@@ -5,7 +5,7 @@ export default function AboutMe() {
   const handleResumeDownload = async () => {
     try {
       // Fetch the PDF file
-      const response = await fetch('/Adam-Peleback-Resume.pdf'); // Adjust the path to where your PDF is stored
+      const response = await fetch('/Adam_Peleback_Frontend_Engineer.pdf'); // Adjust the path to where your PDF is stored
       const blob = await response.blob();
       
       // Create a URL for the blob
@@ -68,7 +68,7 @@ export default function AboutMe() {
               </h1>
               <p className="text-lg text-gray-500 mt-4 dark:text-gray-300">
                 I am looking for a full-time job opportunity in the field of
-                Software Development. Please check out my{"      "}
+                Software Development / QA Engineering. Please check out my{"      "}
                 <button
                   onClick={handleResumeDownload}
                   className="text-gray-800 border-b-2 border-gray-800 dark:border-gray-300 font-bold dark:text-gray-300 hover:text-gray-600 dark:hover:text-gray-400 transition-colors cursor-pointer pr-2"

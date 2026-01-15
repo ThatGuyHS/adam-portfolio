@@ -33,6 +33,16 @@ const userData = {
       imgUrl: "/adluelno.png"
     },
     {
+      title: "Book Report Template",
+      link: "https://bookreporttemplate.com",
+      imgUrl: "/bookreporttemplate.PNG",
+    },
+    {
+      title: "Webbdoktorn", 
+      link: "https://webbdoktorn.se", 
+      imgUrl: "./webbdoktorn.PNG"
+    },
+    {
       title: "Weekend in Paris", 
       link: "https://weekendparis.com",
       imgUrl: "/weekendparis.PNG",
