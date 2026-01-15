@@ -8,6 +8,11 @@ const userData = {
   address: "Stockholm, Sweden",
   projects: [
     {
+      title: "Rivals League",
+      link: "https://rivalsleague.gg",
+      imgUrl: "/rivalsleague.png",
+    },
+    {
       title: "Create Discord Bot",
       link: "https://creatediscordbot.com",
       imgUrl: "/creatediscordbot.PNG",

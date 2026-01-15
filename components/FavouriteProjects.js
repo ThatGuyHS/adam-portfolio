@@ -36,6 +36,25 @@ export default function FavouriteProjects() {
         <div className="grid md:grid-cols-3 gap-8  pb-40">
           {/* Single card */}
           <a
+            href="https://rivalsleague.gg"
+            className="w-full block col-span-3 shadow-2xl"
+          >
+            <div className="relative overflow-hidden">
+              <img
+                src="/rivalsleague.png"
+                alt="rivals league"
+                className="transform hover:scale-125 transition duration-2000 ease-out"
+              />
+              <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-teal-500 rounded-md px-2">
+                RIVALS LEAGUE
+              </h1>
+              <h1 className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
+                01
+              </h1>
+            </div>
+          </a>
+
+          <a
             href="https://pxbmedia.com"
             className="w-full block col-span-3 shadow-2xl"
           >
@@ -49,7 +68,7 @@ export default function FavouriteProjects() {
                 PXB MEDIA
               </h1>
               <h1 className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
-                01
+                02
               </h1>
             </div>
           </a>
@@ -68,7 +87,7 @@ export default function FavouriteProjects() {
                 ADLUELNO
               </h1>
               <h1 className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
-                02
+                03
               </h1>
             </div>
           </a>
@@ -88,7 +107,7 @@ export default function FavouriteProjects() {
                 Weekend Paris
               </h1>
               <h1 className="absolute bottom-10 left-10 dark:text-white text-black font-bold text-xl">
-                03
+                04
               </h1>
             </div>
           </a>
@@ -108,7 +127,7 @@ export default function FavouriteProjects() {
                 Cookbook Generator
               </h1>
               <h1 className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
-                04
+                05
               </h1>
             </div>
           </a>
@@ -128,7 +147,7 @@ export default function FavouriteProjects() {
                 Portfolio
               </h1>
               <h1 className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
-                05
+                06
               </h1>
             </div>
           </a>
