@@ -24,13 +24,11 @@ Key Features:
 
 From simple landing pages to complex web applications, I deliver high-quality code that meets your specific needs.`,
       icon: "💻",
-      timeline: "2-8 weeks",
       highlight: "Performance-first builds",
       deliverables: ["Responsive UI", "SEO setup", "Core Web Vitals tuning"],
       accent: {
         cardHover: "hover:border-blue-200 hover:-translate-y-1",
         iconBg: "bg-blue-100 text-blue-600",
-        badge: "text-blue-700 border-blue-200 bg-blue-50",
         bullet: "bg-blue-500",
         primaryBtn: "bg-blue-500 text-white hover:bg-blue-600",
         secondaryBtn: "bg-gray-100 text-gray-700 hover:bg-gray-200",
@@ -51,13 +49,11 @@ Services Include:
 
 My expertise spans across various platforms and testing methodologies to ensure comprehensive quality assurance.`,
       icon: "⚡",
-      timeline: "1-4 weeks",
       highlight: "Confidence in every release",
       deliverables: ["Unit tests", "E2E coverage", "CI pipeline integration"],
       accent: {
         cardHover: "hover:border-yellow-200 hover:-translate-y-1.5",
         iconBg: "bg-yellow-100 text-yellow-700",
-        badge: "text-yellow-700 border-yellow-200 bg-yellow-50",
         bullet: "bg-yellow-500",
         primaryBtn: "bg-red-500 text-white hover:bg-red-600",
         secondaryBtn: "bg-gray-100 text-gray-700 hover:bg-gray-200",
@@ -79,13 +75,11 @@ Features Include:
 
 Whether you need a simple utility bot or a complex multi-feature bot, I can help you create the perfect solution for your Discord community.`,
       icon: "🤖",
-      timeline: "1-3 weeks",
       highlight: "Community automation",
       deliverables: ["Custom commands", "Moderation tools", "Role automation"],
       accent: {
         cardHover: "hover:border-purple-200 hover:-translate-y-1 hover:rotate-[0.3deg]",
         iconBg: "bg-purple-100 text-purple-700",
-        badge: "text-purple-700 border-purple-200 bg-purple-50",
         bullet: "bg-purple-500",
         primaryBtn: "bg-indigo-500 text-white hover:bg-indigo-600",
         secondaryBtn: "bg-gray-100 text-gray-700 hover:bg-gray-200",
@@ -106,13 +100,11 @@ Services Offered:
 
 I ensure smooth execution of competitive gaming events, handling all aspects of tournament administration professionally.`,
       icon: "🎮",
-      timeline: "Per event",
       highlight: "Smooth event operations",
       deliverables: ["Bracket setup", "Team coordination", "Results reporting"],
       accent: {
         cardHover: "hover:border-red-200 hover:-translate-y-1 hover:rotate-[-0.3deg]",
         iconBg: "bg-red-100 text-red-600",
-        badge: "text-red-700 border-red-200 bg-red-50",
         bullet: "bg-red-500",
         primaryBtn: "bg-rose-500 text-white hover:bg-rose-400",
         secondaryBtn: "bg-gray-100 text-gray-700 hover:bg-gray-200",
@@ -207,11 +199,6 @@ I ensure smooth execution of competitive gaming events, handling all aspects of 
                         </h2>
                       </div>
                     </div>
-                    <span
-                      className={`text-sm border rounded-full px-3 py-1 ${service.accent.badge}`}
-                    >
-                      {service.timeline}
-                    </span>
                   </div>
 
                   <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
