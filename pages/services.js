@@ -1,11 +1,10 @@
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
 import ContainerBlock from "../components/ContainerBlock";
 import Modal from "../components/Modal";
 import { useState } from "react";
 import Link from "next/link";
 
 export default function Services() {
+  const siteUrl = "https://adampeleback.com";
   const [selectedService, setSelectedService] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -84,8 +83,19 @@ I ensure smooth execution of competitive gaming events, handling all aspects of 
 
   return (
     <ContainerBlock
-      title="Services - Adam Peleback"
+      title="Services | Adam Peleback"
       description="Explore my professional services including web development, test automation, and esports tournament administration."
+      keywords="frontend development services, test automation services, esports tournament administration"
+      structuredData={{
+        "@context": "https://schema.org",
+        "@type": "Service",
+        serviceType: "Frontend Development and QA Services",
+        provider: {
+          "@type": "Person",
+          name: "Adam Peleback",
+          url: siteUrl,
+        },
+      }}
     >
       <div className="max-w-4xl mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-center mb-12">My Services</h1>

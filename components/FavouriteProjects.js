@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function FavouriteProjects() {
   return (
@@ -40,9 +41,11 @@ export default function FavouriteProjects() {
             className="w-full block col-span-3 shadow-2xl"
           >
             <div className="relative overflow-hidden">
-              <img
+              <Image
                 src="/rivalsleague.png"
                 alt="rivals league"
+                width={1600}
+                height={900}
                 className="transform hover:scale-125 transition duration-2000 ease-out"
               />
               <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-teal-500 rounded-md px-2">
@@ -59,9 +62,11 @@ export default function FavouriteProjects() {
             className="w-full block col-span-3 shadow-2xl"
           >
             <div className="relative overflow-hidden">
-              <img
+              <Image
                 src="/pxbmedia1.png"
                 alt="pxb media"
+                width={1600}
+                height={900}
                 className="transform hover:scale-125 transition duration-2000 ease-out"
               />
               <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
@@ -78,9 +83,11 @@ export default function FavouriteProjects() {
             className="w-full block col-span-3 shadow-2xl"
           >
             <div className="relative overflow-hidden">
-              <img
+              <Image
                 src="/adluelno.png"
                 alt="adluelno"
+                width={1600}
+                height={900}
                 className="transform hover:scale-125 transition duration-2000 ease-out"
               />
               <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
@@ -98,9 +105,11 @@ export default function FavouriteProjects() {
           >
             <div className="relative overflow-hidden">
               {/* <div className="overlay absolute inset-0 bg-black bg-opacity-70 z-10"></div> */}
-              <img
+              <Image
                 src="/weekendparis.PNG"
-                alt="stryda"
+                alt="Weekend Paris project screenshot"
+                width={1600}
+                height={900}
                 className="transform hover:scale-125 transition duration-2000 ease-out"
               />
               <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
@@ -118,9 +127,11 @@ export default function FavouriteProjects() {
           >
             <div className="relative overflow-hidden shadow-2xl">
               {/* <div className="overlay absolute inset-0 bg-black bg-opacity-70 z-10"></div> */}
-              <img
+              <Image
                 src="/cookbookgenerator.png"
-                alt="portfolio"
+                alt="Cookbook Generator project screenshot"
+                width={900}
+                height={900}
                 className="transform hover:scale-125 transition duration-2000 ease-out object-cover shadow-2xl"
               />
               <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
@@ -138,9 +149,11 @@ export default function FavouriteProjects() {
           >
             <div className="relative overflow-hidden shadow-2xl">
               {/* <div className="overlay absolute inset-0 bg-black bg-opacity-70 z-10"></div> */}
-              <img
+              <Image
                 src="/portfolio.png"
-                alt="portfolio"
+                alt="Adam Peleback portfolio screenshot"
+                width={900}
+                height={900}
                 className="transform hover:scale-125 transition duration-2000 ease-out object-cover shadow-2xl"
               />
               <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">

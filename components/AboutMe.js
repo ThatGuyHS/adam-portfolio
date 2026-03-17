@@ -139,35 +139,43 @@ export default function AboutMe() {
             <div className="flex flex-row flex-wrap mt-8">
               <img
                 src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"
+                alt="JavaScript logo"
                 className="h-20 w-20 mx-4 my-4"
               />
               <img
                 src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png"
+                alt="TypeScript logo"
                 className="h-20 w-20 mx-4 my-4"
               />
               <img
                 src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png"
+                alt="HTML5 logo"
                 className="h-20 w-20 mx-4 my-4"
               />
               <img
                 src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png"
+                alt="CSS3 logo"
                 className="h-20 w-20 mx-4 my-4"
               />
 
               <img
                 src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/vue/vue.png"
+                alt="Vue.js logo"
                 className="h-20 w-20 mx-4 my-4"
               />
               <img
                 src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png"
+                alt="Git logo"
                 className="h-20 w-20 mx-4 my-4"
               />
               <img
                 src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png"
+                alt="React logo"
                 className="h-20 w-20 mx-4 my-4"
               />
               <img
                 src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/firebase/firebase.png"
+                alt="Firebase logo"
                 className="h-20 w-20 mx-4 my-4"
               />
             </div>

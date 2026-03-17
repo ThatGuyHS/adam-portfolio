@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import { RainbowHighlight } from "./RainbowHighlight";
 import userData from "@constants/data";
@@ -36,7 +37,14 @@ export default function Hero() {
       {/* Image container */}
       <div className="hidden lg:block relative w-full md:w-1/2 -mr-40 mt-20">
         <div className="w-3/4 ">
-          <img src={userData.avatarUrl} alt="avatar" className=" shadow" />
+          <Image
+            src={userData.avatarUrl}
+            alt="Portrait of Adam Peleback"
+            width={700}
+            height={700}
+            priority
+            className="shadow"
+          />
           <div className="flex flex-row justify-between mt-4">
             <div className="flex flex-row space-x-4">
               <svg
