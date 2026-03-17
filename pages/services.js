@@ -28,12 +28,12 @@ From simple landing pages to complex web applications, I deliver high-quality co
       highlight: "Performance-first builds",
       deliverables: ["Responsive UI", "SEO setup", "Core Web Vitals tuning"],
       accent: {
-        cardHover: "hover:border-cyan-300/70 hover:-translate-y-1",
-        iconBg: "bg-cyan-400/15",
-        badge: "text-cyan-200 border-cyan-300/40 bg-cyan-400/10",
-        bullet: "bg-cyan-300",
-        primaryBtn: "bg-cyan-500 text-slate-950 hover:bg-cyan-400",
-        secondaryBtn: "bg-white/10 text-white hover:bg-white/20",
+        cardHover: "hover:border-blue-200 hover:-translate-y-1",
+        iconBg: "bg-blue-100 text-blue-600",
+        badge: "text-blue-700 border-blue-200 bg-blue-50",
+        bullet: "bg-blue-500",
+        primaryBtn: "bg-blue-500 text-white hover:bg-blue-600",
+        secondaryBtn: "bg-gray-100 text-gray-700 hover:bg-gray-200",
       },
     },
     {
@@ -55,12 +55,12 @@ My expertise spans across various platforms and testing methodologies to ensure 
       highlight: "Confidence in every release",
       deliverables: ["Unit tests", "E2E coverage", "CI pipeline integration"],
       accent: {
-        cardHover: "hover:border-amber-300/70 hover:-translate-y-1.5",
-        iconBg: "bg-amber-400/15",
-        badge: "text-amber-200 border-amber-300/40 bg-amber-400/10",
-        bullet: "bg-amber-300",
-        primaryBtn: "bg-amber-400 text-slate-950 hover:bg-amber-300",
-        secondaryBtn: "bg-white/10 text-white hover:bg-white/20",
+        cardHover: "hover:border-yellow-200 hover:-translate-y-1.5",
+        iconBg: "bg-yellow-100 text-yellow-700",
+        badge: "text-yellow-700 border-yellow-200 bg-yellow-50",
+        bullet: "bg-yellow-500",
+        primaryBtn: "bg-red-500 text-white hover:bg-red-600",
+        secondaryBtn: "bg-gray-100 text-gray-700 hover:bg-gray-200",
       },
     },
     {
@@ -83,12 +83,12 @@ Whether you need a simple utility bot or a complex multi-feature bot, I can help
       highlight: "Community automation",
       deliverables: ["Custom commands", "Moderation tools", "Role automation"],
       accent: {
-        cardHover: "hover:border-violet-300/70 hover:-translate-y-1 hover:rotate-[0.3deg]",
-        iconBg: "bg-violet-400/15",
-        badge: "text-violet-200 border-violet-300/40 bg-violet-400/10",
-        bullet: "bg-violet-300",
-        primaryBtn: "bg-violet-400 text-slate-950 hover:bg-violet-300",
-        secondaryBtn: "bg-white/10 text-white hover:bg-white/20",
+        cardHover: "hover:border-purple-200 hover:-translate-y-1 hover:rotate-[0.3deg]",
+        iconBg: "bg-purple-100 text-purple-700",
+        badge: "text-purple-700 border-purple-200 bg-purple-50",
+        bullet: "bg-purple-500",
+        primaryBtn: "bg-indigo-500 text-white hover:bg-indigo-600",
+        secondaryBtn: "bg-gray-100 text-gray-700 hover:bg-gray-200",
       },
     },
     {
@@ -110,12 +110,12 @@ I ensure smooth execution of competitive gaming events, handling all aspects of 
       highlight: "Smooth event operations",
       deliverables: ["Bracket setup", "Team coordination", "Results reporting"],
       accent: {
-        cardHover: "hover:border-rose-300/70 hover:-translate-y-1 hover:rotate-[-0.3deg]",
-        iconBg: "bg-rose-400/15",
-        badge: "text-rose-200 border-rose-300/40 bg-rose-400/10",
-        bullet: "bg-rose-300",
+        cardHover: "hover:border-red-200 hover:-translate-y-1 hover:rotate-[-0.3deg]",
+        iconBg: "bg-red-100 text-red-600",
+        badge: "text-red-700 border-red-200 bg-red-50",
+        bullet: "bg-red-500",
         primaryBtn: "bg-rose-500 text-white hover:bg-rose-400",
-        secondaryBtn: "bg-white/10 text-white hover:bg-white/20",
+        secondaryBtn: "bg-gray-100 text-gray-700 hover:bg-gray-200",
       },
     },
   ];
@@ -159,136 +159,149 @@ I ensure smooth execution of competitive gaming events, handling all aspects of 
         },
       }}
     >
-      <div className="relative overflow-hidden bg-slate-950 text-slate-100">
-        <div className="pointer-events-none absolute inset-0 opacity-40">
-          <div className="absolute -top-24 left-0 h-72 w-72 rounded-full bg-cyan-500 blur-3xl" />
-          <div className="absolute top-20 right-0 h-72 w-72 rounded-full bg-red-500 blur-3xl" />
-          <div className="absolute bottom-0 left-1/3 h-64 w-64 rounded-full bg-indigo-500 blur-3xl" />
+      <section className="bg-white dark:bg-gray-800">
+        <div className="max-w-6xl mx-auto h-48 bg-white dark:bg-gray-800">
+          <h1 className="text-5xl md:text-9xl font-bold py-20 text-center md:text-left">
+            Services
+          </h1>
         </div>
 
-        <div className="relative max-w-6xl mx-auto px-4 py-20 md:py-28">
-          <header className="mb-16">
-            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-cyan-200 mb-6">
-              Services
-            </p>
-            <div className="grid md:grid-cols-2 gap-10 items-end">
-              <h1 className="text-4xl md:text-6xl font-black leading-tight">
-                Design, build, and launch digital products with confidence.
-              </h1>
-              <p className="text-slate-300 text-lg leading-relaxed">
-                I help teams and founders ship high-quality experiences across web
-                development, quality assurance, automation, and esports operations.
-                Engagements are structured, collaborative, and focused on outcomes.
+        <div className="bg-[#F1F1F1] dark:bg-gray-900">
+          <div className="max-w-6xl mx-auto px-4 py-14 md:py-20">
+            <header className="mb-14">
+              <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-red-500 mb-4 font-semibold">
+                What I Offer
               </p>
-            </div>
-          </header>
-
-          <section className="grid md:grid-cols-2 gap-6 mb-20">
-            {services.map((service, index) => (
-              <article
-                key={service.title}
-                style={{ transitionDelay: `${index * 40}ms` }}
-                className={`group rounded-2xl border border-white/15 bg-white/5 backdrop-blur-md p-6 md:p-8 shadow-2xl transition-all duration-300 ${service.accent.cardHover}`}
-              >
-                <div className="flex items-start justify-between mb-6">
-                  <div className="flex items-center gap-4">
-                    <div
-                      className={`h-12 w-12 rounded-xl flex items-center justify-center text-2xl transition-transform duration-300 group-hover:scale-110 ${service.accent.iconBg}`}
-                    >
-                      {service.icon}
-                    </div>
-                    <div>
-                      <p className="text-xs uppercase tracking-wider text-slate-300">
-                        {service.highlight}
-                      </p>
-                      <h2 className="text-2xl font-bold">{service.title}</h2>
-                    </div>
-                  </div>
-                  <span
-                    className={`text-sm border rounded-full px-3 py-1 ${service.accent.badge}`}
-                  >
-                    {service.timeline}
-                  </span>
-                </div>
-
-                <p className="text-slate-300 mb-6 leading-relaxed">
-                  {service.shortDescription}
+              <div className="grid md:grid-cols-2 gap-8 items-end">
+                <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
+                  Practical services for shipping quality digital products.
+                </h2>
+                <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                  I help teams and founders with frontend development, testing,
+                  automation, and esports operations through clear scopes and reliable
+                  delivery.
                 </p>
-
-                <ul className="space-y-2 mb-8">
-                  {service.deliverables.map((item) => (
-                    <li key={item} className="text-sm text-slate-200 flex items-center gap-2">
-                      <span className={`h-1.5 w-1.5 rounded-full ${service.accent.bullet}`} />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <button
-                    onClick={() => handleReadMore(service)}
-                    className={`flex-1 rounded-lg px-4 py-3 font-semibold transition-colors duration-300 ${service.accent.secondaryBtn}`}
-                  >
-                    Read Details
-                  </button>
-                  <Link
-                    href="/contact"
-                    className={`flex-1 rounded-lg px-4 py-3 font-semibold text-center transition-colors duration-300 ${service.accent.primaryBtn}`}
-                  >
-                    Start a Project
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </section>
-
-          <section className="rounded-2xl border border-white/20 bg-slate-900/60 p-6 md:p-10">
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
-              <div>
-                <p className="uppercase tracking-[0.2em] text-xs text-slate-300 mb-3">
-                  Process
-                </p>
-                <h2 className="text-3xl md:text-4xl font-bold">How we work together</h2>
               </div>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-lg border border-cyan-300/60 px-5 py-3 text-cyan-200 hover:bg-cyan-300/10 transition-colors duration-300"
-              >
-                Book a conversation
-              </Link>
-            </div>
+            </header>
 
-            <div className="grid md:grid-cols-3 gap-4">
-              {processSteps.map((step, index) => (
-                <div
-                  key={step.title}
-                  className="rounded-xl border border-white/10 bg-white/5 p-5"
+            <section className="grid md:grid-cols-2 gap-6 mb-16">
+              {services.map((service, index) => (
+                <article
+                  key={service.title}
+                  style={{ transitionDelay: `${index * 40}ms` }}
+                  className={`group rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 md:p-8 shadow-lg transition-all duration-300 ${service.accent.cardHover}`}
                 >
-                  <p className="text-sm text-cyan-200 mb-2">0{index + 1}</p>
-                  <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
-                  <p className="text-slate-300 leading-relaxed">{step.description}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-        </div>
-      </div>
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="flex items-center gap-4">
+                      <div
+                        className={`h-12 w-12 rounded-xl flex items-center justify-center text-2xl transition-transform duration-300 group-hover:scale-110 ${service.accent.iconBg}`}
+                      >
+                        {service.icon}
+                      </div>
+                      <div>
+                        <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                          {service.highlight}
+                        </p>
+                        <h2 className="text-2xl font-bold text-gray-800 dark:text-white">
+                          {service.title}
+                        </h2>
+                      </div>
+                    </div>
+                    <span
+                      className={`text-sm border rounded-full px-3 py-1 ${service.accent.badge}`}
+                    >
+                      {service.timeline}
+                    </span>
+                  </div>
 
-      <div className="bg-slate-950 px-4 pb-20">
-        <div className="max-w-6xl mx-auto rounded-2xl border border-white/15 bg-gradient-to-r from-red-500/20 via-transparent to-cyan-500/20 p-6 md:p-10">
+                  <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                    {service.shortDescription}
+                  </p>
+
+                  <ul className="space-y-2 mb-8">
+                    {service.deliverables.map((item) => (
+                      <li
+                        key={item}
+                        className="text-sm text-gray-700 dark:text-gray-200 flex items-center gap-2"
+                      >
+                        <span className={`h-1.5 w-1.5 rounded-full ${service.accent.bullet}`} />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <button
+                      onClick={() => handleReadMore(service)}
+                      className={`flex-1 rounded-lg px-4 py-3 font-semibold transition-colors duration-300 ${service.accent.secondaryBtn}`}
+                    >
+                      Read Details
+                    </button>
+                    <Link
+                      href="/contact"
+                      className={`flex-1 rounded-lg px-4 py-3 font-semibold text-center transition-colors duration-300 ${service.accent.primaryBtn}`}
+                    >
+                      Start a Project
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </section>
+
+            <section className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 md:p-10">
+              <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
+                <div>
+                  <p className="uppercase tracking-[0.2em] text-xs text-gray-500 dark:text-gray-400 mb-3">
+                    Process
+                  </p>
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
+                    How we work together
+                  </h2>
+                </div>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-lg border border-red-300 px-5 py-3 text-red-500 hover:bg-red-50 dark:hover:bg-gray-700 transition-colors duration-300"
+                >
+                  Book a conversation
+                </Link>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-4">
+                {processSteps.map((step, index) => (
+                  <div
+                    key={step.title}
+                    className="rounded-xl border border-gray-200 dark:border-gray-700 bg-[#F9F9F9] dark:bg-gray-900 p-5"
+                  >
+                    <p className="text-sm text-red-500 mb-2 font-semibold">0{index + 1}</p>
+                    <h3 className="text-xl font-semibold mb-3 text-gray-800 dark:text-white">
+                      {step.title}
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <div className="bg-[#F1F1F1] dark:bg-gray-900 px-4 pb-20">
+        <div className="max-w-6xl mx-auto rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 md:p-10 shadow-lg">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-2">
                 Need something tailored?
               </h2>
-              <p className="text-slate-300 max-w-2xl">
+              <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
                 If your project needs a custom setup, we can define a bespoke scope
                 around your team, stack, and timeline.
               </p>
             </div>
             <Link
               href="/contact"
-              className="rounded-lg bg-white text-slate-950 px-6 py-3 font-semibold hover:bg-slate-200 transition-colors duration-300"
+              className="rounded-lg bg-red-500 text-white px-6 py-3 font-semibold hover:bg-red-600 transition-colors duration-300"
             >
               Contact Me
             </Link>
