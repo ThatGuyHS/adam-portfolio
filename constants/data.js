@@ -58,6 +58,11 @@ const userData = {
       imgUrl: "/aoe2sverige.png",
     },
     {
+      title: "PromptBibliotek",
+      link: "https://promptbibliotek.se",
+      imgUrl: "/promptbibliotek.png",
+    },
+    {
       title: "Remote Work Radar",
       link: "https://remoteworkradar.com",
       imgUrl: "/remoteworkradar.png",

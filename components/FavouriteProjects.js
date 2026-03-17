@@ -185,6 +185,27 @@ export default function FavouriteProjects() {
               </h1>
             </div>
           </a>
+          {/* Single card */}
+          <a
+            href="https://promptbibliotek.se"
+            className="w-full block col-span-3 sm:col-span-1 shadow-2xl"
+          >
+            <div className="relative overflow-hidden">
+              <Image
+                src="/promptbibliotek.png"
+                alt="PromptBibliotek project screenshot"
+                width={900}
+                height={900}
+                className="transform hover:scale-125 transition duration-2000 ease-out object-cover"
+              />
+              <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-blue-500 rounded-md px-2">
+                PromptBibliotek
+              </h1>
+              <h1 className="absolute bottom-10 left-10 dark:text-white text-black font-bold text-xl">
+                08
+              </h1>
+            </div>
+          </a>
         </div>
       </div>
     </div>
