@@ -53,6 +53,11 @@ const userData = {
       imgUrl: "/sesf.png",
     },
     {
+      title: "AoE2 Sverige",
+      link: "https://www.aoe2sverige.se/",
+      imgUrl: "/aoe2sverige.png",
+    },
+    {
       title: "Remote Work Radar",
       link: "https://remoteworkradar.com",
       imgUrl: "/remoteworkradar.png",
