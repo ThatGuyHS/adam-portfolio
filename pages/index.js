@@ -28,15 +28,15 @@ export default function Home({ repositories }) {
   );
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   let token = process.env.GITHUB_AUTH_TOKEN;
 
   const repositories = await getLatestRepos(userData, token);
-  
 
   return {
     props: {
-      repositories,
+      repositories: repositories || [],
     },
+    revalidate: 3600,
   };
 };
