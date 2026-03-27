@@ -105,6 +105,18 @@ const userData = {
   },
   experience: [
     {
+      title: "System Tester",
+      company: "Decerno AB",
+      year: "sep. 2025–now",
+      desc: "System testing and software testing.",
+    },
+    {
+      title: "Freelance Web Developer",
+      company: "Svenska E-sportförbundet",
+      year: "mars 2025–aug. 2025",
+      desc: "Freelance web development using Typescript and React.js.",
+    },
+    {
       title: "Freelance Web Developer",
       company: "Self-employed",
       year: "april 2024–april 2025",
