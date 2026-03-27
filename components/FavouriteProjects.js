@@ -43,9 +43,10 @@ export default function FavouriteProjects() {
             <div className="relative overflow-hidden">
               <Image
                 src="/rivalsleague.png"
-                alt="rivals league"
+                alt="Rivals League project screenshot"
                 width={1600}
                 height={900}
+                sizes="(max-width: 768px) 100vw, 1152px"
                 className="transform hover:scale-125 transition duration-2000 ease-out"
               />
               <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-teal-500 rounded-md px-2">
@@ -64,9 +65,10 @@ export default function FavouriteProjects() {
             <div className="relative overflow-hidden">
               <Image
                 src="/pxbmedia1.png"
-                alt="pxb media"
+                alt="PXB Media project screenshot"
                 width={1600}
                 height={900}
+                sizes="(max-width: 768px) 100vw, 1152px"
                 className="transform hover:scale-125 transition duration-2000 ease-out"
               />
               <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
@@ -85,9 +87,10 @@ export default function FavouriteProjects() {
             <div className="relative overflow-hidden">
               <Image
                 src="/adluelno.png"
-                alt="adluelno"
+                alt="Adluelno project screenshot"
                 width={1600}
                 height={900}
+                sizes="(max-width: 768px) 100vw, 1152px"
                 className="transform hover:scale-125 transition duration-2000 ease-out"
               />
               <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
@@ -110,6 +113,7 @@ export default function FavouriteProjects() {
                 alt="Weekend Paris project screenshot"
                 width={1600}
                 height={900}
+                sizes="(max-width: 640px) 100vw, 66vw"
                 className="transform hover:scale-125 transition duration-2000 ease-out"
               />
               <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
@@ -132,6 +136,7 @@ export default function FavouriteProjects() {
                 alt="Cookbook Generator project screenshot"
                 width={900}
                 height={900}
+                sizes="(max-width: 640px) 100vw, 33vw"
                 className="transform hover:scale-125 transition duration-2000 ease-out object-cover shadow-2xl"
               />
               <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
@@ -154,6 +159,7 @@ export default function FavouriteProjects() {
                 alt="Adam Peleback portfolio screenshot"
                 width={900}
                 height={900}
+                sizes="(max-width: 640px) 100vw, 33vw"
                 className="transform hover:scale-125 transition duration-2000 ease-out object-cover shadow-2xl"
               />
               <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
@@ -175,6 +181,7 @@ export default function FavouriteProjects() {
                 alt="AoE2 Sverige project screenshot"
                 width={1600}
                 height={900}
+                sizes="(max-width: 640px) 100vw, 66vw"
                 className="transform hover:scale-125 transition duration-2000 ease-out"
               />
               <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
@@ -196,6 +203,7 @@ export default function FavouriteProjects() {
                 alt="PromptBibliotek project screenshot"
                 width={900}
                 height={900}
+                sizes="(max-width: 640px) 100vw, 33vw"
                 className="transform hover:scale-125 transition duration-2000 ease-out object-cover"
               />
               <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-blue-500 rounded-md px-2">
