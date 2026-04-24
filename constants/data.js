@@ -63,6 +63,11 @@ const userData = {
       imgUrl: "/promptbibliotek.png",
     },
     {
+      title: "Cryptoskatt",
+      link: "https://cryptoskatt.se",
+      imgUrl: "/cryptoskatt.png",
+    },
+    {
       title: "Remote Work Radar",
       link: "https://remoteworkradar.com",
       imgUrl: "/remoteworkradar.png",
