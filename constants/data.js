@@ -65,7 +65,7 @@ const userData = {
     {
       title: "Cryptoskatt",
       link: "https://cryptoskatt.se",
-      imgUrl: "/in-progress.jpeg",
+      imgUrl: "/cryptoskatt.png",
     },
     {
       title: "Remote Work Radar",
