@@ -1,5 +1,3 @@
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
 import ContainerBlock from "../components/ContainerBlock";
 import FavouriteProjects from "../components/FavouriteProjects";
 import LatestCode from "../components/LatestCode";
@@ -8,10 +6,20 @@ import getLatestRepos from "@lib/getLatestRepos";
 import userData from "@constants/data";
 
 export default function Home({ repositories }) {
+  const siteUrl = "https://adampeleback.com";
+
   return (
     <ContainerBlock
-      title="Adam Peleback - Developer, Writer, Esports Tournament Organizer"
-      description="I am a Frontend Developer, Esports Tournament Organizer, and Writer. I've been building web applications for over 5 years and I'm passionate about building products that bring value to people around the globe. "
+      title="Adam Peleback | Frontend Developer and Esports Organizer"
+      description="Frontend developer in Stockholm building modern web applications, esports platforms, and digital products with React and Next.js."
+      keywords="Adam Peleback, frontend developer, React developer, Next.js developer, esports"
+      structuredData={{
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "Adam Peleback",
+        url: siteUrl,
+        inLanguage: "en",
+      }}
     >
       <Hero />
       <FavouriteProjects />
@@ -20,15 +28,15 @@ export default function Home({ repositories }) {
   );
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   let token = process.env.GITHUB_AUTH_TOKEN;
 
   const repositories = await getLatestRepos(userData, token);
-  
 
   return {
     props: {
-      repositories,
+      repositories: repositories || [],
     },
+    revalidate: 3600,
   };
 };

@@ -53,6 +53,16 @@ const userData = {
       imgUrl: "/sesf.png",
     },
     {
+      title: "AoE2 Sverige",
+      link: "https://www.aoe2sverige.se/",
+      imgUrl: "/aoe2sverige.png",
+    },
+    {
+      title: "PromptBibliotek",
+      link: "https://promptbibliotek.se",
+      imgUrl: "/promptbibliotek.png",
+    },
+    {
       title: "Remote Work Radar",
       link: "https://remoteworkradar.com",
       imgUrl: "/remoteworkradar.png",
@@ -94,6 +104,18 @@ const userData = {
     currentProjectUrl: "https://pxbmedia.com",
   },
   experience: [
+    {
+      title: "System Tester",
+      company: "Decerno AB",
+      year: "sep. 2025–now",
+      desc: "System testing and software testing.",
+    },
+    {
+      title: "Freelance Web Developer",
+      company: "Svenska E-sportförbundet",
+      year: "mars 2025–aug. 2025",
+      desc: "Freelance web development using Typescript and React.js.",
+    },
     {
       title: "Freelance Web Developer",
       company: "Self-employed",
