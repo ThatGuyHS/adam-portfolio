@@ -10,7 +10,7 @@ export default function ContainerBlock({ children, ...customMeta }) {
   const siteUrl = "https://adampeleback.com";
 
   const meta = {
-    title: "Adam Peleback - Frontend Developer and Esports Organizer",
+    title: "Adam Peleback | Frontend Developer and Esports Organizer",
     description: `Frontend Developer, Esports Tournament Organizer, and Writer. I've been building web applications for over 5 years and I'm passionate about building products that bring value to people around the globe.`,
     image: "/adam.png",
     type: "website",
@@ -25,15 +25,28 @@ export default function ContainerBlock({ children, ...customMeta }) {
   const personStructuredData = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": `${siteUrl}/#adam-peleback`,
     name: userData.name,
     url: siteUrl,
-    image: ogImageUrl,
-    jobTitle: userData.designation,
+    image: `${siteUrl}/adam.png`,
+    jobTitle: "Frontend Developer",
     email: userData.email,
+    description:
+      "Frontend developer and QA engineer based in Stockholm, Sweden, with 7+ years of experience building web applications and esports platforms with React, Next.js, and TypeScript.",
+    knowsAbout: [
+      "Frontend Development",
+      "React",
+      "Next.js",
+      "TypeScript",
+      "QA Engineering",
+      "Test Automation",
+      "Esports Tournament Organization",
+      "Copywriting",
+    ],
     address: {
       "@type": "PostalAddress",
       addressLocality: "Stockholm",
-      addressCountry: "Sweden",
+      addressCountry: "SE",
     },
     sameAs: [
       userData.socialLinks.github,

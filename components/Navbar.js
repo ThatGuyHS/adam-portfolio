@@ -155,8 +155,12 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className="space-x-4 flex flex-row items-center">
-          <a href={userData.socialLinks.instagram} x>
+        <div className="space-x-2 flex flex-row items-center">
+          <a
+            href={userData.socialLinks.instagram}
+            aria-label="Instagram"
+            className="inline-flex items-center justify-center w-10 h-10 p-2 rounded text-gray-600 dark:text-gray-300"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -171,7 +175,8 @@ export default function Navbar() {
 
           <a
             href={userData.socialLinks.linkedin}
-            className="text-base font-normal text-gray-600 dark:text-gray-300"
+            aria-label="LinkedIn"
+            className="inline-flex items-center justify-center w-10 h-10 p-2 rounded text-base font-normal text-gray-600 dark:text-gray-300"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

@@ -24,7 +24,7 @@ const userData = {
     },
     {
       title: "Cookbook generator",
-      link: "https://cookbokgenerator.com",
+      link: "https://cookbookgenerator.com",
       imgUrl: "/cookbookgenerator.png",
     },
     {
@@ -105,6 +105,20 @@ const userData = {
     description: [
       "I began my journey in the esports and tech industry as a Tournament Administrator, diving deep into the competitive gaming world. My passion for technology led me to roles in QA testing, where I honed my skills in test automation and manual testing, ensuring the best user experience for gaming platforms. Transitioning to a Frontend Developer role, I've mastered tools and languages like Typescript, Next.JS, JavaScript, and React.js. My experience isn't just limited to coding; I've been a pivotal part of teams, advising on testing strategies and ensuring the seamless operation of platforms like G-Loot. In addition to my technical roles, I've been involved in the growth and success of organizations like Phoenix Blue, contributing to the esports community and helping broadcast events. My diverse experience in both the technical and administrative aspects of the esports world has given me a unique perspective, allowing me to bridge the gap between technology and gaming. Today, I'm not just a developer; I'm an esports enthusiast, a tech aficionado, and a dedicated professional committed to enhancing the gaming experience for all.",
     ],
+    sections: [
+      {
+        heading: "What does Adam Peleback do?",
+        body: "Adam Peleback is a frontend developer and QA engineer based in Stockholm, Sweden. He builds modern web applications and esports platforms with React, Next.js, and TypeScript, and runs Age of Empires 2 tournaments through AoE2 Sverige and Phoenix Blue on the operations side.",
+      },
+      {
+        heading: "What is Adam's technical background?",
+        body: "Adam started in esports as a tournament administrator at G-Loot in 2017, then moved into QA testing and test automation, and from there into frontend engineering on the same product. He has shipped frontend work at G-Loot (Stryda), Zaver, Decerno, and Vinnova, plus freelance builds for PXB Media, Svenska E-sportförbundet, and Clutch Group. His core stack is TypeScript, React, Next.js, and Node.js, with strong experience in test automation, CI/CD pipelines, and end-to-end testing.",
+      },
+      {
+        heading: "How can you hire Adam?",
+        body: "Adam is available for freelance and contract engagements in frontend development, QA engineering, and esports tournament operations. The fastest way to get in touch is via the contact form or email at adampeleback@gmail.com — he typically responds within a day.",
+      },
+    ],
     currentProject: "PXB Media",
     currentProjectUrl: "https://pxbmedia.com",
   },
@@ -182,6 +196,52 @@ const userData = {
     linkedin: "https://www.linkedin.com/in/adam-p-507593113/",
     github: "https://github.com/ThatGuyHS",
   },
+  testimonials: [
+    {
+      quote:
+        "Adam's proactive stance in tackling challenges is truly impressive. His adaptability and resourcefulness make him a valuable contributor to any team or project.",
+      fullQuote:
+        "Adam's proactive stance in tackling challenges is truly impressive. He demonstrates remarkable problem-solving skills, fearlessly venturing into unfamiliar territories and consistently delivering successful outcomes. In addition to his technical skills, Adam places a high priority on aligning his efforts with the needs of the company, showcasing a commendable dedication to the company's success. His adaptability and resourcefulness make him a valuable contributor to any team or project.",
+      author: "Gabriel Zanzotti",
+      role: "Senior Frontend Engineer at Hygraph",
+      relationship: "Former colleague",
+      date: "2023-12-23",
+      source: "LinkedIn",
+      sourceUrl: "https://www.linkedin.com/in/adam-p-507593113/",
+      featured: true,
+    },
+    {
+      quote: "The undisputed goat of work ethic.",
+      author: "Peter Laihinen",
+      role: "Business Economist",
+      relationship: "Former colleague",
+      source: "LinkedIn",
+    },
+    {
+      quote: "Awesome guy both personal and business wise.",
+      author: "Daniel Samuelsson",
+      role: "Co-Founder at Charge.gg",
+      source: "LinkedIn",
+    },
+    {
+      quote: "Adam Peleback is a very loyal and much appreciated colleague.",
+      author: "Cecilia Nennefors",
+      role: "TagsIT",
+      relationship: "Colleague",
+      source: "LinkedIn",
+    },
+    {
+      quote:
+        "We're glad to have you at Vinnova. With your easygoing spirit, an ever-present smile, and a positive, constructive attitude, working with you is always a pleasure.",
+      originalQuote:
+        "Vi är glada att ha dig på Vinnova. Med lättsamt sinne, alltid ett leende på läpparna och en positiv och konstruktiv inställning är det alltid lätt att jobba med dig.",
+      originalLanguage: "sv",
+      author: "Jennifer Sevallius",
+      role: "Product Owner & Business Developer at Vinnova",
+      relationship: "Product Owner on current engagement",
+      source: "LinkedIn",
+    },
+  ],
 };
 
 export default userData;

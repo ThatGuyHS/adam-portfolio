@@ -124,18 +124,33 @@ export default function AboutMe() {
           </div>
           {/* Text area */}
           <div className="col-span-1 md:col-span-2">
-            {userData.about.description?.map((desc, idx) => (
-              <p
-                key={idx}
-                className="text-xl text-gray-700 mb-4 dark:text-gray-300 "
-              >
-                {desc}
-              </p>
-            ))}
+            {userData.about.sections?.length > 0 ? (
+              <div className="space-y-8 mb-10">
+                {userData.about.sections.map((section) => (
+                  <div key={section.heading}>
+                    <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-3">
+                      {section.heading}
+                    </h3>
+                    <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
+                      {section.body}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              userData.about.description?.map((desc, idx) => (
+                <p
+                  key={idx}
+                  className="text-xl text-gray-700 mb-4 dark:text-gray-300 "
+                >
+                  {desc}
+                </p>
+              ))
+            )}
 
-            <h1 className="bg-red-500 text-3xl rounded-md px-2 py-1 inline-block font-bold text-gray-50">
+            <h2 className="bg-red-500 text-3xl rounded-md px-2 py-1 inline-block font-bold text-gray-50">
               Tech Stack
-            </h1>
+            </h2>
             <div className="flex flex-row flex-wrap mt-8">
               <img
                 src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"

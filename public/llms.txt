@@ -1,0 +1,49 @@
+# Adam Peleback
+
+> Frontend Developer, QA Engineer, Esports Tournament Organizer, and Copywriter based in Stockholm, Sweden.
+
+Adam Peleback is a Stockholm-based software professional with over seven years of experience across frontend engineering, quality assurance, esports infrastructure, and written content. He builds modern web applications and esports platforms with React, Next.js, and TypeScript, and is available for freelance and full-time engagements in software development and QA engineering.
+
+- Name: Adam Peleback
+- Location: Stockholm, Sweden
+- Email: adampeleback@gmail.com
+- Portfolio: https://adampeleback.com
+- LinkedIn: https://www.linkedin.com/in/adam-p-507593113/
+- GitHub: https://github.com/ThatGuyHS
+- Instagram: https://instagram.com/adampeleback
+
+## Services
+
+- Web Development — React, Next.js, TypeScript, Node.js. Responsive, SEO-optimised, performance-first applications.
+- Test Automation — Unit, integration, end-to-end, and CI/CD pipeline testing. Previously led QA work at G-Loot.
+- Discord Bot Development — Custom bots for moderation, role management, game integration, and community automation.
+- Esports Tournament Administration — Bracket management, team coordination, prize pool administration, and event scheduling.
+- Copywriting — Event pages, news articles, sponsorship proposals, and esports written content.
+
+## Career History
+
+- System Tester, Decerno AB (Sep 2025–present)
+- Freelance Web Developer, Svenska E-sportförbundet (Mar–Aug 2025)
+- Freelance Web Developer, self-employed — Clutch Group, PXB Media, Swedish Esports Association (Apr 2024–Apr 2025)
+- Frontend Engineer, Zaver (Feb–Apr 2024) — TypeScript, Angular
+- Frontend Developer, G-Loot (Oct 2022–Apr 2024) — TypeScript, Next.js, React
+- QA Developer, G-Loot (May 2021–Nov 2022) — test automation, manual testing
+- QA Tester / Tournament Administrator, G-Loot Esports (Aug 2017–May 2021) — PUBG and Age of Empires II tournaments
+- Board Member, Phoenix Blue (2017–present) — non-profit esports organisation
+- Esports Copywriter, Znipe Esports (Jan 2017–Apr 2018)
+
+## Selected Projects
+
+- Rivals League — https://rivalsleague.gg
+- PXB Media — https://pxbmedia.com
+- Create Discord Bot — https://creatediscordbot.com
+- AoE2 Sverige (Age of Empires II tournament platform) — https://www.aoe2sverige.se/
+- Svenska Esportförbundet — https://svenskesport.se
+- Cryptoskatt — https://cryptoskatt.se
+- Stryda — https://play.stryda.gg
+- PromptBibliotek — https://promptbibliotek.se
+
+## Contact
+
+- Email: adampeleback@gmail.com
+- Contact form: https://adampeleback.com/contact

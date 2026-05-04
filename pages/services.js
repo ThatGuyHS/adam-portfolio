@@ -1,5 +1,6 @@
 import ContainerBlock from "../components/ContainerBlock";
 import Modal from "../components/Modal";
+import Testimonials from "../components/Testimonials";
 import { useState } from "react";
 import Link from "next/link";
 
@@ -142,10 +143,22 @@ I ensure smooth execution of competitive gaming events, handling all aspects of 
       keywords="frontend development services, test automation services, esports tournament administration"
       structuredData={{
         "@context": "https://schema.org",
-        "@type": "Service",
-        serviceType: "Frontend Development and QA Services",
+        "@type": "ProfessionalService",
+        name: "Adam Peleback — Frontend Development, QA, and Esports Operations",
+        url: `${siteUrl}/services`,
+        areaServed: [
+          { "@type": "Country", name: "Sweden" },
+          { "@type": "Place", name: "Remote (worldwide)" },
+        ],
+        serviceType: [
+          "Web Development",
+          "Test Automation",
+          "Discord Bot Development",
+          "Esports Tournament Administration",
+        ],
         provider: {
           "@type": "Person",
+          "@id": `${siteUrl}/#adam-peleback`,
           name: "Adam Peleback",
           url: siteUrl,
         },
@@ -234,6 +247,8 @@ I ensure smooth execution of competitive gaming events, handling all aspects of 
                 </article>
               ))}
             </section>
+
+            <Testimonials />
 
             <section className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 md:p-10">
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">

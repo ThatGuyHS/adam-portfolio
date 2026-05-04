@@ -11,10 +11,11 @@ export default function Footer() {
             <p>&copy; Adam Peleback. All Rights Reserved.</p>
           </div>
 
-          <div className="space-x-4 flex flex-row items-center">
+          <div className="space-x-2 flex flex-row items-center">
             <a
               href={userData.socialLinks.instagram}
-              className="text-base font-normal text-gray-600 dark:text-gray-300"
+              aria-label="Instagram"
+              className="inline-flex items-center justify-center w-10 h-10 p-2 rounded text-base font-normal text-gray-600 dark:text-gray-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +31,8 @@ export default function Footer() {
 
             <a
               href={userData.socialLinks.linkedin}
-              className="text-base font-normal text-gray-600 dark:text-gray-300"
+              aria-label="LinkedIn"
+              className="inline-flex items-center justify-center w-10 h-10 p-2 rounded text-base font-normal text-gray-600 dark:text-gray-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

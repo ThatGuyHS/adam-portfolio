@@ -7,9 +7,9 @@ export default function FavouriteProjects() {
     <div className="bg-[#F1F1F1] -mt-40 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto">
         <header className="flex flex-col md:flex-row justify-between items-center pt-40 mx-10 md:my-20 lg:my-0">
-          <h1 className="text-6xl lg:text-9xl max-w-lg font-bold text-black my-20 md:my-0 dark:text-white text-center pb-3">
+          <h2 className="text-6xl lg:text-9xl max-w-lg font-bold text-black my-20 md:my-0 dark:text-white text-center pb-3">
             Favourite Projects
-          </h1>
+          </h2>
           <Link
             href="/projects"
             className="mb-20 md:mb-0 px-8 py-4 rounded-md bg-white shadow-lg text-xl font-semibold flex flex-row space-x-4 items-center dark:text-gray-700"
@@ -43,10 +43,11 @@ export default function FavouriteProjects() {
             <div className="relative overflow-hidden">
               <Image
                 src="/rivalsleague.png"
-                alt="Rivals League project screenshot"
+                alt="Rivals League — esports tournament platform homepage"
                 width={1600}
                 height={900}
                 sizes="(max-width: 768px) 100vw, 1152px"
+                priority
                 className="transform hover:scale-125 transition duration-2000 ease-out"
               />
               <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-teal-500 rounded-md px-2">
@@ -65,7 +66,7 @@ export default function FavouriteProjects() {
             <div className="relative overflow-hidden">
               <Image
                 src="/pxbmedia1.png"
-                alt="PXB Media project screenshot"
+                alt="PXB Media — production company brand site hero"
                 width={1600}
                 height={900}
                 sizes="(max-width: 768px) 100vw, 1152px"
@@ -87,7 +88,7 @@ export default function FavouriteProjects() {
             <div className="relative overflow-hidden">
               <Image
                 src="/adluelno.png"
-                alt="Adluelno project screenshot"
+                alt="Adluelno — Swedish small business site"
                 width={1600}
                 height={900}
                 sizes="(max-width: 768px) 100vw, 1152px"
@@ -110,7 +111,7 @@ export default function FavouriteProjects() {
               {/* <div className="overlay absolute inset-0 bg-black bg-opacity-70 z-10"></div> */}
               <Image
                 src="/weekendparis.PNG"
-                alt="Weekend Paris project screenshot"
+                alt="Weekend in Paris — travel itinerary landing page"
                 width={1600}
                 height={900}
                 sizes="(max-width: 640px) 100vw, 66vw"
@@ -133,7 +134,7 @@ export default function FavouriteProjects() {
               {/* <div className="overlay absolute inset-0 bg-black bg-opacity-70 z-10"></div> */}
               <Image
                 src="/cookbookgenerator.png"
-                alt="Cookbook Generator project screenshot"
+                alt="Cookbook Generator — AI recipe collection web app"
                 width={900}
                 height={900}
                 sizes="(max-width: 640px) 100vw, 33vw"
@@ -156,7 +157,7 @@ export default function FavouriteProjects() {
               {/* <div className="overlay absolute inset-0 bg-black bg-opacity-70 z-10"></div> */}
               <Image
                 src="/portfolio.png"
-                alt="Adam Peleback portfolio screenshot"
+                alt="Adam Peleback portfolio — Next.js personal site"
                 width={900}
                 height={900}
                 sizes="(max-width: 640px) 100vw, 33vw"
@@ -178,7 +179,7 @@ export default function FavouriteProjects() {
             <div className="relative overflow-hidden">
               <Image
                 src="/aoe2sverige.png"
-                alt="AoE2 Sverige project screenshot"
+                alt="AoE2 Sverige — Age of Empires 2 Swedish tournament platform"
                 width={1600}
                 height={900}
                 sizes="(max-width: 640px) 100vw, 66vw"
@@ -200,7 +201,7 @@ export default function FavouriteProjects() {
             <div className="relative overflow-hidden">
               <Image
                 src="/promptbibliotek.png"
-                alt="PromptBibliotek project screenshot"
+                alt="PromptBibliotek — Swedish AI prompt library"
                 width={900}
                 height={900}
                 sizes="(max-width: 640px) 100vw, 33vw"
