@@ -8,6 +8,21 @@ const userData = {
   address: "Stockholm, Sweden",
   projects: [
     {
+      title: "Robotklipparguiden",
+      link: "https://xn--bstarobotgrsklippare-bzbk.se",
+      imgUrl: "/robotklipparguiden.png",
+    },
+    {
+      title: "Robotdammsugarguiden",
+      link: "https://www.basta-robotdammsugare.se",
+      imgUrl: "/robotdammsugarguiden.png",
+    },
+    {
+      title: "Luftrenarguiden",
+      link: "https://bastaluftrenaren.se",
+      imgUrl: "/luftrenarguiden.png",
+    },
+    {
       title: "Rivals League",
       link: "https://rivalsleague.gg",
       imgUrl: "/rivalsleague.png",
