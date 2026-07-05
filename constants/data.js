@@ -39,7 +39,7 @@ const userData = {
     },
     {
       title: "Cookbook generator",
-      link: "https://cookbokgenerator.com",
+      link: "https://cookbookgenerator.com",
       imgUrl: "/cookbookgenerator.png",
     },
     {
