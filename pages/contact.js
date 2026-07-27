@@ -1,10 +1,9 @@
 import React from "react";
 import ContainerBlock from "../components/ContainerBlock";
 import Contact from "../components/Contact";
+import { SITE_URL as siteUrl } from "@constants/site";
 
 export default function contact() {
-  const siteUrl = "https://adampeleback.com";
-
   return (
     <ContainerBlock
       title="Contact Adam Peleback | Frontend Developer"

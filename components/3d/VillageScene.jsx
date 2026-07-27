@@ -1,0 +1,116 @@
+import { useEffect, useMemo, useRef, useState } from "react";
+import World from "@components/3d/World";
+import HUD from "@components/3d/ui/HUD";
+import OverlayRouter from "@components/3d/ui/Panels";
+import MobileControls from "@components/3d/ui/MobileControls";
+import LoadingScreen from "@components/3d/ui/LoadingScreen";
+import { disposeSceneCaches } from "@components/3d/materials";
+import { attachControls, onInteract } from "@lib/3d/input";
+import { resetPlayer } from "@lib/3d/playerState";
+import { useVillage } from "@lib/3d/store";
+import { createAmbience } from "@lib/3d/ambience";
+
+function detectQuality() {
+  if (typeof window === "undefined") return "high";
+  const cores = navigator.hardwareConcurrency || 4;
+  const coarsePointer = window.matchMedia?.("(pointer: coarse)").matches;
+  return cores <= 4 || coarsePointer ? "low" : "high";
+}
+
+export default function VillageScene({ onExit }) {
+  const container = useRef();
+  const [ready, setReady] = useState(false);
+  const overlay = useVillage((state) => state.overlay);
+  const nearest = useVillage((state) => state.nearest);
+  const muted = useVillage((state) => state.muted);
+
+  const environment = useMemo(() => {
+    resetPlayer();
+    return {
+      quality: detectQuality(),
+      touch:
+        typeof window !== "undefined" &&
+        window.matchMedia?.("(pointer: coarse)").matches,
+      reducedMotion:
+        typeof window !== "undefined" &&
+        window.matchMedia?.("(prefers-reduced-motion: reduce)").matches,
+      tipIndex: Math.floor(Math.random() * 4),
+    };
+  }, []);
+
+  useEffect(() => () => disposeSceneCaches(), []);
+
+  // The page behind stays mounted for search engines and the no-WebGL path, so
+  // it has to be pinned while the world is on top of it.
+  useEffect(() => {
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!container.current) return undefined;
+    return attachControls(
+      container.current,
+      () => useVillage.getState().overlay !== null
+    );
+  }, []);
+
+  useEffect(
+    () =>
+      onInteract(() => {
+        const store = useVillage.getState();
+        if (store.overlay) return;
+        const target = store.nearest;
+        if (!target) return;
+        if (target.kind === "npc") store.openDialogue(target.id);
+        else if (target.kind === "stall") store.openPanel("stall", target.id);
+        else store.openPanel(target.kind);
+      }),
+    []
+  );
+
+  const ambience = useRef(null);
+  useEffect(() => {
+    if (muted) {
+      ambience.current?.setMuted(true);
+      return;
+    }
+    if (!ambience.current) ambience.current = createAmbience();
+    ambience.current?.setMuted(false);
+  }, [muted]);
+  useEffect(() => () => ambience.current?.dispose(), []);
+
+  useEffect(() => {
+    const onKeyDown = (event) => {
+      if (event.key === "Escape" && !useVillage.getState().overlay) onExit();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [onExit]);
+
+  return (
+    <div
+      ref={container}
+      className="fixed inset-0 z-50 touch-none select-none overflow-hidden bg-[#3f6470]"
+    >
+      <World quality={environment.quality} onReady={() => setReady(true)} />
+
+      {ready && (
+        <>
+          <HUD onExit={onExit} touch={environment.touch} />
+          {environment.touch && !overlay && <MobileControls prompt={nearest} />}
+          <OverlayRouter
+            overlay={overlay}
+            onExit={onExit}
+            reducedMotion={environment.reducedMotion}
+          />
+        </>
+      )}
+
+      {!ready && <LoadingScreen tipIndex={environment.tipIndex} />}
+    </div>
+  );
+}

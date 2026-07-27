@@ -153,6 +153,16 @@ export default function Navbar() {
               </svg>
             )}
           </Link>
+          <Link
+            href="/3d"
+            className={`text-base ${
+              router.asPath === "/3d"
+                ? "text-gray-800 font-bold dark:text-gray-400"
+                : "text-gray-600 dark:text-gray-300 font-normal "
+            }`}
+          >
+            <span aria-hidden="true">🏘</span> 3D Village
+          </Link>
         </div>
 
         <div className="space-x-4 flex flex-row items-center">
@@ -249,6 +259,12 @@ export default function Navbar() {
             className="text-base font-normal text-gray-600 dark:text-gray-300"
           >
             Contact
+          </Link>
+          <Link
+            href="/3d"
+            className="text-base font-normal text-gray-600 dark:text-gray-300"
+          >
+            <span aria-hidden="true">🏘</span> 3D Village
           </Link>
         </div>
       </div>

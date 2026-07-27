@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const SITE_URL = "https://adampeleback.com";
+const { SITE_URL } = require("../constants/site");
 const PAGES_DIR = path.join(process.cwd(), "pages");
 const OUTPUT_PATH = path.join(process.cwd(), "public", "sitemap.xml");
 const EXCLUDED_ROUTES = new Set(["/thanks"]);

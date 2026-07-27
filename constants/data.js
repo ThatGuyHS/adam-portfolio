@@ -100,7 +100,7 @@ const userData = {
 
     {
       title: "Portfolio",
-      link: "https://adampeleback.com",
+      link: "https://www.adampeleback.com",
       imgUrl: "/portfolio.png",
     },
     {

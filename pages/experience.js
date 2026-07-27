@@ -1,10 +1,9 @@
 import React from "react";
 import ContainerBlock from "../components/ContainerBlock";
 import Experience from "../components/Experience";
+import { SITE_URL as siteUrl } from "@constants/site";
 
 export default function experience() {
-  const siteUrl = "https://adampeleback.com";
-
   return (
     <ContainerBlock
       title="Experience | Adam Peleback"

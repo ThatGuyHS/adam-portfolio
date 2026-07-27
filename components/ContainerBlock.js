@@ -4,10 +4,10 @@ import { useRouter } from "next/router";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import userData from "@constants/data";
+import { SITE_URL as siteUrl } from "@constants/site";
 
 export default function ContainerBlock({ children, ...customMeta }) {
   const router = useRouter();
-  const siteUrl = "https://adampeleback.com";
 
   const meta = {
     title: "Adam Peleback - Frontend Developer and Esports Organizer",
@@ -17,7 +17,15 @@ export default function ContainerBlock({ children, ...customMeta }) {
     robots: "follow, index",
     ...customMeta,
   };
-  const canonicalPath = router.asPath.split("?")[0].split("#")[0];
+  // On the server, asPath for "/" resolves to "/index", which would point the
+  // canonical at a duplicate URL. Normalise it back, and drop trailing slashes
+  // so "/about" and "/about/" never disagree.
+  const canonicalPath =
+    router.asPath
+      .split("?")[0]
+      .split("#")[0]
+      .replace(/\/index$/, "")
+      .replace(/\/$/, "") || "/";
   const canonicalUrl = `${siteUrl}${canonicalPath}`;
   const ogImageUrl = meta.image.startsWith("http")
     ? meta.image

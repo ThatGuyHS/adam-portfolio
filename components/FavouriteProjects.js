@@ -149,7 +149,7 @@ export default function FavouriteProjects() {
           </a>
           {/* Single card */}
           <a
-            href="https://adampeleback.com"
+            href="https://www.adampeleback.com"
             className="w-full block col-span-3 sm:col-span-1  object-cover"
           >
             <div className="relative overflow-hidden shadow-2xl">
@@ -195,16 +195,16 @@ export default function FavouriteProjects() {
           {/* Single card */}
           <a
             href="https://promptbibliotek.se"
-            className="w-full block col-span-3 sm:col-span-1 shadow-2xl"
+            className="w-full block col-span-3 shadow-2xl"
           >
             <div className="relative overflow-hidden">
               <Image
                 src="/promptbibliotek.png"
                 alt="PromptBibliotek project screenshot"
-                width={900}
+                width={1600}
                 height={900}
-                sizes="(max-width: 640px) 100vw, 33vw"
-                className="transform hover:scale-125 transition duration-2000 ease-out object-cover"
+                sizes="(max-width: 768px) 100vw, 1152px"
+                className="transform hover:scale-125 transition duration-2000 ease-out"
               />
               <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-blue-500 rounded-md px-2">
                 PromptBibliotek

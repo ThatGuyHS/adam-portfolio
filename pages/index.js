@@ -1,13 +1,9 @@
 import ContainerBlock from "../components/ContainerBlock";
 import FavouriteProjects from "../components/FavouriteProjects";
-import LatestCode from "../components/LatestCode";
 import Hero from "../components/Hero";
-import getLatestRepos from "@lib/getLatestRepos";
-import userData from "@constants/data";
+import { SITE_URL as siteUrl } from "@constants/site";
 
-export default function Home({ repositories }) {
-  const siteUrl = "https://adampeleback.com";
-
+export default function Home() {
   return (
     <ContainerBlock
       title="Adam Peleback | Frontend Developer and Esports Organizer"
@@ -23,20 +19,6 @@ export default function Home({ repositories }) {
     >
       <Hero />
       <FavouriteProjects />
-      <LatestCode repositories={repositories} />
     </ContainerBlock>
   );
 }
-
-export const getStaticProps = async () => {
-  let token = process.env.GITHUB_AUTH_TOKEN;
-
-  const repositories = await getLatestRepos(userData, token);
-
-  return {
-    props: {
-      repositories: repositories || [],
-    },
-    revalidate: 3600,
-  };
-};

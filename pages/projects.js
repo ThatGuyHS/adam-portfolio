@@ -1,10 +1,9 @@
 import React from "react";
 import ContainerBlock from "../components/ContainerBlock";
 import Projects from "../components/Projects";
+import { SITE_URL as siteUrl } from "@constants/site";
 
 export default function projects() {
-  const siteUrl = "https://adampeleback.com";
-
   return (
     <ContainerBlock
       title="Projects | Adam Peleback"
