@@ -11,47 +11,57 @@ import { flight } from "@lib/3d/playerState";
 // a line of giant text riding a bank of clouds. They only exist while someone
 // is airborne — from the ground the sky stays empty and the village stays cosy.
 
-const FONT = "/fonts/TenorSans-Regular.ttf";
+// Tenor Sans parses in the browser but troika's font engine maps every glyph
+// to .notdef — the sky filled with tofu boxes. Poppins is known-good.
+const FONT = "/fonts/Poppins-Bold.ttf";
 
 const BANNERS = [
   {
     text: "ADAM PELEBACK",
     sub: userData.designation,
-    position: [12, 27, 4],
+    position: [12, 30, 4],
   },
   {
     text: "BUILDING FOR THE WEB SINCE 2017",
     sub: "upstream is where it started",
-    position: [-85, 21, -35],
+    position: [-85, 26, -35],
   },
   {
     text: `${userData.projects.length} PROJECTS SHIPPED`,
     sub: "browse them at the market stalls below",
-    position: [90, 21, -30],
+    position: [90, 26, -30],
   },
   {
     text: "TYPESCRIPT · REACT · NEXT.JS",
     sub: "the daily toolkit",
-    position: [-70, 20, 60],
+    position: [-70, 25, 60],
   },
   {
     text: `BASED IN ${userData.address.toUpperCase()}`,
     sub: "by rather colder water than this",
-    position: [75, 20, 65],
+    position: [75, 25, 65],
   },
   {
     text: "SAY HEJ",
     sub: userData.email,
-    position: [0, 23, 110],
+    position: [0, 28, 110],
   },
   {
     text: "ESPORTS · QA · FRONTEND",
     sub: "the road so far, in order",
-    position: [0, 22, -110],
+    position: [0, 27, -110],
   },
 ];
 
-const CLOUD = { opacity: 0.85, transparent: true };
+// Smooth-shaded and self-lit, or the Lambert sun turns the puffs into
+// boulders — that beige-rock look is exactly what this avoids.
+const CLOUD = {
+  opacity: 0.92,
+  transparent: true,
+  flatShading: false,
+  emissive: "#f7ead2",
+  emissiveIntensity: 0.6,
+};
 
 function CloudBank({ width }) {
   const rand = (i, k) =>
@@ -65,8 +75,8 @@ function CloudBank({ width }) {
         return (
           <Piece
             key={i}
-            geometry={sphereGeo(1, 8)}
-            color="#f6f1e4"
+            geometry={sphereGeo(1, 10)}
+            color="#fbf7ee"
             options={CLOUD}
             scale={[radius, radius * 0.62, radius * 0.8]}
             position={[
