@@ -27,6 +27,7 @@ import Scatter from "@components/3d/Scatter";
 import TourPath from "@components/3d/TourPath";
 import Terrain from "@components/3d/Terrain";
 import River from "@components/3d/River";
+import Boat from "@components/3d/Boat";
 import { ProximitySensor, SelectionRing } from "@components/3d/Interactions";
 
 const LANDMARK_COMPONENTS = {
@@ -52,6 +53,7 @@ export default function Village({ quality }) {
     <group>
       <Terrain />
       <River />
+      <Boat />
       <Bridge />
       <FishingPier />
       <Scatter quality={quality} />
