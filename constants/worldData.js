@@ -33,6 +33,10 @@ export const FOG = { color: "#f0cfa2", near: 46, far: 152 };
 
 export const SPAWN = { x: -44, z: -13.5, yaw: -Math.PI / 2 };
 
+/** Grass airstrip east of the bridge where the mail plane waits, nose pointed
+ *  west down the strip so takeoff runs back over the village. */
+export const AIRSTRIP = { x: 44, z: -16.5, yaw: -Math.PI / 2 };
+
 /**
  * Villagers. Each one carries a chapter of the career; `experience` lists the
  * roles from constants/data.js they speak for, so the story stays anchored to
@@ -230,6 +234,14 @@ export const INTERACTABLES = [
     position: [-44, -11.5],
     range: 3,
   },
+  {
+    id: "plane",
+    kind: "plane",
+    label: "The mail plane",
+    action: "Fly",
+    position: [AIRSTRIP.x, AIRSTRIP.z],
+    range: 4,
+  },
 ];
 
 /** Order of the glowing stones for visitors who'd rather be shown around. */
@@ -269,6 +281,11 @@ export const COLLIDERS = [
   ),
   ...NPCS.map((n) => ({ x: n.position[0], z: n.position[1], r: 0.85 })),
   ...STALLS.map((s) => ({ x: s.position[0], z: s.position[1], r: 1.5 })),
+  // The parked plane and the windsock with its crates beside the strip. While
+  // the plane is away its pilot is the one flying it, so the empty circle is
+  // never really walked into.
+  { x: AIRSTRIP.x, z: AIRSTRIP.z, r: 1.7 },
+  { x: AIRSTRIP.x + 3.5, z: AIRSTRIP.z - 2.5, r: 1 },
 ];
 
 /** Shortest distance from a point to the dirt road, used for both the path
@@ -296,6 +313,14 @@ function nearPath(x, z, margin) {
 function blocked(x, z, margin) {
   if (Math.abs(z) < 11) return true; // river, banks and the riverside road
   if (nearPath(x, z, margin + 1.5)) return true;
+  // Keep the airstrip clear of trees and rocks: the plane needs its runway.
+  if (
+    x > AIRSTRIP.x - 12 &&
+    x < AIRSTRIP.x + 10 &&
+    Math.abs(z - AIRSTRIP.z) < 5
+  ) {
+    return true;
+  }
   for (const c of COLLIDERS) {
     if ((x - c.x) ** 2 + (z - c.z) ** 2 < (c.r + margin) ** 2) return true;
   }

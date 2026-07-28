@@ -5,7 +5,7 @@ import { boxGeo, coneGeo, cylGeo, sphereGeo } from "@components/3d/materials";
 import { Piece } from "@components/3d/buildings";
 import { resolveMove } from "@lib/3d/collisions";
 import { consumeLook, consumeWheel, movementIntent } from "@lib/3d/input";
-import { camState, player } from "@lib/3d/playerState";
+import { camState, flight, player } from "@lib/3d/playerState";
 import { useVillage } from "@lib/3d/store";
 import { BRIDGE, clamp, damp, groundY } from "@lib/3d/terrain";
 
@@ -20,11 +20,26 @@ export default function Player() {
   const { camera } = useThree();
   const smoothed = useRef(new THREE.Vector3());
   const initialised = useRef(false);
+  const wasFlying = useRef(false);
 
   useFrame((_, delta) => {
     const dt = Math.min(delta, 0.05);
     const store = useVillage.getState();
     const paused = store.overlay !== null;
+
+    // Aboard the mail plane, Plane.jsx owns position, camera and input; the
+    // walker just hides. On dismount the camera hands over from wherever the
+    // chase camera left it rather than lurching back to a stale spot.
+    if (flight.active) {
+      if (root.current) root.current.visible = false;
+      wasFlying.current = true;
+      return;
+    }
+    if (wasFlying.current) {
+      wasFlying.current = false;
+      smoothed.current.copy(camera.position);
+      if (root.current) root.current.visible = true;
+    }
 
     // --- camera orbit -------------------------------------------------
     const look = consumeLook();

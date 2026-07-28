@@ -3,7 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { INTERACTABLES } from "@constants/worldData";
 import { useVillage } from "@lib/3d/store";
-import { player } from "@lib/3d/playerState";
+import { flight, player } from "@lib/3d/playerState";
 import { groundY } from "@lib/3d/terrain";
 import { mat } from "@components/3d/materials";
 
@@ -19,9 +19,16 @@ export function ProximitySensor() {
     if (elapsed.current < SAMPLE_INTERVAL) return;
     elapsed.current = 0;
 
+    if (flight.active) {
+      useVillage.getState().setNearest(null);
+      return;
+    }
+
     let best = null;
     let bestDistance = Infinity;
     for (const item of INTERACTABLES) {
+      // No prompt at an empty airstrip while the plane is out.
+      if (item.kind === "plane" && flight.phase !== "parked") continue;
       const dx = player.position.x - item.position[0];
       const dz = player.position.z - item.position[1];
       const distance = Math.hypot(dx, dz);

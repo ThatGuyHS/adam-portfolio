@@ -223,6 +223,7 @@ function HelpPanel({ onClose, onExit }) {
     ["Zoom", "Scroll wheel"],
     ["Run", "Hold Shift"],
     ["Interact", "E, Enter or Space when a prompt appears"],
+    ["Fly", "Board the mail plane on the strip east of the bridge"],
     ["Close a panel", "Esc"],
   ];
 

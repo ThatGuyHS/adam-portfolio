@@ -24,6 +24,7 @@ function IconButton({ label, onClick, children, active }) {
 export default function HUD({ onExit, touch }) {
   const nearest = useVillage((state) => state.nearest);
   const overlay = useVillage((state) => state.overlay);
+  const flying = useVillage((state) => state.flying);
   const visited = useVillage((state) => state.visited);
   const muted = useVillage((state) => state.muted);
   const celebrated = useVillage((state) => state.celebrated);
@@ -96,6 +97,21 @@ export default function HUD({ onExit, touch }) {
             >
               End tour
             </button>
+          </div>
+        </div>
+      )}
+
+      {flying && !overlay && (
+        <div
+          data-ui
+          className={`pointer-events-none absolute inset-x-0 z-20 flex justify-center px-4 ${
+            touch ? "bottom-32" : "bottom-8"
+          }`}
+        >
+          <div className="rounded-full border border-amber-200/30 bg-[#1c1712]/80 px-5 py-2.5 text-sm text-amber-50 backdrop-blur">
+            {touch
+              ? "Steer with the stick · land over grass with ✋"
+              : "W/S climb & dive · A/D turn · Shift boost · E to land over grass"}
           </div>
         </div>
       )}

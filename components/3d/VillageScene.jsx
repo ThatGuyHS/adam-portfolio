@@ -6,9 +6,11 @@ import MobileControls from "@components/3d/ui/MobileControls";
 import LoadingScreen from "@components/3d/ui/LoadingScreen";
 import { disposeSceneCaches } from "@components/3d/materials";
 import { attachControls, onInteract } from "@lib/3d/input";
-import { resetPlayer } from "@lib/3d/playerState";
+import { flight, resetPlayer } from "@lib/3d/playerState";
 import { useVillage } from "@lib/3d/store";
 import { createAmbience } from "@lib/3d/ambience";
+
+const LAND_PROMPT = { action: "Land" };
 
 function detectQuality() {
   if (typeof window === "undefined") return "high";
@@ -23,6 +25,7 @@ export default function VillageScene({ onExit }) {
   const overlay = useVillage((state) => state.overlay);
   const nearest = useVillage((state) => state.nearest);
   const muted = useVillage((state) => state.muted);
+  const flying = useVillage((state) => state.flying);
 
   const environment = useMemo(() => {
     resetPlayer();
@@ -39,6 +42,12 @@ export default function VillageScene({ onExit }) {
   }, []);
 
   useEffect(() => () => disposeSceneCaches(), []);
+
+  // resetPlayer above grounds the plane's shared state; the store's mirror of
+  // it has to follow suit or the HUD re-enters mid-"flight".
+  useEffect(() => {
+    useVillage.getState().setFlying(false);
+  }, []);
 
   // The page behind stays mounted for search engines and the no-WebGL path, so
   // it has to be pinned while the world is on top of it.
@@ -63,11 +72,20 @@ export default function VillageScene({ onExit }) {
       onInteract(() => {
         const store = useVillage.getState();
         if (store.overlay) return;
+        if (flight.active) {
+          flight.landRequested = true;
+          return;
+        }
         const target = store.nearest;
         if (!target) return;
         if (target.kind === "npc") store.openDialogue(target.id);
         else if (target.kind === "stall") store.openPanel("stall", target.id);
-        else store.openPanel(target.kind);
+        else if (target.kind === "plane") {
+          if (flight.phase === "parked") {
+            flight.active = true;
+            store.setFlying(true);
+          }
+        } else store.openPanel(target.kind);
       }),
     []
   );
@@ -101,7 +119,9 @@ export default function VillageScene({ onExit }) {
       {ready && (
         <>
           <HUD onExit={onExit} touch={environment.touch} />
-          {environment.touch && !overlay && <MobileControls prompt={nearest} />}
+          {environment.touch && !overlay && (
+            <MobileControls prompt={flying ? LAND_PROMPT : nearest} />
+          )}
           <OverlayRouter
             overlay={overlay}
             onExit={onExit}
