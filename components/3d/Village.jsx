@@ -26,6 +26,8 @@ import Fireworks from "@components/3d/Fireworks";
 import Scatter from "@components/3d/Scatter";
 import TourPath from "@components/3d/TourPath";
 import Terrain from "@components/3d/Terrain";
+import Outlands from "@components/3d/Outlands";
+import SkyText from "@components/3d/SkyText";
 import River from "@components/3d/River";
 import Boat from "@components/3d/Boat";
 import Plane from "@components/3d/Plane";
@@ -53,6 +55,8 @@ export default function Village({ quality }) {
   return (
     <group>
       <Terrain />
+      <Outlands quality={quality} />
+      <SkyText />
       <River />
       <Boat />
       <Plane />

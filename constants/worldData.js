@@ -387,19 +387,3 @@ export const REEDS = (() => {
   }
   return out;
 })();
-
-/** Low hills on the horizon so the world doesn't end in a hard edge. */
-export const HILLS = (() => {
-  const rand = mulberry32(9091);
-  const out = [];
-  for (let i = 0; i < 26; i++) {
-    const angle = (i / 26) * Math.PI * 2 + rand() * 0.15;
-    const radius = 80 + rand() * 20;
-    out.push({
-      position: [Math.cos(angle) * radius * 1.3, -3, Math.sin(angle) * radius],
-      scale: [14 + rand() * 16, 7 + rand() * 11, 14 + rand() * 16],
-      rotation: rand() * Math.PI,
-    });
-  }
-  return out;
-})();

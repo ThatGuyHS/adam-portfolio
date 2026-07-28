@@ -1,7 +1,14 @@
 import { useRef } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { AIRSTRIP, PALETTE } from "@constants/worldData";
-import { WALK_BOUNDS, clamp, damp, groundY, isWater } from "@lib/3d/terrain";
+import {
+  WALK_BOUNDS,
+  clamp,
+  damp,
+  flightGroundY,
+  groundY,
+  isWater,
+} from "@lib/3d/terrain";
 import { resolveMove } from "@lib/3d/collisions";
 import { boxGeo, coneGeo, cylGeo, sphereGeo } from "@components/3d/materials";
 import { Piece } from "@components/3d/buildings";
@@ -18,9 +25,10 @@ const CRUISE = 16;
 const BOOST = 23;
 const CLIMB = 6.5;
 const TURN_RATE = 1.15;
-const CEILING = 30;
+const CEILING = 40;
 const FLOOR_CLEARANCE = 2.4; // metres kept between belly and terrain
-const BOUNDS = { x: 66, z: 48 };
+// An ellipse over the outlands, sized so the mountain ring stays scenery.
+const BOUNDS = { x: 290, z: 230 };
 const STILL = { x: 0, y: 0, running: false };
 
 // Landing needs dry ground and enough margin that the pilot steps out inside
@@ -141,7 +149,7 @@ export default function Plane() {
         p.yaw -= intent.x * TURN_RATE * dt;
         p.vy = damp(p.vy, intent.y * CLIMB, 4, dt);
         p.y = Math.min(p.y + p.vy * dt, CEILING);
-        const floor = groundY(p.x, p.z) + FLOOR_CLEARANCE;
+        const floor = flightGroundY(p.x, p.z) + FLOOR_CLEARANCE;
         if (p.y < floor) {
           p.y = damp(p.y, floor, 10, dt);
           if (p.vy < 0) p.vy = 0;
@@ -183,7 +191,7 @@ export default function Plane() {
         if (dist > 3) {
           steer(p, Math.atan2(dx, dz), 1.6, dt);
           p.speed = damp(p.speed, Math.min(CRUISE * 0.8, 4 + dist * 0.5), 1.8, dt);
-          const cruiseY = Math.max(groundY(p.x, p.z) + 7, padY + 3);
+          const cruiseY = Math.max(flightGroundY(p.x, p.z) + 7, padY + 3);
           p.y = damp(p.y, dist > 16 ? cruiseY : padY + dist * 0.4, 1.7, dt);
         } else {
           p.speed = 0;
@@ -207,8 +215,13 @@ export default function Plane() {
 
     // Forward motion, common to every phase that has any speed on.
     if (p.speed > 0.01) {
-      const nx = clamp(p.x + Math.sin(p.yaw) * p.speed * dt, -BOUNDS.x, BOUNDS.x);
-      const nz = clamp(p.z + Math.cos(p.yaw) * p.speed * dt, -BOUNDS.z, BOUNDS.z);
+      let nx = p.x + Math.sin(p.yaw) * p.speed * dt;
+      let nz = p.z + Math.cos(p.yaw) * p.speed * dt;
+      const edge = Math.hypot(nx / BOUNDS.x, nz / BOUNDS.z);
+      if (edge > 1) {
+        nx /= edge;
+        nz /= edge;
+      }
       if (flight.phase === "landing" && isWater(nx, nz)) {
         p.speed = 0; // rolled out to the waterline — good enough, stop here
       } else {
@@ -245,7 +258,7 @@ export default function Plane() {
       c.x = damp(c.x, p.x - Math.sin(p.yaw) * dist, 5, dt);
       c.y = damp(c.y, p.y + 2.4 + dist * 0.3, 5, dt);
       c.z = damp(c.z, p.z - Math.cos(p.yaw) * dist, 5, dt);
-      camera.position.set(c.x, Math.max(c.y, groundY(c.x, c.z) + 1.2), c.z);
+      camera.position.set(c.x, Math.max(c.y, flightGroundY(c.x, c.z) + 1.2), c.z);
       camera.lookAt(
         p.x + Math.sin(p.yaw) * 4,
         p.y + 1,

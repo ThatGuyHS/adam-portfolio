@@ -94,8 +94,15 @@ export default function River() {
     []
   );
 
-  useFrame((_, delta) => {
-    if (material.current) material.current.uniforms.uTime.value += delta;
+  useFrame((state, delta) => {
+    const m = material.current;
+    if (!m) return;
+    m.uniforms.uTime.value += delta;
+    // Follow the scene fog, which breathes out while the mail plane is up.
+    if (state.scene.fog) {
+      m.uniforms.uFogNear.value = state.scene.fog.near;
+      m.uniforms.uFogFar.value = state.scene.fog.far;
+    }
   });
 
   return (

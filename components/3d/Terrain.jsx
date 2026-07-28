@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import * as THREE from "three";
-import { PALETTE, HILLS, distanceToPath } from "@constants/worldData";
+import { PALETTE, distanceToPath } from "@constants/worldData";
 import { SHORE_Z, WORLD, mulberry32, terrainHeight } from "@lib/3d/terrain";
 
 // One displaced plane carries the whole island. Grass, sand and the dirt road
@@ -64,37 +64,13 @@ function useTerrainGeometry() {
   }, []);
 }
 
-function Horizon() {
-  return (
-    <group>
-      {/* Land continuing past the playable island, so the world has no edge. */}
-      <mesh position={[0, -0.55, 0]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow={false}>
-        <circleGeometry args={[240, 24]} />
-        <meshLambertMaterial color={PALETTE.grassDark} />
-      </mesh>
-      {HILLS.map((hill, i) => (
-        <mesh
-          key={i}
-          position={hill.position}
-          rotation={[0, hill.rotation, 0]}
-          scale={hill.scale}
-        >
-          <coneGeometry args={[1, 1, 6]} />
-          <meshLambertMaterial color="#5c7a4b" flatShading />
-        </mesh>
-      ))}
-    </group>
-  );
-}
-
 export default function Terrain() {
   const geometry = useTerrainGeometry();
+  // The land past the island's edge is Outlands.jsx — a whole procedural
+  // countryside now that the mail plane can go and look at it.
   return (
-    <group>
-      <mesh geometry={geometry} receiveShadow>
-        <meshLambertMaterial vertexColors flatShading />
-      </mesh>
-      <Horizon />
-    </group>
+    <mesh geometry={geometry} receiveShadow>
+      <meshLambertMaterial vertexColors flatShading />
+    </mesh>
   );
 }

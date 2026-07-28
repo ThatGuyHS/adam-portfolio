@@ -110,8 +110,8 @@ export default function HUD({ onExit, touch }) {
         >
           <div className="rounded-full border border-amber-200/30 bg-[#1c1712]/80 px-5 py-2.5 text-sm text-amber-50 backdrop-blur">
             {touch
-              ? "Steer with the stick · land over grass with ✋"
-              : "W/S climb & dive · A/D turn · Shift boost · E to land over grass"}
+              ? "Steer with the stick · ✋ lands on village grass"
+              : "W/S climb & dive · A/D turn · Shift boost · E lands on village grass"}
           </div>
         </div>
       )}

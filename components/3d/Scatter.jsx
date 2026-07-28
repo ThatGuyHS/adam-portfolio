@@ -8,7 +8,7 @@ import { cylGeo, boxGeo, coneGeo, mat, sphereGeo } from "@components/3d/material
 // into one InstancedMesh instead, taking the whole ground cover down to about a
 // dozen draws.
 
-const TREE_VARIANTS = [
+export const TREE_VARIANTS = [
   [
     { id: "trunk", geometry: () => cylGeo(0.2, 0.3, 2.2, 6), color: "#6b4a2a", position: [0, 1.1, 0] },
     { id: "pineLower", geometry: () => coneGeo(1.5, 3, 7), color: "#4f7a3d", position: [0, 3, 0] },
@@ -45,7 +45,7 @@ const REED_VARIANTS = [
   })),
 ];
 
-function buildBuckets(items, variants) {
+export function buildBuckets(items, variants) {
   const buckets = new Map();
   const itemQuat = new THREE.Quaternion();
   const partQuat = new THREE.Quaternion();
@@ -82,7 +82,7 @@ function buildBuckets(items, variants) {
   return [...buckets.values()];
 }
 
-function Bucket({ geometry, color, matrices, castShadow = true }) {
+export function Bucket({ geometry, color, matrices, castShadow = true }) {
   const ref = useRef();
   const material = useMemo(() => mat(color), [color]);
 
