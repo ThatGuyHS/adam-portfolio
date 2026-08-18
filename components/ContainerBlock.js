@@ -12,11 +12,16 @@ export default function ContainerBlock({ children, ...customMeta }) {
   const meta = {
     title: "Adam Peleback - Frontend Developer and Esports Organizer",
     description: `Frontend Developer, Esports Tournament Organizer, and Writer. I've been building web applications for over 5 years and I'm passionate about building products that bring value to people around the globe.`,
-    image: "/adam.png",
+    image: "/og-image.png",
+    imageAlt: "Adam Peleback — Frontend Developer, QA Engineer, Esports Organizer",
     type: "website",
     robots: "follow, index",
     ...customMeta,
   };
+  // The default card is rendered at the recommended 1200x630; pages that pass
+  // their own image (project screenshots) have unknown dimensions, so only
+  // emit width/height for the default.
+  const isDefaultOgImage = meta.image === "/og-image.png";
   // On the server, asPath for "/" resolves to "/index", which would point the
   // canonical at a duplicate URL. Normalise it back, and drop trailing slashes
   // so "/about" and "/about/" never disagree.
@@ -35,7 +40,8 @@ export default function ContainerBlock({ children, ...customMeta }) {
     "@type": "Person",
     name: userData.name,
     url: siteUrl,
-    image: ogImageUrl,
+    // Always the portrait — the og image is a branded share card, not a photo.
+    image: `${siteUrl}/adam.png`,
     jobTitle: userData.designation,
     email: userData.email,
     address: {
@@ -86,12 +92,20 @@ export default function ContainerBlock({ children, ...customMeta }) {
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={ogImageUrl} />
+        <meta property="og:image:alt" content={meta.imageAlt || meta.title} />
+        {isDefaultOgImage && (
+          <>
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
+          </>
+        )}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@ThatGuy_HS" />
         <meta name="twitter:creator" content="@ThatGuy_HS" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={ogImageUrl} />
+        <meta name="twitter:image:alt" content={meta.imageAlt || meta.title} />
         {meta.date && (
           <meta property="article:published_time" content={meta.date} />
         )}

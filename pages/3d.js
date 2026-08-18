@@ -64,7 +64,6 @@ export default function ThreeDVillage() {
         title="The Village by the River — Adam Peleback in 3D"
         description="Adam Peleback's portfolio as a walkable 3D village: five villagers by a river, each telling one chapter of a career that runs from esports tournament administration to frontend engineering."
         keywords="3d portfolio, interactive cv, three.js portfolio, react three fiber, adam peleback"
-        image="/adam.png"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "WebApplication",

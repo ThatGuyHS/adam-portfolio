@@ -43,14 +43,14 @@ const ExperienceCard = ({ title, desc, year, company, companyLink }) => {
   const { theme } = useTheme();
   return (
     <div className="relative experience-card border p-4 rounded-md shadow-xl bg-white dark:bg-gray-800 z-10 mx-4">
-      <h1
+      <p
         className={`text-4xl ${
           theme === "dark" ? "text-white" : "text-black"
         } font-bold mb-2`}
       >
         {year}
-      </h1>
-      <h1 className="font-semibold text-xl mb-2">{title}</h1>
+      </p>
+      <h2 className="font-semibold text-xl mb-2">{title}</h2>
       <a href={companyLink} className="text-gray-500 mb-2 block">
         {company}
       </a>

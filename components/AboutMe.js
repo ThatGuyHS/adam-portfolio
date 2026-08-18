@@ -48,9 +48,9 @@ export default function AboutMe() {
           {/* Social Buttons */}
           <div className="inline-flex flex-col">
             <div>
-              <h1 className="text-xl font-semibold text-gray-700 dark:text-gray-200">
+              <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-200">
                 Contact
-              </h1>
+              </h2>
               <p className="text-lg text-gray-500 mt-4 dark:text-gray-300">
                 For any sort help / enquiry, shoot a{" "}
                 <a
@@ -63,9 +63,9 @@ export default function AboutMe() {
               </p>
             </div>
             <div className="mt-8">
-              <h1 className="text-xl font-semibold text-gray-700 dark:text-gray-200">
+              <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-200">
                 Job Opportunities
-              </h1>
+              </h2>
               <p className="text-lg text-gray-500 mt-4 dark:text-gray-300">
                 I am looking for a full-time job opportunity in the field of
                 Software Development / QA Engineering. Please check out my{"      "}
@@ -79,9 +79,9 @@ export default function AboutMe() {
               </p>
             </div>
             {/* Social Links */}
-            <h1 className="text-xl font-semibold text-gray-700 mt-8 dark:text-gray-200">
+            <h2 className="text-xl font-semibold text-gray-700 mt-8 dark:text-gray-200">
               Social Links
-            </h1>
+            </h2>
             <div className="mt-4 ml-4">
               <div className="flex flex-row justify-start items-center"></div>
               <div className="flex flex-row justify-start items-center">
@@ -133,9 +133,9 @@ export default function AboutMe() {
               </p>
             ))}
 
-            <h1 className="bg-red-500 text-3xl rounded-md px-2 py-1 inline-block font-bold text-gray-50">
+            <h2 className="bg-red-500 text-3xl rounded-md px-2 py-1 inline-block font-bold text-gray-50">
               Tech Stack
-            </h1>
+            </h2>
             <div className="flex flex-row flex-wrap mt-8">
               <img
                 src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"

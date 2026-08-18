@@ -11,9 +11,9 @@ export default function LoadingScreen({ tipIndex = 0 }) {
       <div className="absolute inset-0 bg-gradient-to-b from-[#ffd9a0] via-[#e6a86e] to-[#3f6470]" />
       <div className="relative flex flex-col items-center px-6">
         <p className="text-4xl">🏘</p>
-        <h1 className="mt-3 font-serif text-2xl text-[#2a1c12] sm:text-3xl">
+        <p className="mt-3 font-serif text-2xl text-[#2a1c12] sm:text-3xl">
           Building the village…
-        </h1>
+        </p>
         <div className="mt-5 h-1 w-48 overflow-hidden rounded-full bg-[#2a1c12]/20">
           <div className="village-loading-bar h-full w-1/3 rounded-full bg-[#2a1c12]/60" />
         </div>

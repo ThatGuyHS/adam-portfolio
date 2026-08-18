@@ -7,9 +7,9 @@ export default function FavouriteProjects() {
     <div className="bg-[#F1F1F1] -mt-40 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto">
         <header className="flex flex-col md:flex-row justify-between items-center pt-40 mx-10 md:my-20 lg:my-0">
-          <h1 className="text-6xl lg:text-9xl max-w-lg font-bold text-black my-20 md:my-0 dark:text-white text-center pb-3">
+          <h2 className="text-6xl lg:text-9xl max-w-lg font-bold text-black my-20 md:my-0 dark:text-white text-center pb-3">
             Favourite Projects
-          </h1>
+          </h2>
           <Link
             href="/projects"
             className="mb-20 md:mb-0 px-8 py-4 rounded-md bg-white shadow-lg text-xl font-semibold flex flex-row space-x-4 items-center dark:text-gray-700"
@@ -49,12 +49,12 @@ export default function FavouriteProjects() {
                 sizes="(max-width: 768px) 100vw, 1152px"
                 className="transform hover:scale-125 transition duration-2000 ease-out"
               />
-              <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-teal-500 rounded-md px-2">
+              <span className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-teal-500 rounded-md px-2">
                 RIVALS LEAGUE
-              </h1>
-              <h1 className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
+              </span>
+              <h3 className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
                 01
-              </h1>
+              </h3>
             </div>
           </a>
 
@@ -71,12 +71,12 @@ export default function FavouriteProjects() {
                 sizes="(max-width: 768px) 100vw, 1152px"
                 className="transform hover:scale-125 transition duration-2000 ease-out"
               />
-              <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
+              <span className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
                 PXB MEDIA
-              </h1>
-              <h1 className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
+              </span>
+              <h3 className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
                 02
-              </h1>
+              </h3>
             </div>
           </a>
 
@@ -93,12 +93,12 @@ export default function FavouriteProjects() {
                 sizes="(max-width: 768px) 100vw, 1152px"
                 className="transform hover:scale-125 transition duration-2000 ease-out"
               />
-              <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
+              <span className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
                 ADLUELNO
-              </h1>
-              <h1 className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
+              </span>
+              <h3 className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
                 03
-              </h1>
+              </h3>
             </div>
           </a>
           {/* Single card */}
@@ -116,12 +116,12 @@ export default function FavouriteProjects() {
                 sizes="(max-width: 640px) 100vw, 66vw"
                 className="transform hover:scale-125 transition duration-2000 ease-out"
               />
-              <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
+              <span className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
                 Weekend Paris
-              </h1>
-              <h1 className="absolute bottom-10 left-10 dark:text-white text-black font-bold text-xl">
+              </span>
+              <h3 className="absolute bottom-10 left-10 dark:text-white text-black font-bold text-xl">
                 04
-              </h1>
+              </h3>
             </div>
           </a>
           {/* Single card */}
@@ -139,12 +139,12 @@ export default function FavouriteProjects() {
                 sizes="(max-width: 640px) 100vw, 33vw"
                 className="transform hover:scale-125 transition duration-2000 ease-out object-cover shadow-2xl"
               />
-              <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
+              <span className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
                 Cookbook Generator
-              </h1>
-              <h1 className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
+              </span>
+              <h3 className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
                 05
-              </h1>
+              </h3>
             </div>
           </a>
           {/* Single card */}
@@ -162,12 +162,12 @@ export default function FavouriteProjects() {
                 sizes="(max-width: 640px) 100vw, 33vw"
                 className="transform hover:scale-125 transition duration-2000 ease-out object-cover shadow-2xl"
               />
-              <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
+              <span className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
                 Portfolio
-              </h1>
-              <h1 className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
+              </span>
+              <h3 className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
                 06
-              </h1>
+              </h3>
             </div>
           </a>
           {/* Single card */}
@@ -184,12 +184,12 @@ export default function FavouriteProjects() {
                 sizes="(max-width: 640px) 100vw, 66vw"
                 className="transform hover:scale-125 transition duration-2000 ease-out"
               />
-              <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
+              <span className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
                 AoE2 Sverige
-              </h1>
-              <h1 className="absolute bottom-10 left-10 dark:text-white text-black font-bold text-xl">
+              </span>
+              <h3 className="absolute bottom-10 left-10 dark:text-white text-black font-bold text-xl">
                 07
-              </h1>
+              </h3>
             </div>
           </a>
           {/* Single card */}
@@ -206,12 +206,12 @@ export default function FavouriteProjects() {
                 sizes="(max-width: 768px) 100vw, 1152px"
                 className="transform hover:scale-125 transition duration-2000 ease-out"
               />
-              <h1 className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-blue-500 rounded-md px-2">
+              <span className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-blue-500 rounded-md px-2">
                 PromptBibliotek
-              </h1>
-              <h1 className="absolute bottom-10 left-10 dark:text-white text-black font-bold text-xl">
+              </span>
+              <h3 className="absolute bottom-10 left-10 dark:text-white text-black font-bold text-xl">
                 08
-              </h1>
+              </h3>
             </div>
           </a>
         </div>
