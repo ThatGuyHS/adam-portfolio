@@ -11,107 +11,199 @@ const userData = {
       title: "Robotklipparguiden",
       link: "https://xn--bstarobotgrsklippare-bzbk.se",
       imgUrl: "/robotklipparguiden.png",
+      kind: "Affiliate content site",
+      stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+      blurb:
+        "Swedish buying guide for robot lawn mowers, living on the internationalized domain bästarobotgräsklippare.se. Server-rendered comparison content built for organic search.",
     },
     {
       title: "Robotdammsugarguiden",
       link: "https://www.basta-robotdammsugare.se",
       imgUrl: "/robotdammsugarguiden.png",
+      kind: "Affiliate content site",
+      stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+      blurb:
+        "Swedish comparison site for robot vacuum cleaners — reviews and buying guides, part of the same family of SEO-driven guide sites.",
     },
     {
       title: "Luftrenarguiden",
       link: "https://bastaluftrenaren.se",
       imgUrl: "/luftrenarguiden.png",
+      kind: "Affiliate content site",
+      stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+      blurb:
+        "Swedish buying guide for air purifiers — the third of the SEO-focused comparison sites, sharing the same server-rendered Next.js setup.",
     },
     {
       title: "Rivals League",
       link: "https://rivalsleague.gg",
       imgUrl: "/rivalsleague.png",
+      kind: "Esports tournament platform",
+      stack: [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Express",
+        "Supabase",
+        "Stripe",
+        "Discord.js",
+        "Strapi",
+      ],
+      blurb:
+        "Full-stack tournament platform: React front end, Express API on Supabase, Stripe payments, a Discord bot for match operations, plus a Strapi CMS and a separate stats backend.",
     },
     {
       title: "Create Discord Bot",
       link: "https://creatediscordbot.com",
       imgUrl: "/creatediscordbot.PNG",
+      kind: "Productized service site",
+      stack: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "Resend"],
+      blurb:
+        "A service selling custom-built Discord bots, with Stripe checkout and transactional email through Resend.",
     },
     {
       title: "PXB Media",
       link: "https://pxbmedia.com",
       imgUrl: "/pxbmedia1.png",
+      kind: "Company website",
+      stack: ["Next.js", "TypeScript", "Tailwind CSS", "Contentful"],
+      blurb:
+        "Brand site for the esports broadcast and production company PXB Media, with content managed headlessly in Contentful.",
     },
     {
       title: "Cookbook generator",
       link: "https://cookbookgenerator.com",
       imgUrl: "/cookbookgenerator.png",
+      kind: "Web app",
+      stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase", "Stripe"],
+      blurb:
+        "Turns your recipes into a print-ready cookbook — PDF generation in the browser, Supabase for storage, and Stripe-powered checkout.",
     },
     {
       title: "Adluelno",
       link: "https://adluelno.se",
-      imgUrl: "/adluelno.png"
+      imgUrl: "/adluelno.png",
+      kind: "Company website",
+      stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+      blurb:
+        "Website for a Swedish business advisory and consulting firm — a clean, fast, SEO-optimized Next.js build.",
     },
     {
       title: "Book Report Template",
       link: "https://bookreporttemplate.com",
       imgUrl: "/bookreporttemplate.PNG",
+      kind: "AI web app",
+      stack: ["React", "TypeScript", "Vite", "shadcn/ui", "Stripe"],
+      blurb:
+        "AI-powered book report generator — pick a template, let the AI draft the report, pay through Stripe.",
     },
     {
-      title: "Webbdoktorn", 
-      link: "https://webbdoktorn.se", 
-      imgUrl: "./webbdoktorn.PNG"
+      title: "Webbdoktorn",
+      link: "https://webbdoktorn.se",
+      imgUrl: "./webbdoktorn.PNG",
+      kind: "Agency website",
+      stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase"],
+      blurb:
+        "Swedish web agency that builds, maintains and optimizes websites for small businesses.",
     },
     {
-      title: "Weekend in Paris", 
+      title: "Weekend in Paris",
       link: "https://weekendparis.com",
       imgUrl: "/weekendparis.PNG",
+      kind: "Travel content site",
+      stack: ["Next.js", "TypeScript", "Tailwind CSS", "MDX"],
+      blurb:
+        "Curated weekend itineraries for Paris — statically generated, with the guides written in MDX.",
     },
     {
       title: "Svenska Esportförbundet",
       link: "https://svenskesport.se",
       imgUrl: "/sesf.png",
+      kind: "Federation website + custom CMS",
+      stack: ["Next.js", "TypeScript", "Tailwind CSS", "Strapi", "Resend"],
+      blurb:
+        "Official site of the Swedish Esports Federation, built as a freelance project with a headless Strapi CMS so the federation can publish news and content themselves.",
     },
     {
       title: "AoE2 Sverige",
       link: "https://www.aoe2sverige.se/",
       imgUrl: "/aoe2sverige.png",
+      kind: "Community site",
+      stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase"],
+      blurb:
+        "Community hub for the Swedish Age of Empires II scene, with community data backed by Supabase.",
     },
     {
       title: "PromptBibliotek",
       link: "https://promptbibliotek.se",
       imgUrl: "/promptbibliotek.png",
+      kind: "Web app / directory",
+      stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase"],
+      blurb:
+        "A Swedish library of AI prompts — browse, search and share prompts, all stored in Supabase.",
     },
     {
       title: "Cryptoskatt",
       link: "https://cryptoskatt.se",
       imgUrl: "/cryptoskatt.png",
+      kind: "Fintech web app",
+      stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Stripe"],
+      blurb:
+        "Helps Swedish crypto traders sort out their taxes — a Next.js app with Supabase for data and Stripe for payments.",
     },
     {
       title: "Remote Work Radar",
       link: "https://remoteworkradar.com",
       imgUrl: "/remoteworkradar.png",
+      kind: "Content site / blog",
+      stack: ["Next.js", "TypeScript", "Tailwind CSS", "Markdown"],
+      blurb:
+        "Statically generated blog about all things remote work, with posts written in Markdown.",
     },
     {
       title: "Nexus Collegiate",
       link: "https://nexuscollegiate.com",
       imgUrl: "/nexus-collegiate.png",
+      kind: "Esports organization site",
+      stack: [],
+      blurb: "Website for a collegiate esports organization.",
     },
     {
       title: "Best Travel Route",
       link: "https://besttravelroute.com",
       imgUrl: "/in-progress.jpeg",
+      kind: "AI web app — in progress",
+      stack: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
+      blurb:
+        "An AI travel companion for planning the best route between destinations. Currently in development.",
     },
 
     {
       title: "Portfolio",
       link: "https://www.adampeleback.com",
       imgUrl: "/portfolio.png",
+      kind: "Personal site",
+      stack: ["Next.js", "React", "Tailwind CSS", "Three.js", "React Three Fiber"],
+      blurb:
+        "This site — including a walkable 3D village version of my CV built with React Three Fiber.",
     },
     {
       title: "Stryda",
       link: "https://play.stryda.gg",
       imgUrl: "/stryda.png",
+      kind: "Esports platform — professional work",
+      stack: ["TypeScript", "React", "Next.js"],
+      blurb:
+        "G-Loot's esports platform, now part of Challengermode. Not a personal project — I worked on it professionally as QA Developer and later Frontend Developer.",
     },
     {
       title: "Phoenix Blue",
       link: "https://pxb.gg",
       imgUrl: "/pxb.png",
+      kind: "Esports organization",
+      stack: ["WordPress"],
+      blurb:
+        "Non-profit esports organization where I've served on the board since 2017 and helped create the Phoenix Blue Event Series.",
     },
   ],
   about: {

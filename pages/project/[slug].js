@@ -12,7 +12,11 @@ const ProjectPage = ({ project }) => {
   return (
     <ContainerBlock
       title={`${project.title} | Adam Peleback`}
-      description={project.description || `Learn more about ${project.title}.`}
+      description={
+        project.blurb ||
+        project.description ||
+        `Learn more about ${project.title}.`
+      }
       image={normalizeImageSrc(project.imgUrl)}
       type="article"
       // These pages are still thin — keep them out of the index until each one
@@ -31,6 +35,12 @@ const ProjectPage = ({ project }) => {
           {project.title}
         </h1>
 
+        {project.kind && (
+          <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-red-500">
+            {project.kind}
+          </p>
+        )}
+
         <div className="relative w-full my-10 shadow-2xl">
           <Image
             src={normalizeImageSrc(project.imgUrl)}
@@ -43,8 +53,30 @@ const ProjectPage = ({ project }) => {
         </div>
 
         <article className="max-w-2xl text-xl text-gray-700 dark:text-gray-300">
-          <p>{project.description || "A write-up of this project is coming soon."}</p>
+          <p>
+            {project.blurb ||
+              project.description ||
+              "A write-up of this project is coming soon."}
+          </p>
         </article>
+
+        {project.stack && project.stack.length > 0 && (
+          <div className="mt-10">
+            <h2 className="text-2xl font-bold text-gray-800 dark:text-white">
+              Tech stack
+            </h2>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {project.stack.map((tech) => (
+                <li
+                  key={tech}
+                  className="rounded-md bg-gray-200 dark:bg-gray-700 px-3 py-1 text-base font-medium text-gray-700 dark:text-gray-200"
+                >
+                  {tech}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         <a
           href={project.link}
