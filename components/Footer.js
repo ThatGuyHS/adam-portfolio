@@ -14,7 +14,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="space-x-4 flex flex-row items-center">
+          <div className="flex flex-row flex-wrap items-center gap-x-4 gap-y-2">
             <Link
               href="/discord-bots"
               className="text-base font-normal text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100"
@@ -27,6 +27,13 @@ export default function Footer() {
               className="text-base font-normal text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100"
             >
               Webbkonsult
+            </Link>
+            <Link
+              href="/testkonsult"
+              lang="sv"
+              className="text-base font-normal text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100"
+            >
+              Testkonsult
             </Link>
             <a
               href={userData.socialLinks.github}

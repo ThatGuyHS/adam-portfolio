@@ -5,21 +5,23 @@ import ContainerBlock from "../../components/ContainerBlock";
 import userData from "@constants/data";
 import { toProjectSlug, findProjectBySlug } from "@lib/projectSlug";
 import { normalizeImageSrc } from "@lib/projects";
+import caseStudies from "@constants/caseStudies";
 
-const ProjectPage = ({ project }) => {
+const ProjectPage = ({ project, caseStudy }) => {
   return (
     <ContainerBlock
       title={`${project.title} | Adam Peleback`}
       description={
+        caseStudy?.intro ||
         project.blurb ||
         project.description ||
         `Learn more about ${project.title}.`
       }
       image={normalizeImageSrc(project.imgUrl)}
       type="article"
-      // These pages are still thin — keep them out of the index until each one
-      // has a real write-up.
-      robots="noindex, follow"
+      // Pages with a real case-study write-up are indexed; the rest stay
+      // thin and out of the index until they get one.
+      robots={caseStudy ? "index, follow" : "noindex, follow"}
     >
       <div className="max-w-6xl mx-auto px-4 py-20">
         <Link
@@ -50,13 +52,50 @@ const ProjectPage = ({ project }) => {
           />
         </div>
 
-        <article className="max-w-2xl text-xl text-gray-700 dark:text-gray-300">
-          <p>
-            {project.blurb ||
-              project.description ||
-              "A write-up of this project is coming soon."}
-          </p>
-        </article>
+        {caseStudy ? (
+          <article className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
+              My role: {caseStudy.role}
+            </p>
+            <p className="mt-6 text-xl leading-relaxed text-gray-700 dark:text-gray-300">
+              {caseStudy.intro}
+            </p>
+            {caseStudy.sections.map((section) => (
+              <section key={section.heading} className="mt-10">
+                <h2 className="text-2xl font-bold text-gray-800 dark:text-white">
+                  {section.heading}
+                </h2>
+                <p className="mt-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                  {section.body}
+                </p>
+              </section>
+            ))}
+            <section className="mt-10">
+              <h2 className="text-2xl font-bold text-gray-800 dark:text-white">
+                Highlights
+              </h2>
+              <ul className="mt-4 space-y-2">
+                {caseStudy.highlights.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-2 text-lg leading-relaxed text-gray-700 dark:text-gray-300"
+                  >
+                    <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </article>
+        ) : (
+          <article className="max-w-2xl text-xl text-gray-700 dark:text-gray-300">
+            <p>
+              {project.blurb ||
+                project.description ||
+                "A write-up of this project is coming soon."}
+            </p>
+          </article>
+        )}
 
         {project.stack && project.stack.length > 0 && (
           <div className="mt-10">
@@ -105,7 +144,7 @@ export const getStaticProps = async ({ params }) => {
     return { notFound: true };
   }
 
-  return { props: { project } };
+  return { props: { project, caseStudy: caseStudies[params.slug] || null } };
 };
 
 export default ProjectPage;

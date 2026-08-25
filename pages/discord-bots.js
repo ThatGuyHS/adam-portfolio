@@ -3,6 +3,8 @@ import Link from "next/link";
 import ContainerBlock from "../components/ContainerBlock";
 import { SITE_URL as siteUrl, CONTACT_FORM_ENDPOINT } from "@constants/site";
 import userData from "@constants/data";
+import caseStudies from "@constants/caseStudies";
+import { toProjectSlug } from "@lib/projectSlug";
 
 // Landing page for custom Discord bot development. Unlike /webbkonsult
 // (which targets Swedish businesses, in Swedish) this page is in English —
@@ -293,6 +295,16 @@ export default function DiscordBots() {
                       {p.blurb}
                     </p>
                   </a>
+                  {caseStudies[toProjectSlug(p.title)] && (
+                    <p className="mt-3">
+                      <Link
+                        href={`/project/${toProjectSlug(p.title)}`}
+                        className="text-sm font-semibold text-indigo-500 hover:underline"
+                      >
+                        Read the case study →
+                      </Link>
+                    </p>
+                  )}
                 </li>
               ))}
             </ul>

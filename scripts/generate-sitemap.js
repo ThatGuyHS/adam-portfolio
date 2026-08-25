@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const { SITE_URL } = require("../constants/site");
+const caseStudies = require("../constants/caseStudies");
 const PAGES_DIR = path.join(process.cwd(), "pages");
 const OUTPUT_PATH = path.join(process.cwd(), "public", "sitemap.xml");
 const EXCLUDED_ROUTES = new Set(["/thanks"]);
@@ -65,9 +66,16 @@ ${urls}
 }
 
 function generateSitemap() {
+  // Dynamic /project/[slug] pages are noindex except the ones with a
+  // case-study write-up — only those belong in the sitemap.
+  const caseStudyRoutes = Object.keys(caseStudies).map(
+    (slug) => `/project/${slug}`
+  );
+
   const routes = getAllPageFiles(PAGES_DIR)
     .map(toRoute)
     .filter(Boolean)
+    .concat(caseStudyRoutes)
     .filter((route) => !EXCLUDED_ROUTES.has(route))
     .sort((a, b) => a.localeCompare(b));
 

@@ -3,87 +3,99 @@ import Link from "next/link";
 import ContainerBlock from "../components/ContainerBlock";
 import { SITE_URL as siteUrl, CONTACT_FORM_ENDPOINT } from "@constants/site";
 import userData from "@constants/data";
-import caseStudies from "@constants/caseStudies";
-import { toProjectSlug } from "@lib/projectSlug";
 
-// Landing page in Swedish targeting "frilansande webbkonsult" — the copy is
-// aimed at Swedish businesses looking for help with their website, so
-// everything below is intentionally in Swedish while the rest of the site
-// stays in English.
+// Landing page in Swedish targeting "testkonsult" / "testautomatisering" —
+// aimed at Swedish teams that need QA help, so the copy is in Swedish while
+// the rest of the site stays in English. Amber accent to set it apart from
+// /webbkonsult (red) and /discord-bots (indigo).
 
 const offers = [
   {
-    icon: "🧑‍💻",
-    title: "Webbutveckling",
+    icon: "🤖",
+    title: "Testautomatisering",
     blurb:
-      "Nya webbplatser och webbappar i React och Next.js — eller WordPress när det passar bättre. Snabba, responsiva och byggda för att synas i sök från dag ett.",
-    points: ["Nya webbplatser", "Webbappar & integrationer", "React/Next.js/WordPress"],
+      "Automatiserade tester som fångar regressioner innan kunderna gör det: enhetstester, integrationstester och end-to-end-flöden, byggda med verktyg som passar er stack.",
+    points: ["End-to-end-tester", "Enhets- & integrationstester", "Testtäckning där det gör nytta"],
   },
   {
-    icon: "⚡",
-    title: "Prestanda & teknisk hälsa",
+    icon: "🔁",
+    title: "CI/CD & kvalitetsgrindar",
     blurb:
-      "Core Web Vitals, tillgänglighet och teknisk SEO. Jag mäter, hittar flaskhalsarna och åtgärdar dem i koden — ingen rapport som stannar i en byrålåda.",
-    points: ["Core Web Vitals", "Tillgänglighet", "Teknisk genomlysning"],
+      "Testerna gör mest nytta när de körs på varje ändring. Jag sätter upp testkörningar i er CI-pipeline med tydliga kvalitetsgrindar — så att en röd bygge stoppar felet, inte releasen efteråt.",
+    points: ["Tester i CI-pipelinen", "Kvalitetsgrindar före release", "Snabb återkoppling till utvecklare"],
   },
   {
     icon: "🔍",
-    title: "SEO & synlighet",
+    title: "Manuell & utforskande testning",
     blurb:
-      "Sökordsstrategi, innehållsstruktur och optimering för både Google och AI-sök (AI Overviews, ChatGPT, Perplexity). Samma metoder som mina egna guidesajter rankar med.",
-    points: ["Sökordsstrategi", "AI-sök (GEO)", "Strukturerad data"],
+      "Allt kan inte automatiseras. Jag testar era kritiska användarflöden på riktigt — betalningar, registrering, det som inte får gå sönder — och rapporterar buggar utvecklare förstår.",
+    points: ["Kritiska användarflöden", "Utforskande testning", "Tydliga buggrapporter"],
   },
   {
-    icon: "🛠️",
-    title: "Förvaltning & vidareutveckling",
+    icon: "🧭",
+    title: "Teststrategi & rådgivning",
     blurb:
-      "Löpande support, nya funktioner och kvalitetssäkring av befintliga sajter. Med bakgrund som testare bygger jag inte bara — jag ser till att det håller.",
-    points: ["Löpande support", "Nya funktioner", "Testning & QA"],
+      "Vad ska automatiseras först? Vad ska inte testas alls? Jag har varit rådgivare åt utvecklingsteam i testfrågor och hjälper er lägga en strategi som teamet faktiskt följer.",
+    points: ["Teststrategi", "Rådgivning till utvecklingsteam", "Prioritering efter risk"],
+  },
+];
+
+const roles = [
+  {
+    role: "Systemtestare — Decerno",
+    period: "2025–",
+    text: "Systemtestning och mjukvarutestning av verksamhetssystem, som anställd testare i pågående utvecklingsprojekt.",
+  },
+  {
+    role: "QA Developer — G-Loot",
+    period: "2021–2022",
+    text: "Testautomatisering och manuell testning av kritiska användarflöden på en esportplattform med riktiga pengar i omlopp, plus rådgivning till utvecklingsteamen i testfrågor.",
+  },
+  {
+    role: "QA Tester — G-Loot Esports",
+    period: "2018–2021",
+    text: "Kvalitetssäkring av Global Loot League-plattformen genom turneringar och releaser, i tätt samarbete med tech-teamet.",
   },
 ];
 
 const steps = [
   {
-    title: "Behov & genomlysning",
+    title: "Nulägesgenomgång",
     description:
-      "Vi börjar med ett kort samtal om vad ni vill uppnå. Har ni en befintlig sajt går jag igenom den tekniskt: hastighet, struktur, synlighet och vad som håller er tillbaka.",
+      "Vi går igenom hur ni testar i dag: vad som är automatiserat, var buggarna brukar slinka igenom och var en timmes testarbete gör mest nytta.",
   },
   {
-    title: "Prioriterad plan med fast offert",
+    title: "Prioriterad testplan",
     description:
-      "Ni får en konkret plan sorterad efter effekt — vad som ger mest först, med tydlig motivering och ett fast pris eller en tydlig timuppskattning. Inga 40-sidiga rapporter.",
+      "Ni får en konkret plan sorterad efter risk: vilka flöden som automatiseras först, vad som testas manuellt och hur det kopplas in i er pipeline — med fast pris eller tydlig timuppskattning.",
   },
   {
-    title: "Leverans & uppföljning",
+    title: "Genomförande & överlämning",
     description:
-      "Jag bygger och åtgärdar själv, stämmer av löpande och följer upp efter lansering med mätning — så ni ser vad som faktiskt hände.",
+      "Jag skriver testerna, sätter upp körningarna i CI och lämnar över så att ert team kan äga och bygga vidare på dem — dokumenterat och utan konsultberoende.",
   },
 ];
 
 const faqs = [
   {
-    q: "Vad kostar en frilansande webbkonsult?",
-    a: "Frilansande webbkonsulter i Sverige tar normalt 900–1 500 kr/h beroende på erfarenhet och inriktning. Mitt timpris är 900 kr/h exkl. moms. Avgränsade projekt offereras till fast pris — till exempel kostar en teknisk genomlysning med prioriterad åtgärdslista 9 500 kr exkl. moms. Löpande samarbeten prissätts per månad efter omfattning.",
+    q: "Vad kostar en testkonsult?",
+    a: "Mitt timpris är 900 kr/h exkl. moms. Avgränsade insatser — till exempel en genomgång av ert nuvarande testarbete med en prioriterad plan, eller ett första automatiserat testpaket för era viktigaste flöden — offereras till fast pris efter ett kort samtal.",
   },
   {
-    q: "Vilka tekniker arbetar du med?",
-    a: "Främst React, Next.js, TypeScript och Tailwind CSS, med Supabase eller ett headless CMS som Strapi och Contentful i botten när sajten behöver data eller redaktörsflöden. Jag arbetar även med WordPress när det är rätt verktyg för uppgiften.",
+    q: "Behöver vi verkligen testautomatisering?",
+    a: "Om ni släpper ofta och testar manuellt inför varje release: förmodligen. Automatisering lönar sig snabbast för flöden som testas om och om igen — inloggning, betalning, registrering. Men allt ska inte automatiseras, och en del av mitt jobb är att säga var det inte är värt det.",
   },
   {
-    q: "Tar du både nya byggen och befintliga sajter?",
-    a: "Ja. Jag bygger nya webbplatser från grunden, men minst lika ofta handlar uppdragen om befintliga sajter: vidareutveckling, prestandaoptimering, tillgänglighet eller bättre synlighet i sök.",
+    q: "Vilka verktyg och ramverk använder du?",
+    a: "Jag väljer verktyg efter er stack i stället för tvärtom — för webben handlar det typiskt om moderna ramverk som Playwright eller Cypress för end-to-end-tester, kompletterat med enhetstester i det ramverk ni redan använder, och testkörningar i er befintliga CI-miljö som GitHub Actions eller GitLab CI.",
   },
   {
-    q: "Hjälper du till med SEO också?",
-    a: "Ja, SEO är en av mina specialiteter. Jag driver egna innehållssajter i konkurrensutsatta svenska nischer och arbetar med både klassisk Google-SEO och AI-sök — att synas i AI Overviews och i svaren från ChatGPT och Perplexity. Det arbetet ingår naturligt när jag bygger, eftersom samma person skriver koden.",
+    q: "Kan du förstärka vårt befintliga team?",
+    a: "Ja. Uppdragen kan se ut på två sätt: en avgränsad insats där jag bygger upp testningen och lämnar över, eller löpande förstärkning där jag arbetar i ert team som testare. Jag är utvecklare också, så jag läser er kod och pratar med era utvecklare på deras villkor.",
   },
   {
     q: "Arbetar du på distans?",
-    a: "Ja. Jag utgår från Stockholm och arbetar på distans med kunder i hela Sverige. Fysiska möten går bra i Stockholmsområdet när det behövs.",
-  },
-  {
-    q: "Vad skiljer dig från en webbyrå?",
-    a: "Hos en byrå betalar du ofta för projektledning, säljled och juniora utförare. Hos mig pratar du direkt med personen som designar, bygger, testar och optimerar — en utvecklare med bakgrund inom QA och SEO som dessutom driver egna sajter med egna pengar på spel.",
+    a: "Ja. Jag utgår från Stockholm och arbetar på distans med team i hela Sverige. Fysiska möten går bra i Stockholmsområdet när det behövs.",
   },
 ];
 
@@ -104,7 +116,7 @@ function SwedishContactForm() {
         body: JSON.stringify({
           name: form.name.value,
           email: form.email.value,
-          message: `[Webbkonsult] ${form.message.value}`,
+          message: `[Testkonsult] ${form.message.value}`,
         }),
       });
       if (res.ok) {
@@ -118,7 +130,7 @@ function SwedishContactForm() {
   }
 
   const inputClass =
-    "w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 px-4 py-3 text-gray-800 dark:text-gray-100 placeholder-gray-400 focus:border-red-500 focus:outline-none";
+    "w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 px-4 py-3 text-gray-800 dark:text-gray-100 placeholder-gray-400 focus:border-amber-600 focus:outline-none";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
@@ -168,14 +180,14 @@ function SwedishContactForm() {
           name="message"
           required
           rows={5}
-          placeholder="Berätta kort om er sajt eller idé och vad ni vill uppnå"
+          placeholder="Berätta kort om er produkt och hur ni testar i dag"
           className={inputClass}
         />
       </div>
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="rounded-lg bg-red-500 text-white px-6 py-3 font-semibold hover:bg-red-600 transition-colors duration-300 disabled:opacity-60"
+        className="rounded-lg bg-amber-700 text-white px-6 py-3 font-semibold hover:bg-amber-800 transition-colors duration-300 disabled:opacity-60"
       >
         {status === "submitting" ? "Skickar…" : "Skicka"}
       </button>
@@ -189,28 +201,17 @@ function SwedishContactForm() {
   );
 }
 
-const PROOF_TITLES = [
-  "Svenska Esportförbundet",
-  "Adluelno",
-  "PXB Media",
-  "Robotklipparguiden",
-];
-
-export default function Webbkonsult() {
-  const proofSites = PROOF_TITLES.map((title) =>
-    userData.projects.find((p) => p.title === title)
-  ).filter(Boolean);
-
+export default function Testkonsult() {
   const structuredData = [
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "@id": `${siteUrl}/webbkonsult#service`,
-      name: "Adam Peleback — Frilansande webbkonsult",
-      url: `${siteUrl}/webbkonsult`,
+      "@id": `${siteUrl}/testkonsult#service`,
+      name: "Adam Peleback — Testkonsult & testautomatisering",
+      url: `${siteUrl}/testkonsult`,
       image: `${siteUrl}/adam.png`,
       email: userData.email,
-      priceRange: "900-1500 SEK/h",
+      priceRange: "900 SEK/h",
       areaServed: "SE",
       address: {
         "@type": "PostalAddress",
@@ -218,21 +219,19 @@ export default function Webbkonsult() {
         addressCountry: "SE",
       },
       knowsAbout: [
-        "Webbutveckling",
-        "React",
-        "Next.js",
-        "WordPress",
-        "Core Web Vitals",
-        "Teknisk SEO",
-        "AI-sök (GEO)",
         "Testautomatisering",
+        "Systemtestning",
+        "Manuell testning",
+        "Teststrategi",
+        "CI/CD",
+        "Kvalitetssäkring",
       ],
       inLanguage: "sv-SE",
     },
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      "@id": `${siteUrl}/webbkonsult#faq`,
+      "@id": `${siteUrl}/testkonsult#faq`,
       inLanguage: "sv-SE",
       mainEntity: faqs.map((f) => ({
         "@type": "Question",
@@ -244,8 +243,8 @@ export default function Webbkonsult() {
 
   return (
     <ContainerBlock
-      title="Frilansande webbkonsult i Stockholm — webbutveckling, prestanda & SEO | Adam Peleback"
-      description="Frilansande webbkonsult i Stockholm. Bygger snabba webbplatser i React och Next.js, optimerar prestanda och synlighet i Google och AI-sök — en utvecklare som gör hela jobbet, på distans i hela Sverige."
+      title="Testkonsult & testautomatisering i Stockholm | Adam Peleback"
+      description="Testkonsult i Stockholm med bakgrund som QA-utvecklare och systemtestare. Testautomatisering, CI/CD-integration, manuell testning och teststrategi — på distans i hela Sverige."
       ogLocale="sv_SE"
       structuredData={structuredData}
     >
@@ -253,76 +252,65 @@ export default function Webbkonsult() {
         {/* Hero */}
         <section className="bg-white dark:bg-gray-800">
           <div className="max-w-6xl mx-auto px-4 py-20">
-            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-red-500 mb-4 font-semibold">
+            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-amber-700 dark:text-amber-500 mb-4 font-semibold">
               Stockholm & distans i hela Sverige
             </p>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight text-gray-800 dark:text-white max-w-3xl">
-              Frilansande webbkonsult — från idé till snabb, synlig webbplats
+              Testkonsult — automatisera testningen, släpp med gott samvete
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-gray-600 dark:text-gray-300 max-w-2xl">
-              Jag heter Adam Peleback och hjälper svenska företag med hela
-              webben: nya webbplatser, vidareutveckling, prestanda och
-              synlighet i Google och AI-sök. Skillnaden mot en byrå? Du pratar
-              direkt med personen som designar, bygger, testar och optimerar —
-              och som driver egna sajter med egna pengar på spel.
+              Jag heter Adam Peleback och har testat mjukvara professionellt
+              sedan 2018 — som QA-testare och QA-utvecklare på G-Loot och i dag
+              som systemtestare på Decerno. Jag är dessutom utvecklare, så jag
+              skriver testautomatiseringen själv, kopplar in den i er pipeline
+              och pratar med era utvecklare på deras villkor.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="#kontakt"
-                className="rounded-lg bg-red-500 text-white px-6 py-3 font-semibold hover:bg-red-600 transition-colors duration-300"
+                className="rounded-lg bg-amber-700 text-white px-6 py-3 font-semibold hover:bg-amber-800 transition-colors duration-300"
               >
                 Boka kostnadsfritt samtal
               </a>
               <a
-                href="#bevis"
-                className="rounded-lg border border-red-300 px-6 py-3 font-semibold text-red-500 hover:bg-red-50 dark:hover:bg-gray-700 transition-colors duration-300"
+                href="#bakgrund"
+                className="rounded-lg border border-amber-600 px-6 py-3 font-semibold text-amber-700 dark:text-amber-500 hover:bg-amber-50 dark:hover:bg-gray-700 transition-colors duration-300"
               >
-                Se ett urval av projekt ↓
+                Se min QA-bakgrund ↓
               </a>
             </div>
           </div>
         </section>
 
-        {/* Proof: selected projects */}
-        <section id="bevis" className="bg-[#F1F1F1] dark:bg-gray-900">
+        {/* Proof: QA background */}
+        <section id="bakgrund" className="bg-[#F1F1F1] dark:bg-gray-900">
           <div className="max-w-6xl mx-auto px-4 py-14 md:py-20">
-            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-red-500 mb-4 font-semibold">
-              Beviset först
+            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-amber-700 dark:text-amber-500 mb-4 font-semibold">
+              Bakgrund
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
-              Sajter jag byggt — åt kunder och åt mig själv
+              Sju år av testning — som anställd, inte bara som konsult
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-gray-600 dark:text-gray-300 max-w-2xl">
-              Kundprojekt som Svenska Esportförbundet och Adluelno, och egna
-              sajter i konkurrensutsatta svenska nischer. Samma hantverk i
-              båda: snabb kod, tydlig struktur och synlighet i sök.
+              Min QA-erfarenhet kommer från riktiga roller i riktiga team: en
+              esportplattform med pengar i omlopp och verksamhetssystem där
+              fel kostar på riktigt.
             </p>
-            <ul className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-              {proofSites.map((p) => (
-                <li key={p.title}>
-                  <a
-                    href={p.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="block h-full rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-                  >
-                    <h3 className="text-xl font-bold text-gray-800 dark:text-white">
-                      {p.title} ↗
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
-                      {p.blurb}
-                    </p>
-                  </a>
-                  {caseStudies[toProjectSlug(p.title)] && (
-                    <p className="mt-3">
-                      <Link
-                        href={`/project/${toProjectSlug(p.title)}`}
-                        className="text-sm font-semibold text-red-500 hover:underline"
-                      >
-                        Läs caset →
-                      </Link>
-                    </p>
-                  )}
+            <ul className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+              {roles.map((r) => (
+                <li
+                  key={r.role}
+                  className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 shadow-lg"
+                >
+                  <p className="text-sm font-semibold text-amber-700 dark:text-amber-500">
+                    {r.period}
+                  </p>
+                  <h3 className="mt-1 text-xl font-bold text-gray-800 dark:text-white">
+                    {r.role}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                    {r.text}
+                  </p>
                 </li>
               ))}
             </ul>
@@ -332,11 +320,11 @@ export default function Webbkonsult() {
         {/* What I do */}
         <section className="bg-white dark:bg-gray-800">
           <div className="max-w-6xl mx-auto px-4 py-14 md:py-20">
-            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-red-500 mb-4 font-semibold">
+            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-amber-700 dark:text-amber-500 mb-4 font-semibold">
               Vad jag gör
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
-              Hela webben — från analys till färdig kod
+              Kvalitet från strategi till körande tester
             </h2>
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
               {offers.map((o) => (
@@ -345,7 +333,7 @@ export default function Webbkonsult() {
                   className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 md:p-8 shadow-lg"
                 >
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="h-12 w-12 rounded-xl bg-red-50 dark:bg-gray-900 flex items-center justify-center text-2xl">
+                    <div className="h-12 w-12 rounded-xl bg-amber-50 dark:bg-gray-900 flex items-center justify-center text-2xl">
                       {o.icon}
                     </div>
                     <h3 className="text-2xl font-bold text-gray-800 dark:text-white">
@@ -361,7 +349,7 @@ export default function Webbkonsult() {
                         key={item}
                         className="text-sm text-gray-700 dark:text-gray-200 flex items-center gap-2"
                       >
-                        <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
+                        <span className="h-1.5 w-1.5 rounded-full bg-amber-600" />
                         {item}
                       </li>
                     ))}
@@ -375,11 +363,11 @@ export default function Webbkonsult() {
         {/* Process + pricing */}
         <section className="bg-[#F1F1F1] dark:bg-gray-900">
           <div className="max-w-6xl mx-auto px-4 py-14 md:py-20">
-            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-red-500 mb-4 font-semibold">
+            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-amber-700 dark:text-amber-500 mb-4 font-semibold">
               Så går det till
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
-              Tre steg, inga 40-sidiga rapporter
+              Tre steg till tester ni litar på
             </h2>
             <div className="mt-8 grid md:grid-cols-3 gap-4">
               {steps.map((step, index) => (
@@ -387,7 +375,7 @@ export default function Webbkonsult() {
                   key={step.title}
                   className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5"
                 >
-                  <p className="text-sm text-red-500 mb-2 font-semibold">
+                  <p className="text-sm text-amber-700 dark:text-amber-500 mb-2 font-semibold">
                     0{index + 1}
                   </p>
                   <h3 className="text-xl font-semibold mb-3 text-gray-800 dark:text-white">
@@ -407,10 +395,9 @@ export default function Webbkonsult() {
                 </span>
               </p>
               <p className="text-2xl md:text-3xl font-bold text-white">
-                Fast pris per projekt
+                Fast pris på avgränsade insatser
                 <span className="ml-2 text-sm font-normal text-gray-300">
-                  offert efter ett kort samtal — t.ex. teknisk genomlysning
-                  9 500 kr
+                  offert efter ett kort samtal
                 </span>
               </p>
             </div>
@@ -420,7 +407,7 @@ export default function Webbkonsult() {
         {/* FAQ */}
         <section className="bg-white dark:bg-gray-800">
           <div className="max-w-3xl mx-auto px-4 py-14 md:py-20">
-            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-red-500 mb-4 font-semibold">
+            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-amber-700 dark:text-amber-500 mb-4 font-semibold">
               Vanliga frågor
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
@@ -433,7 +420,7 @@ export default function Webbkonsult() {
                   className="group rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 shadow-sm"
                 >
                   <summary className="cursor-pointer list-none text-lg font-bold text-gray-800 dark:text-white">
-                    <span className="mr-2 inline-block text-red-500 transition-transform duration-200 group-open:rotate-90">
+                    <span className="mr-2 inline-block text-amber-700 dark:text-amber-500 transition-transform duration-200 group-open:rotate-90">
                       ›
                     </span>
                     {f.q}
@@ -451,21 +438,22 @@ export default function Webbkonsult() {
         <section id="kontakt" className="bg-[#F1F1F1] dark:bg-gray-900">
           <div className="max-w-6xl mx-auto px-4 py-14 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-10">
             <div>
-              <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-red-500 mb-4 font-semibold">
+              <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-amber-700 dark:text-amber-500 mb-4 font-semibold">
                 Säg hej
               </p>
               <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
-                Har du ett webbprojekt — stort eller litet?
+                Testas era releaser för hand? Låt oss ändra på det.
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-gray-600 dark:text-gray-300 max-w-md">
-                Berätta kort om er sajt eller idé så återkommer jag inom en dag
-                med en första bedömning — kostnadsfritt och utan förpliktelser.
+                Berätta kort om er produkt och hur ni testar i dag, så
+                återkommer jag inom en dag med en första bedömning —
+                kostnadsfritt och utan förpliktelser.
               </p>
               <div className="mt-8 space-y-2 text-sm">
                 <p>
                   <a
                     href={`mailto:${userData.email}`}
-                    className="text-red-500 font-semibold hover:underline"
+                    className="text-amber-700 dark:text-amber-500 font-semibold hover:underline"
                   >
                     {userData.email}
                   </a>
@@ -475,10 +463,10 @@ export default function Webbkonsult() {
                 </p>
                 <p className="pt-2">
                   <Link
-                    href="/projects"
+                    href="/webbkonsult"
                     className="text-gray-600 dark:text-gray-400 underline hover:text-gray-800 dark:hover:text-gray-200"
                   >
-                    Se hela portfolion →
+                    Behöver ni även webbutveckling? →
                   </Link>
                 </p>
               </div>
