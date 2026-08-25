@@ -1,9 +1,10 @@
 import React from "react";
+import Link from "next/link";
 import userData from "@constants/data";
 
 export default function Footer() {
   return (
-    <div className="bg-[#F1F1F1] dark:bg-gray-900">
+    <footer className="bg-[#F1F1F1] dark:bg-gray-900">
       <div className="max-w-6xl  mx-auto px-4 py-10 md:py-20">
         <div className="h-0.5 w-full bg-white dark:bg-gray-700"></div>
         <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row justify-between md:items-center mt-8">
@@ -14,10 +15,17 @@ export default function Footer() {
           </div>
 
           <div className="space-x-4 flex flex-row items-center">
+            <Link
+              href="/seo-konsult"
+              lang="sv"
+              className="text-base font-normal text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100"
+            >
+              SEO-konsult
+            </Link>
             <a
               href={userData.socialLinks.github}
               aria-label="GitHub"
-              className="text-base font-normal text-gray-600 dark:text-gray-300"
+              className="inline-flex items-center justify-center p-3 -m-2 text-base font-normal text-gray-600 dark:text-gray-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +42,7 @@ export default function Footer() {
             <a
               href={userData.socialLinks.instagram}
               aria-label="Instagram"
-              className="text-base font-normal text-gray-600 dark:text-gray-300"
+              className="inline-flex items-center justify-center p-3 -m-2 text-base font-normal text-gray-600 dark:text-gray-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +59,7 @@ export default function Footer() {
             <a
               href={userData.socialLinks.linkedin}
               aria-label="LinkedIn"
-              className="text-base font-normal text-gray-600 dark:text-gray-300"
+              className="inline-flex items-center justify-center p-3 -m-2 text-base font-normal text-gray-600 dark:text-gray-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -67,6 +75,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
