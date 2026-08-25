@@ -4,79 +4,84 @@ import ContainerBlock from "../components/ContainerBlock";
 import { SITE_URL as siteUrl, CONTACT_FORM_ENDPOINT } from "@constants/site";
 import userData from "@constants/data";
 
-// Landing page in Swedish targeting "frilansande SEO-konsult" — the copy is
-// aimed at Swedish businesses searching for SEO help, so everything below is
-// intentionally in Swedish while the rest of the site stays in English.
+// Landing page in Swedish targeting "frilansande webbkonsult" — the copy is
+// aimed at Swedish businesses looking for help with their website, so
+// everything below is intentionally in Swedish while the rest of the site
+// stays in English.
 
 const offers = [
   {
-    icon: "🔧",
-    title: "Teknisk SEO",
+    icon: "🧑‍💻",
+    title: "Webbutveckling",
     blurb:
-      'Crawlbarhet, indexering, Core Web Vitals, strukturerad data och renderingsproblem. Jag är utvecklare — jag lämnar ingen rapport till "er tekniker", jag åtgärdar själv.',
-    points: ["Teknisk genomlysning", "Core Web Vitals", "Strukturerad data"],
-  },
-  {
-    icon: "📝",
-    title: "Innehåll & programmatisk SEO",
-    blurb:
-      "Sökordsanalys, innehållsstruktur och sidor som byggs i skala från data — utan att trilla i tunt-innehåll-fällan. Samma metod som mina egna guidesajter bygger på.",
-    points: ["Sökordsstrategi", "Innehållsarkitektur", "Programmatiska sidmallar"],
-  },
-  {
-    icon: "🤖",
-    title: "AI-sök (GEO)",
-    blurb:
-      "Allt fler svar levereras av AI Overviews, ChatGPT och Perplexity i stället för tio blå länkar. Jag optimerar för att din sajt ska citeras där — inte bara ranka i klassiska Google.",
-    points: ["AI Overviews", "Citerbarhet & llms.txt", "AI-crawlertillgänglighet"],
+      "Nya webbplatser och webbappar i React och Next.js — eller WordPress när det passar bättre. Snabba, responsiva och byggda för att synas i sök från dag ett.",
+    points: ["Nya webbplatser", "Webbappar & integrationer", "React/Next.js/WordPress"],
   },
   {
     icon: "⚡",
-    title: "SEO + utveckling i samma person",
+    title: "Prestanda & teknisk hälsa",
     blurb:
-      "Ingen väntan mellan rekommendation och implementation. Åtgärdslistan blir genomförd kod i React, Next.js eller WordPress — ofta samma vecka.",
-    points: ["Implementation ingår", "React/Next.js/WordPress", "Mätbar uppföljning"],
+      "Core Web Vitals, tillgänglighet och teknisk SEO. Jag mäter, hittar flaskhalsarna och åtgärdar dem i koden — ingen rapport som stannar i en byrålåda.",
+    points: ["Core Web Vitals", "Tillgänglighet", "Teknisk genomlysning"],
+  },
+  {
+    icon: "🔍",
+    title: "SEO & synlighet",
+    blurb:
+      "Sökordsstrategi, innehållsstruktur och optimering för både Google och AI-sök (AI Overviews, ChatGPT, Perplexity). Samma metoder som mina egna guidesajter rankar med.",
+    points: ["Sökordsstrategi", "AI-sök (GEO)", "Strukturerad data"],
+  },
+  {
+    icon: "🛠️",
+    title: "Förvaltning & vidareutveckling",
+    blurb:
+      "Löpande support, nya funktioner och kvalitetssäkring av befintliga sajter. Med bakgrund som testare bygger jag inte bara — jag ser till att det håller.",
+    points: ["Löpande support", "Nya funktioner", "Testning & QA"],
   },
 ];
 
 const steps = [
   {
-    title: "Genomlysning",
+    title: "Behov & genomlysning",
     description:
-      "Jag går igenom sajten tekniskt och innehållsmässigt: indexering, hastighet, struktur, sökordsläge och hur ni syns i AI-sök i dag.",
+      "Vi börjar med ett kort samtal om vad ni vill uppnå. Har ni en befintlig sajt går jag igenom den tekniskt: hastighet, struktur, synlighet och vad som håller er tillbaka.",
   },
   {
-    title: "Prioriterad åtgärdslista",
+    title: "Prioriterad plan med fast offert",
     description:
-      "Ni får en konkret lista sorterad efter effekt per timme — vad som ger mest synlighet först, med tydlig motivering. Inga 40-sidiga rapporter.",
+      "Ni får en konkret plan sorterad efter effekt — vad som ger mest först, med tydlig motivering och ett fast pris eller en tydlig timuppskattning. Inga 40-sidiga rapporter.",
   },
   {
-    title: "Implementation & uppföljning",
+    title: "Leverans & uppföljning",
     description:
-      "Jag genomför åtgärderna själv och följer upp i Search Console månad för månad, så ni ser vad som faktiskt hände.",
+      "Jag bygger och åtgärdar själv, stämmer av löpande och följer upp efter lansering med mätning — så ni ser vad som faktiskt hände.",
   },
 ];
 
 const faqs = [
   {
-    q: "Vad kostar en frilansande SEO-konsult?",
-    a: "Frilansande SEO-konsulter i Sverige tar normalt 1 200–2 000 kr/h beroende på erfarenhet. Mitt timpris är 1 200 kr/h exkl. moms, och en fast prissatt SEO-genomlysning med åtgärdslista kostar 9 500 kr exkl. moms. Löpande samarbeten prissätts per månad efter omfattning.",
+    q: "Vad kostar en frilansande webbkonsult?",
+    a: "Frilansande webbkonsulter i Sverige tar normalt 900–1 500 kr/h beroende på erfarenhet och inriktning. Mitt timpris är 1 200 kr/h exkl. moms. Avgränsade projekt offereras till fast pris — till exempel kostar en teknisk genomlysning med prioriterad åtgärdslista 9 500 kr exkl. moms. Löpande samarbeten prissätts per månad efter omfattning.",
   },
   {
-    q: "Vad är AI-sök och varför spelar det roll för SEO?",
-    a: "AI-sök är samlingsnamnet för svar som genereras av AI i stället för klassiska sökresultat: Googles AI Overviews, ChatGPT med webbsökning och Perplexity. En växande andel av sökningarna besvaras där, och de källor som citeras får trafiken. Att optimera för AI-sök (ofta kallat GEO) handlar om citerbart innehåll, tillgänglighet för AI-crawlers och tydlig struktur — det ingår i alla mina uppdrag.",
+    q: "Vilka tekniker arbetar du med?",
+    a: "Främst React, Next.js, TypeScript och Tailwind CSS, med Supabase eller ett headless CMS som Strapi och Contentful i botten när sajten behöver data eller redaktörsflöden. Jag arbetar även med WordPress när det är rätt verktyg för uppgiften.",
   },
   {
-    q: "Hur snabbt ser man resultat av SEO?",
-    a: "Tekniska åtgärder kan ge effekt inom några veckor, medan innehålls- och auktoritetsarbete normalt tar tre till sex månader innan det syns tydligt i trafiken. Jag sätter upp mätning från dag ett så att ni ser utvecklingen löpande i stället för att vänta på en slutrapport.",
+    q: "Tar du både nya byggen och befintliga sajter?",
+    a: "Ja. Jag bygger nya webbplatser från grunden, men minst lika ofta handlar uppdragen om befintliga sajter: vidareutveckling, prestandaoptimering, tillgänglighet eller bättre synlighet i sök.",
+  },
+  {
+    q: "Hjälper du till med SEO också?",
+    a: "Ja, SEO är en av mina specialiteter. Jag driver egna innehållssajter i konkurrensutsatta svenska nischer och arbetar med både klassisk Google-SEO och AI-sök — att synas i AI Overviews och i svaren från ChatGPT och Perplexity. Det arbetet ingår naturligt när jag bygger, eftersom samma person skriver koden.",
   },
   {
     q: "Arbetar du på distans?",
     a: "Ja. Jag utgår från Stockholm och arbetar på distans med kunder i hela Sverige. Fysiska möten går bra i Stockholmsområdet när det behövs.",
   },
   {
-    q: "Vad skiljer dig från en SEO-byrå?",
-    a: "Hos en byrå betalar du ofta för projektledning, säljled och juniora utförare. Hos mig pratar du direkt med personen som både analyserar och implementerar — och som driver egna sajter med egna pengar på spel, så metoderna är testade på riktigt innan de används hos dig.",
+    q: "Vad skiljer dig från en webbyrå?",
+    a: "Hos en byrå betalar du ofta för projektledning, säljled och juniora utförare. Hos mig pratar du direkt med personen som designar, bygger, testar och optimerar — en utvecklare med bakgrund inom QA och SEO som dessutom driver egna sajter med egna pengar på spel.",
   },
 ];
 
@@ -97,7 +102,7 @@ function SwedishContactForm() {
         body: JSON.stringify({
           name: form.name.value,
           email: form.email.value,
-          message: `[SEO-konsult] ${form.message.value}`,
+          message: `[Webbkonsult] ${form.message.value}`,
         }),
       });
       if (res.ok) {
@@ -161,7 +166,7 @@ function SwedishContactForm() {
           name="message"
           required
           rows={5}
-          placeholder="Berätta kort om er sajt och vad ni vill uppnå"
+          placeholder="Berätta kort om er sajt eller idé och vad ni vill uppnå"
           className={inputClass}
         />
       </div>
@@ -182,21 +187,28 @@ function SwedishContactForm() {
   );
 }
 
-export default function SeoKonsult() {
-  const proofSites = userData.projects.filter(
-    (p) => p.kind === "Affiliate content site"
-  );
+const PROOF_TITLES = [
+  "Svenska Esportförbundet",
+  "Adluelno",
+  "PXB Media",
+  "Robotklipparguiden",
+];
+
+export default function Webbkonsult() {
+  const proofSites = PROOF_TITLES.map((title) =>
+    userData.projects.find((p) => p.title === title)
+  ).filter(Boolean);
 
   const structuredData = [
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "@id": `${siteUrl}/seo-konsult#service`,
-      name: "Adam Peleback — Frilansande SEO-konsult",
-      url: `${siteUrl}/seo-konsult`,
+      "@id": `${siteUrl}/webbkonsult#service`,
+      name: "Adam Peleback — Frilansande webbkonsult",
+      url: `${siteUrl}/webbkonsult`,
       image: `${siteUrl}/adam.png`,
       email: userData.email,
-      priceRange: "1200-2000 SEK/h",
+      priceRange: "900-1500 SEK/h",
       areaServed: "SE",
       address: {
         "@type": "PostalAddress",
@@ -204,19 +216,21 @@ export default function SeoKonsult() {
         addressCountry: "SE",
       },
       knowsAbout: [
-        "Teknisk SEO",
-        "Programmatisk SEO",
-        "AI-sök (GEO)",
-        "Core Web Vitals",
-        "Next.js",
+        "Webbutveckling",
         "React",
+        "Next.js",
+        "WordPress",
+        "Core Web Vitals",
+        "Teknisk SEO",
+        "AI-sök (GEO)",
+        "Testautomatisering",
       ],
       inLanguage: "sv-SE",
     },
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      "@id": `${siteUrl}/seo-konsult#faq`,
+      "@id": `${siteUrl}/webbkonsult#faq`,
       inLanguage: "sv-SE",
       mainEntity: faqs.map((f) => ({
         "@type": "Question",
@@ -228,9 +242,8 @@ export default function SeoKonsult() {
 
   return (
     <ContainerBlock
-      title="Frilansande SEO-konsult — synlig i Google och i AI-sök | Adam Peleback"
-      description="Frilansande SEO-konsult i Stockholm som rankar sina egna sajter. Teknisk SEO, innehåll och AI-sök (AI Overviews, ChatGPT, Perplexity) — utfört av en utvecklare, på distans i hela Sverige."
-      keywords="frilansande SEO-konsult, SEO-konsult Stockholm, AI-sök, GEO, teknisk SEO, programmatisk SEO"
+      title="Frilansande webbkonsult i Stockholm — webbutveckling, prestanda & SEO | Adam Peleback"
+      description="Frilansande webbkonsult i Stockholm. Bygger snabba webbplatser i React och Next.js, optimerar prestanda och synlighet i Google och AI-sök — en utvecklare som gör hela jobbet, på distans i hela Sverige."
       ogLocale="sv_SE"
       structuredData={structuredData}
     >
@@ -242,14 +255,14 @@ export default function SeoKonsult() {
               Stockholm & distans i hela Sverige
             </p>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight text-gray-800 dark:text-white max-w-3xl">
-              Frilansande SEO-konsult — för Google och för AI-sök
+              Frilansande webbkonsult — från idé till snabb, synlig webbplats
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-gray-600 dark:text-gray-300 max-w-2xl">
-              Jag heter Adam Peleback och hjälper svenska företag att synas där
-              kunderna faktiskt letar: i Google, i AI Overviews och i svaren
-              från ChatGPT och Perplexity. Skillnaden mot de flesta konsulter?
-              Jag är utvecklare och rankar mina egna sajter — så jag säljer
-              metoder jag själv lever på, och implementerar åtgärderna själv.
+              Jag heter Adam Peleback och hjälper svenska företag med hela
+              webben: nya webbplatser, vidareutveckling, prestanda och
+              synlighet i Google och AI-sök. Skillnaden mot en byrå? Du pratar
+              direkt med personen som designar, bygger, testar och optimerar —
+              och som driver egna sajter med egna pengar på spel.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
@@ -262,27 +275,27 @@ export default function SeoKonsult() {
                 href="#bevis"
                 className="rounded-lg border border-red-300 px-6 py-3 font-semibold text-red-500 hover:bg-red-50 dark:hover:bg-gray-700 transition-colors duration-300"
               >
-                Se sajterna jag rankar ↓
+                Se ett urval av projekt ↓
               </a>
             </div>
           </div>
         </section>
 
-        {/* Proof: my own ranking sites */}
+        {/* Proof: selected projects */}
         <section id="bevis" className="bg-[#F1F1F1] dark:bg-gray-900">
           <div className="max-w-6xl mx-auto px-4 py-14 md:py-20">
             <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-red-500 mb-4 font-semibold">
               Beviset först
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
-              Jag rankar mina egna sajter — med egna pengar på spel
+              Sajter jag byggt — åt kunder och åt mig själv
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-gray-600 dark:text-gray-300 max-w-2xl">
-              De här sajterna driver jag själv, i konkurrensutsatta svenska
-              nischer. De byggs, optimeras och tjänar pengar med exakt de
-              metoder jag använder i kunduppdrag.
+              Kundprojekt som Svenska Esportförbundet och Adluelno, och egna
+              sajter i konkurrensutsatta svenska nischer. Samma hantverk i
+              båda: snabb kod, tydlig struktur och synlighet i sök.
             </p>
-            <ul className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <ul className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
               {proofSites.map((p) => (
                 <li key={p.title}>
                   <a
@@ -311,7 +324,7 @@ export default function SeoKonsult() {
               Vad jag gör
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
-              SEO från analys till färdig kod
+              Hela webben — från analys till färdig kod
             </h2>
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
               {offers.map((o) => (
@@ -382,9 +395,10 @@ export default function SeoKonsult() {
                 </span>
               </p>
               <p className="text-2xl md:text-3xl font-bold text-white">
-                9 500 kr
+                Fast pris per projekt
                 <span className="ml-2 text-sm font-normal text-gray-300">
-                  fast pris — SEO-genomlysning med åtgärdslista
+                  offert efter ett kort samtal — t.ex. teknisk genomlysning
+                  9 500 kr
                 </span>
               </p>
             </div>
@@ -429,11 +443,11 @@ export default function SeoKonsult() {
                 Säg hej
               </p>
               <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
-                Vill du synas bättre — i Google och i AI-svaren?
+                Har du ett webbprojekt — stort eller litet?
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-gray-600 dark:text-gray-300 max-w-md">
-                Berätta kort om er sajt så återkommer jag inom en dag med en
-                första bedömning — kostnadsfritt och utan förpliktelser.
+                Berätta kort om er sajt eller idé så återkommer jag inom en dag
+                med en första bedömning — kostnadsfritt och utan förpliktelser.
               </p>
               <div className="mt-8 space-y-2 text-sm">
                 <p>

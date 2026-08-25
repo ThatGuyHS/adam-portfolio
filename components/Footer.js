@@ -16,11 +16,11 @@ export default function Footer() {
 
           <div className="space-x-4 flex flex-row items-center">
             <Link
-              href="/seo-konsult"
+              href="/webbkonsult"
               lang="sv"
               className="text-base font-normal text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100"
             >
-              SEO-konsult
+              Webbkonsult
             </Link>
             <a
               href={userData.socialLinks.github}
