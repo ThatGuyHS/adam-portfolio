@@ -1,7 +1,9 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import userData from "@constants/data";
 import { normalizeImageSrc } from "@lib/projects";
+import { toProjectSlug } from "@lib/projectSlug";
 
 export default function Projects() {
   return (
@@ -37,7 +39,7 @@ const ProjectCard = ({ title, link, imgUrl, number, kind, stack, blurb }) => {
 
   return (
     <div className="w-full shadow-2xl bg-white dark:bg-gray-800">
-      <a href={link} className="block">
+      <Link href={`/project/${toProjectSlug(title)}`} className="block">
         <div className="relative overflow-hidden">
           <div className="h-72 object-cover relative">
             <Image
@@ -58,8 +60,8 @@ const ProjectCard = ({ title, link, imgUrl, number, kind, stack, blurb }) => {
             {number.length === 1 ? "0" + number : number}
           </span>
         </div>
-      </a>
-      {(kind || blurb || (stack && stack.length > 0)) && (
+      </Link>
+      {(kind || blurb || link || (stack && stack.length > 0)) && (
         <div className="p-6">
           {kind && (
             <p className="text-sm font-semibold uppercase tracking-wide text-red-500">
@@ -80,6 +82,18 @@ const ProjectCard = ({ title, link, imgUrl, number, kind, stack, blurb }) => {
                 </li>
               ))}
             </ul>
+          )}
+          {link && (
+            <p className="mt-4">
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-semibold text-red-500 hover:underline"
+              >
+                Visit live site ↗
+              </a>
+            </p>
           )}
         </div>
       )}

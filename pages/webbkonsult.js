@@ -3,7 +3,6 @@ import Link from "next/link";
 import ContainerBlock from "../components/ContainerBlock";
 import { SITE_URL as siteUrl, CONTACT_FORM_ENDPOINT } from "@constants/site";
 import userData from "@constants/data";
-import caseStudies from "@constants/caseStudies";
 import { toProjectSlug } from "@lib/projectSlug";
 
 // Landing page in Swedish targeting "frilansande webbkonsult" — the copy is
@@ -300,29 +299,27 @@ export default function Webbkonsult() {
             <ul className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
               {proofSites.map((p) => (
                 <li key={p.title}>
-                  <a
-                    href={p.link}
-                    target="_blank"
-                    rel="noreferrer"
+                  <Link
+                    href={`/project/${toProjectSlug(p.title)}`}
                     className="block h-full rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                   >
                     <h3 className="text-xl font-bold text-gray-800 dark:text-white">
-                      {p.title} ↗
+                      {p.title} →
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                       {p.blurb}
                     </p>
-                  </a>
-                  {caseStudies[toProjectSlug(p.title)] && (
-                    <p className="mt-3">
-                      <Link
-                        href={`/project/${toProjectSlug(p.title)}`}
-                        className="text-sm font-semibold text-red-500 hover:underline"
-                      >
-                        Läs caset →
-                      </Link>
-                    </p>
-                  )}
+                  </Link>
+                  <p className="mt-3">
+                    <a
+                      href={p.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-sm font-semibold text-red-500 hover:underline"
+                    >
+                      Besök live-sajten ↗
+                    </a>
+                  </p>
                 </li>
               ))}
             </ul>
