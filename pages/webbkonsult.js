@@ -61,7 +61,7 @@ const steps = [
 const faqs = [
   {
     q: "Vad kostar en frilansande webbkonsult?",
-    a: "Frilansande webbkonsulter i Sverige tar normalt 900–1 500 kr/h beroende på erfarenhet och inriktning. Mitt timpris är 1 200 kr/h exkl. moms. Avgränsade projekt offereras till fast pris — till exempel kostar en teknisk genomlysning med prioriterad åtgärdslista 9 500 kr exkl. moms. Löpande samarbeten prissätts per månad efter omfattning.",
+    a: "Frilansande webbkonsulter i Sverige tar normalt 900–1 500 kr/h beroende på erfarenhet och inriktning. Mitt timpris är 900 kr/h exkl. moms. Avgränsade projekt offereras till fast pris — till exempel kostar en teknisk genomlysning med prioriterad åtgärdslista 9 500 kr exkl. moms. Löpande samarbeten prissätts per månad efter omfattning.",
   },
   {
     q: "Vilka tekniker arbetar du med?",
@@ -389,7 +389,7 @@ export default function Webbkonsult() {
             </div>
             <div className="mt-8 rounded-2xl bg-gray-800 dark:bg-black p-6 md:p-8 flex flex-wrap items-baseline gap-x-10 gap-y-3">
               <p className="text-2xl md:text-3xl font-bold text-white">
-                1 200 kr/h
+                900 kr/h
                 <span className="ml-2 text-sm font-normal text-gray-300">
                   exkl. moms
                 </span>
