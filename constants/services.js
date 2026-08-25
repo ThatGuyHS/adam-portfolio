@@ -5,7 +5,7 @@ const services = [
   {
     title: "Web Development",
     shortDescription: "Creating modern, responsive web applications with cutting-edge technologies.",
-    fullDescription: `I specialize in creating modern, responsive, and user-friendly web applications. With over 5 years of experience, I build scalable solutions using cutting-edge technologies like React, Next.js, and Node.js.
+    fullDescription: `I specialize in creating modern, responsive, and user-friendly web applications. With 8+ years of experience, I build scalable solutions using cutting-edge technologies like React, Next.js, and Node.js.
 
 Key Features:
 • Modern, responsive design

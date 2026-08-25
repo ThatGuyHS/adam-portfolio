@@ -49,12 +49,12 @@ export default function FavouriteProjects() {
                 sizes="(max-width: 768px) 100vw, 1152px"
                 className="transform hover:scale-125 transition duration-2000 ease-out"
               />
-              <span className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-teal-500 rounded-md px-2">
+              <span className="absolute top-10 left-10 text-white font-bold text-xl bg-teal-700 rounded-md px-2">
                 RIVALS LEAGUE
               </span>
-              <h3 className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
+              <span aria-hidden="true" className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
                 01
-              </h3>
+              </span>
             </div>
           </a>
 
@@ -74,9 +74,9 @@ export default function FavouriteProjects() {
               <span className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
                 PXB MEDIA
               </span>
-              <h3 className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
+              <span aria-hidden="true" className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
                 02
-              </h3>
+              </span>
             </div>
           </a>
 
@@ -96,9 +96,9 @@ export default function FavouriteProjects() {
               <span className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
                 ADLUELNO
               </span>
-              <h3 className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
+              <span aria-hidden="true" className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
                 03
-              </h3>
+              </span>
             </div>
           </a>
           {/* Single card */}
@@ -119,9 +119,9 @@ export default function FavouriteProjects() {
               <span className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
                 Weekend Paris
               </span>
-              <h3 className="absolute bottom-10 left-10 dark:text-white text-black font-bold text-xl">
+              <span aria-hidden="true" className="absolute bottom-10 left-10 dark:text-white text-black font-bold text-xl">
                 04
-              </h3>
+              </span>
             </div>
           </a>
           {/* Single card */}
@@ -142,9 +142,9 @@ export default function FavouriteProjects() {
               <span className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
                 Cookbook Generator
               </span>
-              <h3 className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
+              <span aria-hidden="true" className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
                 05
-              </h3>
+              </span>
             </div>
           </a>
           {/* Single card */}
@@ -165,9 +165,9 @@ export default function FavouriteProjects() {
               <span className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
                 Portfolio
               </span>
-              <h3 className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
+              <span aria-hidden="true" className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
                 06
-              </h3>
+              </span>
             </div>
           </a>
           {/* Single card */}
@@ -187,9 +187,9 @@ export default function FavouriteProjects() {
               <span className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
                 AoE2 Sverige
               </span>
-              <h3 className="absolute bottom-10 left-10 dark:text-white text-black font-bold text-xl">
+              <span aria-hidden="true" className="absolute bottom-10 left-10 dark:text-white text-black font-bold text-xl">
                 07
-              </h3>
+              </span>
             </div>
           </a>
           {/* Single card */}
@@ -209,9 +209,9 @@ export default function FavouriteProjects() {
               <span className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-blue-500 rounded-md px-2">
                 PromptBibliotek
               </span>
-              <h3 className="absolute bottom-10 left-10 dark:text-white text-black font-bold text-xl">
+              <span aria-hidden="true" className="absolute bottom-10 left-10 dark:text-white text-black font-bold text-xl">
                 08
-              </h3>
+              </span>
             </div>
           </a>
         </div>

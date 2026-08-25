@@ -1,31 +1,8 @@
 import React from "react";
+import Image from "next/image";
 import userData from "@constants/data";
 
 export default function AboutMe() {
-  const handleResumeDownload = async () => {
-    try {
-      // Fetch the PDF file
-      const response = await fetch('/Adam_Peleback_Frontend_Engineer.pdf'); // Adjust the path to where your PDF is stored
-      const blob = await response.blob();
-      
-      // Create a URL for the blob
-      const url = window.URL.createObjectURL(blob);
-      
-      // Create a temporary anchor element
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = "resume.pdf"; // Name for the downloaded file
-      
-      // Append to document, click, and cleanup
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error('Error downloading resume:', error);
-      alert('Sorry, there was an error downloading the resume. Please try again later.');
-    }
-  };
   return (
     <section className="bg-white dark:bg-gray-800">
       <div className="max-w-6xl mx-auto h-48 bg-white dark:bg-gray-800">
@@ -39,7 +16,9 @@ export default function AboutMe() {
             className="leading-loose text-2xl md:text-4xl font-semibold  mx-4"
             style={{ lineHeight: "3rem" }}
           >
-            {userData.about.title}. Currently searching for new opportunities.
+            {userData.about.title}. Currently working as a system tester at
+            Decerno, and taking on freelance web development and SEO work on
+            the side.
           </p>
         </div>
       </div>
@@ -52,7 +31,7 @@ export default function AboutMe() {
                 Contact
               </h2>
               <p className="text-lg text-gray-500 mt-4 dark:text-gray-300">
-                For any sort help / enquiry, shoot a{" "}
+                For any sort of help / enquiry, shoot a{" "}
                 <a
                   href={`mailto:${userData.email}`}
                   className="text-gray-800 border-b-2 border-gray-800 dark:border-gray-300 font-bold dark:text-gray-300"
@@ -64,17 +43,19 @@ export default function AboutMe() {
             </div>
             <div className="mt-8">
               <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-200">
-                Job Opportunities
+                Freelance Work
               </h2>
               <p className="text-lg text-gray-500 mt-4 dark:text-gray-300">
-                I am looking for a full-time job opportunity in the field of
-                Software Development / QA Engineering. Please check out my{"      "}
-                <button
-                  onClick={handleResumeDownload}
+                I work as a system tester at Decerno and build web projects on
+                the side. I&apos;m available for freelance web development and
+                SEO work. Please check out my{"      "}
+                <a
+                  href="/Adam_Peleback_CV.pdf"
+                  download
                   className="text-gray-800 border-b-2 border-gray-800 dark:border-gray-300 font-bold dark:text-gray-300 hover:text-gray-600 dark:hover:text-gray-400 transition-colors cursor-pointer pr-2"
                 >
                   resume {"   "}
-                </button>
+                </a>
                 and reach out if you want to know more.
               </p>
             </div>
@@ -137,45 +118,60 @@ export default function AboutMe() {
               Tech Stack
             </h2>
             <div className="flex flex-row flex-wrap mt-8">
-              <img
-                src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"
+              <Image
+                src="/logos/javascript.png"
                 alt="JavaScript logo"
+                width={80}
+                height={80}
                 className="h-20 w-20 mx-4 my-4"
               />
-              <img
-                src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png"
+              <Image
+                src="/logos/typescript.png"
                 alt="TypeScript logo"
+                width={80}
+                height={80}
                 className="h-20 w-20 mx-4 my-4"
               />
-              <img
-                src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png"
+              <Image
+                src="/logos/html.png"
                 alt="HTML5 logo"
+                width={80}
+                height={80}
                 className="h-20 w-20 mx-4 my-4"
               />
-              <img
-                src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png"
+              <Image
+                src="/logos/css.png"
                 alt="CSS3 logo"
+                width={80}
+                height={80}
                 className="h-20 w-20 mx-4 my-4"
               />
-
-              <img
-                src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/vue/vue.png"
-                alt="Vue.js logo"
-                className="h-20 w-20 mx-4 my-4"
-              />
-              <img
-                src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png"
+              <Image
+                src="/logos/git.png"
                 alt="Git logo"
+                width={80}
+                height={80}
                 className="h-20 w-20 mx-4 my-4"
               />
-              <img
-                src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png"
+              <Image
+                src="/logos/react.png"
                 alt="React logo"
+                width={80}
+                height={80}
                 className="h-20 w-20 mx-4 my-4"
               />
-              <img
-                src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/firebase/firebase.png"
-                alt="Firebase logo"
+              <Image
+                src="/logos/nextjs.png"
+                alt="Next.js logo"
+                width={80}
+                height={80}
+                className="h-20 w-20 mx-4 my-4"
+              />
+              <Image
+                src="/logos/tailwind.png"
+                alt="Tailwind CSS logo"
+                width={80}
+                height={80}
                 className="h-20 w-20 mx-4 my-4"
               />
             </div>

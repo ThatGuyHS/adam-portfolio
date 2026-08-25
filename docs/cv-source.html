@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Adam Peleback — CV</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  :root {
+    --ink: #14181d;
+    --body: #3d444d;
+    --muted: #7b838d;
+    --faint: #a8aeb6;
+    --accent: #0e7a5a;
+    --accent-soft: #e7f2ee;
+    --rule: #e4e6e9;
+    --paper: #ffffff;
+  }
+  body {
+    font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: var(--body);
+    background: var(--paper);
+    font-size: 9.4pt;
+    line-height: 1.5;
+  }
+  .sheet { padding: 15mm 16mm 14mm; }
+
+  /* ---------- Header ---------- */
+  header { margin-bottom: 6mm; }
+  .name {
+    font-size: 27pt;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    line-height: 1.05;
+  }
+  .name .dot { color: var(--accent); }
+  .role {
+    margin-top: 2.2mm;
+    font-size: 10.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .contact {
+    margin-top: 4.5mm;
+    padding-top: 3.2mm;
+    border-top: 1.4pt solid var(--ink);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2mm 7mm;
+    font-size: 8.6pt;
+    color: var(--muted);
+  }
+  .contact span b { color: var(--ink); font-weight: 600; }
+  .contact a { color: var(--ink); text-decoration: none; font-weight: 600; }
+
+  /* ---------- Summary + skills band ---------- */
+  .intro {
+    display: grid;
+    grid-template-columns: 1.45fr 1fr;
+    gap: 10mm;
+    margin-bottom: 5mm;
+  }
+  .summary { font-size: 9.8pt; line-height: 1.62; }
+  .summary strong { color: var(--ink); font-weight: 600; }
+  .skillbox h3 {
+    font-size: 7.8pt;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 1.6mm;
+  }
+  .skillgroup { margin-bottom: 3.4mm; }
+  .chips { display: flex; flex-wrap: wrap; gap: 1.4mm; }
+  .chip {
+    font-size: 8pt;
+    font-weight: 500;
+    color: var(--ink);
+    background: var(--accent-soft);
+    border-radius: 2pt;
+    padding: 0.7mm 2.2mm;
+    white-space: nowrap;
+  }
+  .chip.plain { background: #f1f2f4; color: var(--body); }
+
+  /* ---------- Sections ---------- */
+  section { margin-bottom: 7mm; }
+  h2 {
+    font-size: 8.4pt;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 3mm;
+    margin-bottom: 3.5mm;
+  }
+  h2::after { content: ""; flex: 1; height: 0.5pt; background: var(--rule); }
+
+  /* ---------- Experience ---------- */
+  .job {
+    display: grid;
+    grid-template-columns: 30mm 1fr;
+    gap: 6mm;
+    padding-bottom: 3.6mm;
+    margin-bottom: 3.6mm;
+    border-bottom: 0.5pt solid var(--rule);
+    break-inside: avoid;
+  }
+  .job:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .when {
+    font-size: 8.2pt;
+    font-weight: 600;
+    color: var(--muted);
+    padding-top: 0.6mm;
+    line-height: 1.4;
+  }
+  .when .now { color: var(--accent); }
+  .job h3 { font-size: 10.4pt; font-weight: 700; color: var(--ink); line-height: 1.25; }
+  .job .co { font-size: 9pt; font-weight: 500; color: var(--accent); margin-bottom: 1.2mm; }
+  .job p { font-size: 9.2pt; }
+  .job ul { margin: 1mm 0 0 4mm; }
+  .job li { font-size: 9.2pt; margin-bottom: 0.8mm; }
+  .earlier {
+    display: grid;
+    grid-template-columns: 30mm 1fr;
+    gap: 6mm;
+    break-inside: avoid;
+  }
+  .earlier-items { font-size: 8.9pt; }
+  .earlier-items b { color: var(--ink); font-weight: 600; }
+  .earlier-items .sep { color: var(--faint); margin: 0 1.4mm; }
+
+  /* ---------- Projects ---------- */
+  .projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4mm 7mm;
+  }
+  .proj {
+    break-inside: avoid;
+    border: 0.5pt solid var(--rule);
+    border-radius: 3pt;
+    padding: 3.2mm 3.6mm;
+  }
+  .proj h3 { font-size: 9.4pt; font-weight: 700; color: var(--ink); display: flex; justify-content: space-between; align-items: baseline; }
+  .proj h3 .url { font-size: 7.4pt; font-weight: 500; color: var(--muted); }
+  .proj p { font-size: 8.5pt; line-height: 1.5; margin: 1mm 0 1.6mm; }
+  .proj .stack { font-size: 7.4pt; font-weight: 600; color: var(--accent); letter-spacing: 0.04em; }
+
+  /* ---------- Footer sections ---------- */
+  .twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 10mm; }
+  .twocol p { font-size: 9pt; }
+  .twocol b { color: var(--ink); font-weight: 600; }
+
+  .pagebreak { break-before: page; }
+  .sheet2 { padding-top: 15mm; }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+  <header>
+    <div class="name">Adam Peleback<span class="dot">.</span></div>
+    <div class="role">Frontend Developer &amp; QA Engineer</div>
+    <div class="contact">
+      <span><b>Stockholm, Sweden</b></span>
+      <span><a href="mailto:adampeleback@gmail.com">adampeleback@gmail.com</a></span>
+      <span><a href="https://www.adampeleback.com">adampeleback.com</a></span>
+      <span><a href="https://github.com/ThatGuyHS">github.com/ThatGuyHS</a></span>
+      <span><a href="https://www.linkedin.com/in/adam-p-507593113/">linkedin.com/in/adam-p-507593113</a></span>
+    </div>
+  </header>
+
+  <div class="intro">
+    <div class="summary">
+      Software developer with <strong>8+ years in the esports and tech industry</strong>, spanning the
+      full arc from tournament operations to QA engineering to frontend development.
+      I build <strong>fast, well-tested web applications</strong> with TypeScript, React and Next.js —
+      and my QA background means I ship them with quality baked in, not bolted on.
+      Alongside employment I run a portfolio of <strong>15+ live products</strong>: SaaS tools,
+      a full-stack esports tournament platform, and SEO-driven content sites.
+    </div>
+    <div class="skillbox">
+      <div class="skillgroup">
+        <h3>Frontend</h3>
+        <div class="chips">
+          <span class="chip">TypeScript</span><span class="chip">React</span><span class="chip">Next.js</span>
+          <span class="chip">Angular</span><span class="chip">Tailwind CSS</span><span class="chip">Three.js</span>
+        </div>
+      </div>
+      <div class="skillgroup">
+        <h3>Backend &amp; Tools</h3>
+        <div class="chips">
+          <span class="chip plain">Node.js</span><span class="chip plain">Nest.js</span><span class="chip plain">Express</span>
+          <span class="chip plain">Supabase</span><span class="chip plain">Stripe</span><span class="chip plain">Strapi</span><span class="chip plain">Git</span>
+        </div>
+      </div>
+      <div class="skillgroup">
+        <h3>Quality Assurance</h3>
+        <div class="chips">
+          <span class="chip plain">Test automation</span><span class="chip plain">Manual testing</span><span class="chip plain">Test strategy</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div class="when">Sep 2025 — <span class="now">Present</span></div>
+      <div>
+        <h3>System Tester</h3>
+        <div class="co">Decerno AB · Stockholm</div>
+        <p>System testing and software testing of business-critical applications.</p>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">Mar 2025 — Aug 2025</div>
+      <div>
+        <h3>Freelance Web Developer</h3>
+        <div class="co">Svenska E-sportförbundet</div>
+        <p>Built the official website of the Swedish Esports Federation with TypeScript and React,
+           including a headless CMS setup so the federation can publish news and content themselves.</p>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">Apr 2024 — Apr 2025</div>
+      <div>
+        <h3>Freelance Web Developer</h3>
+        <div class="co">Self-employed</div>
+        <ul>
+          <li>Developed new solutions and internal tools with Nest.js at Clutch Group.</li>
+          <li>Created the brand website for esports production company PXB Media in Next.js.</li>
+          <li>Delivered the first iteration of the Swedish Esports Federation site, including a custom CMS.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">Feb 2024 — Apr 2024</div>
+      <div>
+        <h3>Frontend Engineer</h3>
+        <div class="co">Zaver · Fintech</div>
+        <p>Frontend development on Zaver's payment products using TypeScript and Angular.</p>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">Oct 2022 — Feb 2024</div>
+      <div>
+        <h3>Frontend Developer</h3>
+        <div class="co">G-Loot (Stryda)</div>
+        <p>Frontend development of the Stryda esports platform (now part of Challengermode) —
+           shipping user-facing features in TypeScript, React and Next.js.</p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<div class="sheet sheet2 pagebreak">
+  <section>
+    <h2>Experience · Continued</h2>
+
+    <div class="job">
+      <div class="when">May 2021 — Nov 2022</div>
+      <div>
+        <h3>QA Developer</h3>
+        <div class="co">G-Loot</div>
+        <p>Built test automation, performed manual testing of crucial user flows, and advised
+           development teams on testing strategy across the platform.</p>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">May 2018 — May 2021</div>
+      <div>
+        <h3>QA Tester &amp; Tournament Administrator</h3>
+        <div class="co">G-Loot Esports</div>
+        <p>QA testing and tournament administration for the Global Loot League — supported the tech
+           team while running live competitive operations.</p>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">Aug 2017 — May 2018</div>
+      <div>
+        <h3>Tournament Administrator</h3>
+        <div class="co">G-Loot</div>
+        <p>Responsible for the PUBG tournaments on the Global Loot League platform.</p>
+      </div>
+    </div>
+
+    <div class="earlier">
+      <div class="when">2017 — 2018</div>
+      <div class="earlier-items">
+        <b>Director of Social Media &amp; Content</b> — Crimson Esports<span class="sep">·</span>
+        <b>Esports Copywriter</b> — Znipe Esports
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Selected Projects</h2>
+    <div class="projects">
+      <div class="proj">
+        <h3>Rivals League <span class="url">rivalsleague.gg</span></h3>
+        <p>Full-stack esports tournament platform: React front end, Express API on Supabase, Stripe
+           payments, a Discord bot for match operations, and a Strapi CMS.</p>
+        <div class="stack">React · TypeScript · Express · Supabase · Stripe · Discord.js</div>
+      </div>
+      <div class="proj">
+        <h3>Svenska Esportförbundet <span class="url">svenskesport.se</span></h3>
+        <p>Official site of the Swedish Esports Federation with a headless Strapi CMS for
+           self-service publishing.</p>
+        <div class="stack">Next.js · TypeScript · Strapi · Resend</div>
+      </div>
+      <div class="proj">
+        <h3>Cookbook Generator <span class="url">cookbookgenerator.com</span></h3>
+        <p>Turns recipes into a print-ready cookbook — in-browser PDF generation, Supabase storage
+           and Stripe checkout.</p>
+        <div class="stack">React · TypeScript · Supabase · Stripe</div>
+      </div>
+      <div class="proj">
+        <h3>Cryptoskatt <span class="url">cryptoskatt.se</span></h3>
+        <p>Fintech web app helping Swedish crypto traders sort out their taxes.</p>
+        <div class="stack">Next.js · TypeScript · Supabase · Stripe</div>
+      </div>
+      <div class="proj">
+        <h3>Create Discord Bot <span class="url">creatediscordbot.com</span></h3>
+        <p>Productized service selling custom Discord bots, with Stripe checkout and transactional
+           email through Resend.</p>
+        <div class="stack">Next.js · TypeScript · Stripe · Resend</div>
+      </div>
+      <div class="proj">
+        <h3>3D Portfolio Village <span class="url">adampeleback.com</span></h3>
+        <p>A walkable 3D village version of this CV, built with React Three Fiber — explore my
+           experience as a game world.</p>
+        <div class="stack">Next.js · Three.js · React Three Fiber</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Community &amp; Leadership</h2>
+    <div class="twocol">
+      <p><b>Board Member — Phoenix Blue</b> (2017 – present)<br>
+         Non-profit esports organization. Helped grow the organization and co-created the
+         Phoenix Blue Event Series.</p>
+      <p><b>Independent product portfolio</b><br>
+         Designed, built and operate 15+ live sites and apps end to end — from SEO-driven Swedish
+         comparison guides to AI-powered tools with paying customers.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

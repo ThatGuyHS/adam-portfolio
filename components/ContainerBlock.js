@@ -11,11 +11,12 @@ export default function ContainerBlock({ children, ...customMeta }) {
 
   const meta = {
     title: "Adam Peleback - Frontend Developer and Esports Organizer",
-    description: `Frontend Developer, Esports Tournament Organizer, and Writer. I've been building web applications for over 5 years and I'm passionate about building products that bring value to people around the globe.`,
+    description: `Frontend Developer, Esports Tournament Organizer, and Writer. I've been building web applications for 8+ years and I'm passionate about building products that bring value to people around the globe.`,
     image: "/og-image.png",
     imageAlt: "Adam Peleback — Frontend Developer, QA Engineer, Esports Organizer",
     type: "website",
-    robots: "follow, index",
+    robots: "index, follow",
+    ogLocale: "en_US",
     ...customMeta,
   };
   // The default card is rendered at the recommended 1200x630; pages that pass
@@ -67,10 +68,13 @@ export default function ContainerBlock({ children, ...customMeta }) {
       ? meta.structuredData
       : [meta.structuredData]
     : [];
+  // Pages that provide their own schema describe the URL themselves — only
+  // fall back to the generic WebPage node when none is given.
   const structuredDataItems = [
     personStructuredData,
-    pageStructuredData,
-    ...customStructuredData,
+    ...(customStructuredData.length > 0
+      ? customStructuredData
+      : [pageStructuredData]),
   ];
 
   return (
@@ -80,7 +84,6 @@ export default function ContainerBlock({ children, ...customMeta }) {
         <meta name="robots" content={meta.robots} />
         <meta name="author" content={userData.name} />
         <meta content={meta.description} name="description" />
-        {meta.keywords && <meta name="keywords" content={meta.keywords} />}
         <meta
           property="og:url"
           content={canonicalUrl}
@@ -88,7 +91,7 @@ export default function ContainerBlock({ children, ...customMeta }) {
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content="Adam Peleback" />
-        <meta property="og:locale" content="en_US" />
+        <meta property="og:locale" content={meta.ogLocale} />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={ogImageUrl} />
@@ -117,11 +120,11 @@ export default function ContainerBlock({ children, ...customMeta }) {
           />
         ))}
       </Head>
-      <main className="dark:bg-gray-800 w-full">
+      <div className="dark:bg-gray-800 w-full">
         <Navbar />
-        <div>{children}</div>
+        <main>{children}</main>
         <Footer />
-      </main>
+      </div>
     </div>
   );
 }

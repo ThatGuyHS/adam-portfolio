@@ -4,7 +4,6 @@ const userData = {
   designation: "Frontend Developer, Esports Tournament Organizer",
   avatarUrl: "/adam.png",
   email: "adampeleback@gmail.com",
-  phone: "-",
   address: "Stockholm, Sweden",
   projects: [
     {
@@ -225,25 +224,25 @@ const userData = {
     {
       title: "Freelance Web Developer",
       company: "Svenska E-sportförbundet",
-      year: "mars 2025–aug. 2025",
+      year: "mar. 2025–aug. 2025",
       desc: "Freelance web development using Typescript and React.js.",
     },
     {
       title: "Freelance Web Developer",
       company: "Self-employed",
-      year: "april 2024–april 2025",
+      year: "apr. 2024–apr. 2025",
       desc: "Developed new solutions and internal tools using Nest.js at Clutch Group. Created the PXB Media brand website using Next.js. Developed the first iteration of the Swedish Esports Association website, including a custom CMS solution.",
     },
     {
       title: "Frontend Engineer",
       company: "Zaver",
-      year: "feb. 2024–april 2024",
+      year: "feb. 2024–apr. 2024",
       desc: "Skills: Typescript, Angular",
     },
     {
       title: "Frontend Developer",
       company: "G-Loot",
-      year: "oct. 2022–now",
+      year: "oct. 2022–feb. 2024",
       desc: "Skills: Typescript, Next.JS, JavaScript, React.js",
     },
     {

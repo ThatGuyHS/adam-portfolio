@@ -14,7 +14,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className="max-w-6xl  mx-auto px-4 py-10 md:py-20">
+    <nav className="max-w-6xl  mx-auto px-4 py-10 md:py-20">
       <div className="flex  md:flex-row justify-between items-center">
         <div className="flex flex-col">
           <Link href="/">
@@ -32,7 +32,7 @@ export default function Navbar() {
             href="/about"
             className={`text-base  ${
               router.asPath === "/about"
-                ? "text-gray-800 font-bold dark:text-gray-400"
+                ? "text-gray-800 font-bold dark:text-gray-100"
                 : "text-gray-600 dark:text-gray-300 font-normal "
             }`}
           >
@@ -57,7 +57,7 @@ export default function Navbar() {
             href="/services"
             className={`text-base  ${
               router.asPath === "/services"
-                ? "text-gray-800 font-bold dark:text-gray-400"
+                ? "text-gray-800 font-bold dark:text-gray-100"
                 : "text-gray-600 dark:text-gray-300 font-normal "
             }`}
           >
@@ -82,7 +82,7 @@ export default function Navbar() {
             href="/projects"
             className={`text-base  ${
               router.asPath === "/projects"
-                ? "text-gray-800 font-bold dark:text-gray-400"
+                ? "text-gray-800 font-bold dark:text-gray-100"
                 : "text-gray-600 dark:text-gray-300 font-normal "
             }`}
           >
@@ -107,7 +107,7 @@ export default function Navbar() {
             href="/experience"
             className={`text-base  ${
               router.asPath === "/experience"
-                ? "text-gray-800 font-bold dark:text-gray-400"
+                ? "text-gray-800 font-bold dark:text-gray-100"
                 : "text-gray-600 dark:text-gray-300 font-normal "
             }`}
           >
@@ -132,7 +132,7 @@ export default function Navbar() {
             href="/contact"
             className={`text-base  ${
               router.asPath === "/contact"
-                ? "text-gray-800 font-bold dark:text-gray-400"
+                ? "text-gray-800 font-bold dark:text-gray-100"
                 : "text-gray-600 dark:text-gray-300 font-normal "
             }`}
           >
@@ -157,7 +157,7 @@ export default function Navbar() {
             href="/3d"
             className={`text-base ${
               router.asPath === "/3d"
-                ? "text-gray-800 font-bold dark:text-gray-400"
+                ? "text-gray-800 font-bold dark:text-gray-100"
                 : "text-gray-600 dark:text-gray-300 font-normal "
             }`}
           >
@@ -166,7 +166,11 @@ export default function Navbar() {
         </div>
 
         <div className="space-x-4 flex flex-row items-center">
-          <a href={userData.socialLinks.instagram} x>
+          <a
+            href={userData.socialLinks.instagram}
+            aria-label="Adam Peleback on Instagram"
+            className="inline-flex items-center justify-center p-3 -m-2"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -181,7 +185,8 @@ export default function Navbar() {
 
           <a
             href={userData.socialLinks.linkedin}
-            className="text-base font-normal text-gray-600 dark:text-gray-300"
+            aria-label="Adam Peleback on LinkedIn"
+            className="inline-flex items-center justify-center p-3 -m-2 text-base font-normal text-gray-600 dark:text-gray-300"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -232,42 +237,66 @@ export default function Navbar() {
         <div className="flex flex-wrap gap-4">
           <Link
             href="/about"
-            className="text-base font-normal text-gray-600 dark:text-gray-300"
+            className={`text-base ${
+              router.asPath === "/about"
+                ? "text-gray-800 font-bold dark:text-gray-100"
+                : "text-gray-600 dark:text-gray-300 font-normal "
+            }`}
           >
             About
           </Link>
           <Link
             href="/services"
-            className="text-base font-normal text-gray-600 dark:text-gray-300"
+            className={`text-base ${
+              router.asPath === "/services"
+                ? "text-gray-800 font-bold dark:text-gray-100"
+                : "text-gray-600 dark:text-gray-300 font-normal "
+            }`}
           >
             Services
           </Link>
           <Link
             href="/projects"
-            className="text-base font-normal text-gray-600 dark:text-gray-300"
+            className={`text-base ${
+              router.asPath === "/projects"
+                ? "text-gray-800 font-bold dark:text-gray-100"
+                : "text-gray-600 dark:text-gray-300 font-normal "
+            }`}
           >
             Projects
           </Link>
           <Link
             href="/experience"
-            className="text-base font-normal text-gray-600 dark:text-gray-300"
+            className={`text-base ${
+              router.asPath === "/experience"
+                ? "text-gray-800 font-bold dark:text-gray-100"
+                : "text-gray-600 dark:text-gray-300 font-normal "
+            }`}
           >
             Experience
           </Link>
           <Link
             href="/contact"
-            className="text-base font-normal text-gray-600 dark:text-gray-300"
+            className={`text-base ${
+              router.asPath === "/contact"
+                ? "text-gray-800 font-bold dark:text-gray-100"
+                : "text-gray-600 dark:text-gray-300 font-normal "
+            }`}
           >
             Contact
           </Link>
           <Link
             href="/3d"
-            className="text-base font-normal text-gray-600 dark:text-gray-300"
+            className={`text-base ${
+              router.asPath === "/3d"
+                ? "text-gray-800 font-bold dark:text-gray-100"
+                : "text-gray-600 dark:text-gray-300 font-normal "
+            }`}
           >
             <span aria-hidden="true">🏘</span> 3D Village
           </Link>
         </div>
       </div>
-    </div>
+    </nav>
   );
 }

@@ -52,9 +52,12 @@ const ProjectCard = ({ title, link, imgUrl, number, kind, stack, blurb }) => {
           <span className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
             {title}
           </span>
-          <h2 className="absolute bottom-10 left-10 text-gray-50 font-bold text-xl">
+          <span
+            aria-hidden="true"
+            className="absolute bottom-10 left-10 text-gray-50 font-bold text-xl"
+          >
             {number.length === 1 ? "0" + number : number}
-          </h2>
+          </span>
         </div>
       </a>
       {(kind || blurb || (stack && stack.length > 0)) && (
