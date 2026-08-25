@@ -117,7 +117,11 @@ export default function HUD({ onExit, touch }) {
       )}
 
       {showPrompt && !touch && (
-        <div data-ui className="pointer-events-none absolute inset-x-0 bottom-8 z-20 flex justify-center px-4">
+        <div
+          data-ui
+          aria-live="polite"
+          className="pointer-events-none absolute inset-x-0 bottom-8 z-20 flex justify-center px-4"
+        >
           <div className="rounded-full border border-amber-200/30 bg-[#1c1712]/80 px-5 py-2.5 text-sm text-amber-50 backdrop-blur">
             <kbd className="mr-2 rounded border border-amber-200/40 px-1.5 py-0.5 text-xs">
               E

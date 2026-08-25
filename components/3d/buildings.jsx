@@ -21,6 +21,9 @@ export function Piece({ geometry, color, options, ...props }) {
     <mesh
       geometry={geometry}
       material={mat(color, options)}
+      // Geometry and material come from the shared caches; R3F must never
+      // dispose them when a conditionally-rendered piece unmounts.
+      dispose={null}
       castShadow
       receiveShadow
       {...props}
@@ -203,10 +206,13 @@ export function Lighthouse() {
       ))}
       <Piece geometry={cylGeo(1.55, 1.55, 0.22, 10)} color={PALETTE.stoneDark} position={[0, 8.9, 0]} />
       <Piece geometry={cylGeo(1.5, 1.5, 0.5, 10)} color={PALETTE.stoneDark} position={[0, 9.2, 0]} options={{ opacity: 0.9 }} />
+      {/* The lamp's colour/emissive pair is unique to the lighthouse, so its
+          per-frame pulse never fights another mesh over a shared material. */}
       <mesh
         ref={lamp}
         geometry={cylGeo(1, 1, 1.5, 10)}
         material={mat("#fff0c4", { emissive: "#ffcf6b", emissiveIntensity: 1.6 })}
+        dispose={null}
         position={[0, 10.1, 0]}
       />
       <Piece geometry={coneGeo(1.5, 1.3, 10)} color={PALETTE.roofRed} position={[0, 11.5, 0]} />
@@ -216,6 +222,7 @@ export function Lighthouse() {
       <group ref={beam} position={[0, 10.1, 0]}>
         <mesh
           geometry={coneGeo(2.6, 16, 4)}
+          dispose={null}
           material={mat("#ffd68a", {
             transparent: true,
             opacity: 0.13,
@@ -293,21 +300,27 @@ export function Barrel(props) {
   );
 }
 
-export function Lantern({ position }) {
-  const glow = useRef();
+const LANTERN_GLOW = { emissive: PALETTE.lamp, emissiveIntensity: 1.1 };
+
+/** Every lantern shares one cached material, so one driver — mounted once in
+ *  Village.jsx — flickers them all together. Per-lantern useFrames would just
+ *  fight over the same material and waste a callback each. */
+export function LanternGlowDriver() {
   useFrame((state) => {
-    if (glow.current) {
-      glow.current.material.emissiveIntensity =
-        1.1 + Math.sin(state.clock.elapsedTime * 3.1 + position[0]) * 0.18;
-    }
+    mat("#ffe1a0", LANTERN_GLOW).emissiveIntensity =
+      1.1 + Math.sin(state.clock.elapsedTime * 3.1) * 0.18;
   });
+  return null;
+}
+
+export function Lantern({ position }) {
   return (
     <group position={position}>
       <Piece geometry={boxGeo(0.34, 0.08, 0.34)} color={PALETTE.woodDark} position={[0, 0.26, 0]} castShadow={false} />
       <mesh
-        ref={glow}
         geometry={boxGeo(0.24, 0.34, 0.24)}
-        material={mat("#ffe1a0", { emissive: PALETTE.lamp, emissiveIntensity: 1.1 })}
+        material={mat("#ffe1a0", LANTERN_GLOW)}
+        dispose={null}
       />
       <Piece geometry={boxGeo(0.34, 0.08, 0.34)} color={PALETTE.woodDark} position={[0, -0.2, 0]} castShadow={false} />
     </group>

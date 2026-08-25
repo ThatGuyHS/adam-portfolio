@@ -1,4 +1,4 @@
-import { useMemo, useRef } from "react";
+import { useMemo, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
@@ -8,6 +8,7 @@ import * as THREE from "three";
 const POOL = 260;
 const BURST = 65;
 const GRAVITY = 5.5;
+const SHOW_LENGTH = 14; // seconds of new bursts before the show winds down
 const COLORS = ["#ffd27a", "#ff8f6b", "#8fd4ec", "#e2a3ff", "#b9f2a1"];
 const ORIGINS = [
   [22, 14, 2],
@@ -20,6 +21,7 @@ export default function Fireworks({ active }) {
   const timer = useRef(0);
   const nextSlot = useRef(0);
   const elapsed = useRef(0);
+  const [done, setDone] = useState(false);
 
   const state = useMemo(() => {
     const positions = new Float32Array(POOL * 3).fill(-999);
@@ -64,12 +66,12 @@ export default function Fireworks({ active }) {
   };
 
   useFrame((_, delta) => {
-    if (!active) return;
+    if (!active || done) return;
     const dt = Math.min(delta, 0.05);
     elapsed.current += dt;
     timer.current -= dt;
 
-    if (timer.current <= 0 && elapsed.current < 14) {
+    if (timer.current <= 0 && elapsed.current < SHOW_LENGTH) {
       timer.current = 1 + Math.random();
       launch();
     }
@@ -86,9 +88,11 @@ export default function Fireworks({ active }) {
       if (state.life[i] <= 0) state.positions[i * 3 + 1] = -999;
     }
     if (anyAlive) state.geometry.attributes.position.needsUpdate = true;
+    // Show's over and the last spark is out: stop simulating and drawing.
+    else if (elapsed.current >= SHOW_LENGTH) setDone(true);
   });
 
-  if (!active) return null;
+  if (!active || done) return null;
 
   return (
     <points ref={points} geometry={state.geometry} frustumCulled={false}>

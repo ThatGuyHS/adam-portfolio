@@ -95,12 +95,15 @@ export function Bucket({ geometry, color, matrices, castShadow = true }) {
   }, [matrices]);
 
   return (
+    // dispose={null}: geometry and material are shared cache entries, and a
+    // quality change rebuilds the buckets around them. The bounding sphere is
+    // computed above, so frustum culling is left on.
     <instancedMesh
       ref={ref}
       args={[geometry, material, matrices.length]}
+      dispose={null}
       castShadow={castShadow}
       receiveShadow
-      frustumCulled={false}
     />
   );
 }

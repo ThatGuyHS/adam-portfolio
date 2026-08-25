@@ -49,9 +49,12 @@ function Stones({ lit }) {
   }, [positions]);
 
   return (
+    // dispose={null}: geometry and both lit/unlit materials are shared cache
+    // entries, and toggling `lit` rebuilds the mesh around them.
     <instancedMesh
       ref={ref}
       args={[geometry, material, positions.length]}
+      dispose={null}
       receiveShadow
       frustumCulled={false}
     />
@@ -82,10 +85,13 @@ function Beacon({ stop }) {
       ref={group}
       position={[stop.position[0], groundY(...stop.position), stop.position[1]]}
     >
-      <mesh geometry={cylGeo(1.1, 1.5, 9, 6)} material={glow} position={[0, 4.5, 0]} />
+      {/* dispose={null}: cached geometry/material must survive the beacon
+          unmounting when the tour moves on or ends. */}
+      <mesh geometry={cylGeo(1.1, 1.5, 9, 6)} material={glow} dispose={null} position={[0, 4.5, 0]} />
       <mesh
         geometry={cylGeo(1.7, 1.7, 0.05, 22)}
         material={glow}
+        dispose={null}
         position={[0, 0.1, 0]}
       />
     </group>

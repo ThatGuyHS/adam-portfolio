@@ -1,4 +1,11 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import World from "@components/3d/World";
 import HUD from "@components/3d/ui/HUD";
 import OverlayRouter from "@components/3d/ui/Panels";
@@ -27,8 +34,13 @@ export default function VillageScene({ onExit }) {
   const muted = useVillage((state) => state.muted);
   const flying = useVillage((state) => state.flying);
 
-  const environment = useMemo(() => {
+  // Before the first frame runs, not during render — a render-phase call
+  // would double-fire under StrictMode and belongs in an effect anyway.
+  useLayoutEffect(() => {
     resetPlayer();
+  }, []);
+
+  const environment = useMemo(() => {
     return {
       quality: detectQuality(),
       touch:
@@ -101,6 +113,10 @@ export default function VillageScene({ onExit }) {
   }, [muted]);
   useEffect(() => () => ambience.current?.dispose(), []);
 
+  // Stable reference: World is memoised, so a changing onReady would drag the
+  // whole Canvas tree through reconciliation on every overlay/HUD change.
+  const handleReady = useCallback(() => setReady(true), []);
+
   useEffect(() => {
     const onKeyDown = (event) => {
       if (event.key === "Escape" && !useVillage.getState().overlay) onExit();
@@ -114,7 +130,7 @@ export default function VillageScene({ onExit }) {
       ref={container}
       className="fixed inset-0 z-50 touch-none select-none overflow-hidden bg-[#3f6470]"
     >
-      <World quality={environment.quality} onReady={() => setReady(true)} />
+      <World quality={environment.quality} onReady={handleReady} />
 
       {ready && (
         <>

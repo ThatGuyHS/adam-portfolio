@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { fireInteract, input } from "@lib/3d/input";
 
 const RADIUS = 46;
@@ -9,19 +9,24 @@ export default function MobileControls({ prompt }) {
   const knob = useRef();
   const pointerId = useRef(null);
 
+  // The component unmounts whenever a panel opens; a drag in progress would
+  // otherwise leave the joystick deflected and the player walking on their own.
+  useEffect(
+    () => () => {
+      input.joystick.x = 0;
+      input.joystick.y = 0;
+    },
+    []
+  );
+
   const setKnob = (dx, dy) => {
     if (knob.current) {
       knob.current.style.transform = `translate(${dx}px, ${dy}px)`;
     }
   };
 
-  const onPointerDown = (event) => {
-    pointerId.current = event.pointerId;
-    event.currentTarget.setPointerCapture(event.pointerId);
-  };
-
-  const onPointerMove = (event) => {
-    if (pointerId.current !== event.pointerId || !base.current) return;
+  const applyPointer = (event) => {
+    if (!base.current) return;
     const rect = base.current.getBoundingClientRect();
     let dx = event.clientX - (rect.left + rect.width / 2);
     let dy = event.clientY - (rect.top + rect.height / 2);
@@ -33,6 +38,17 @@ export default function MobileControls({ prompt }) {
     setKnob(dx, dy);
     input.joystick.x = dx / RADIUS;
     input.joystick.y = -dy / RADIUS;
+  };
+
+  const onPointerDown = (event) => {
+    pointerId.current = event.pointerId;
+    event.currentTarget.setPointerCapture(event.pointerId);
+    applyPointer(event); // respond from the first touch, not the first move
+  };
+
+  const onPointerMove = (event) => {
+    if (pointerId.current !== event.pointerId) return;
+    applyPointer(event);
   };
 
   const release = (event) => {

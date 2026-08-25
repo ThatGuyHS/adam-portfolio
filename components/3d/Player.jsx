@@ -21,6 +21,7 @@ export default function Player() {
   const smoothed = useRef(new THREE.Vector3());
   const initialised = useRef(false);
   const wasFlying = useRef(false);
+  const wasOnBridge = useRef(false);
 
   useFrame((_, delta) => {
     const dt = Math.min(delta, 0.05);
@@ -85,12 +86,12 @@ export default function Player() {
       dt
     );
 
-    if (
+    // Fire once on stepping onto the bridge, not every frame spent on it.
+    const onBridge =
       Math.abs(player.position.x - BRIDGE.x) < BRIDGE.halfWidth &&
-      Math.abs(player.position.z) < 1.6
-    ) {
-      store.markBridgeCrossed();
-    }
+      Math.abs(player.position.z) < 1.6;
+    if (onBridge && !wasOnBridge.current) store.markBridgeCrossed();
+    wasOnBridge.current = onBridge;
 
     // --- pose ---------------------------------------------------------
     if (root.current) {

@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { INTERACTABLES } from "@constants/worldData";
@@ -47,7 +47,7 @@ export function ProximitySensor() {
 export function SelectionRing() {
   const nearest = useVillage((state) => state.nearest);
   const ring = useRef();
-  const geometry = useRef(new THREE.RingGeometry(1.05, 1.35, 28));
+  const geometry = useMemo(() => new THREE.RingGeometry(1.05, 1.35, 28), []);
 
   useFrame((state) => {
     if (!ring.current || !nearest) return;
@@ -59,9 +59,12 @@ export function SelectionRing() {
   const [x, z] = nearest.position;
 
   return (
+    // dispose={null}: the geometry has to outlive the mesh (it unmounts every
+    // time you step out of range) and the material is a shared cache entry.
     <mesh
       ref={ring}
-      geometry={geometry.current}
+      dispose={null}
+      geometry={geometry}
       material={mat("#ffd27a", {
         transparent: true,
         opacity: 0.7,

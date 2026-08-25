@@ -4,6 +4,7 @@ import { terrainHeight } from "@lib/3d/terrain";
 import { useVillage } from "@lib/3d/store";
 import {
   Cottage,
+  LanternGlowDriver,
   Lighthouse,
   Tavern,
   TournamentTent,
@@ -111,6 +112,7 @@ export default function Village({ quality }) {
 
       <Campfire position={[-46.5, terrainHeight(-46.5, -15.5), -15.5]} />
       <Fireworks active={celebrated} />
+      <LanternGlowDriver />
 
       <ProximitySensor />
       <SelectionRing />

@@ -45,10 +45,19 @@ export default function DialogueBox({ npcId, nodeId, reducedMotion }) {
     else closeOverlay();
   };
 
+  // The typewriter re-renders every tick; the listener registers once and
+  // reads the moving parts through this ref instead of churning ~55 times/s.
+  const keyState = useRef();
+  keyState.current = { finished, reveal, node, choose };
+
   useEffect(() => {
     const onKeyDown = (event) => {
+      const { finished, reveal, node, choose } = keyState.current;
       if (event.key === "Escape") {
+        // Capture + stopPropagation: close the dialogue before VillageScene's
+        // bubble-phase Escape can see the cleared overlay and exit the village.
         event.preventDefault();
+        event.stopPropagation();
         closeOverlay();
         return;
       }
@@ -64,9 +73,19 @@ export default function DialogueBox({ npcId, nodeId, reducedMotion }) {
         choose(node.choices[index]);
       }
     };
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  });
+    window.addEventListener("keydown", onKeyDown, true);
+    return () => window.removeEventListener("keydown", onKeyDown, true);
+  }, [closeOverlay]);
+
+  // Move focus into the dialogue on open, hand it back on close.
+  const box = useRef(null);
+  useEffect(() => {
+    const previous = document.activeElement;
+    box.current?.focus();
+    return () => {
+      if (previous instanceof HTMLElement) previous.focus();
+    };
+  }, []);
 
   const paragraphs = full.slice(0, shown).split("\n\n");
 
@@ -75,7 +94,13 @@ export default function DialogueBox({ npcId, nodeId, reducedMotion }) {
       data-ui
       className="pointer-events-auto absolute inset-x-0 bottom-0 z-30 flex justify-center px-3 pb-3 sm:px-6 sm:pb-6"
     >
-      <div className="w-full max-w-3xl rounded-2xl border border-amber-200/25 bg-[#1c1712]/95 p-4 text-amber-50 shadow-2xl backdrop-blur sm:p-6">
+      <div
+        ref={box}
+        role="dialog"
+        aria-label={`${dialogue.name}, ${dialogue.title}`}
+        tabIndex={-1}
+        className="w-full max-w-3xl rounded-2xl border border-amber-200/25 bg-[#1c1712]/95 p-4 text-amber-50 shadow-2xl backdrop-blur outline-none sm:p-6"
+      >
         <div className="mb-3 flex items-center gap-3">
           <span
             aria-hidden="true"

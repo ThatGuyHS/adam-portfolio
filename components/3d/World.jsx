@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useRef, useState } from "react";
+import { Suspense, memo, useEffect, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { PerformanceMonitor, Sky } from "@react-three/drei";
 import { FOG } from "@constants/worldData";
@@ -38,7 +38,9 @@ function ReadySignal({ onReady }) {
   return null;
 }
 
-export default function World({ quality, onReady }) {
+// Memoised: VillageScene re-renders on every overlay/HUD store change, and
+// without this each one would reconcile the entire Canvas tree.
+function World({ quality, onReady }) {
   const [degraded, setDegraded] = useState(false);
   const shadows = quality === "high" && !degraded;
 
@@ -93,3 +95,5 @@ export default function World({ quality, onReady }) {
     </Canvas>
   );
 }
+
+export default memo(World);

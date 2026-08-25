@@ -306,6 +306,7 @@ export function Campfire({ position }) {
         ref={flame}
         geometry={coneGeo(0.35, 1, 5)}
         material={mat("#ff9b3d", { emissive: "#ff6a00", emissiveIntensity: 1.6 })}
+        dispose={null}
         position={[0, 0.75, 0]}
       />
     </group>

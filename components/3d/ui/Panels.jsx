@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import userData from "@constants/data";
 import services from "@constants/services";
@@ -7,17 +7,56 @@ import { BRIDGE_STORY } from "@constants/dialogues";
 import { useVillage } from "@lib/3d/store";
 import DialogueBox from "@components/3d/ui/DialogueBox";
 
+const FOCUSABLE =
+  'a[href], button:not([disabled]), input, textarea, select, [tabindex]:not([tabindex="-1"])';
+
 function Panel({ kicker, title, onClose, children, footer }) {
+  const dialog = useRef(null);
+
   useEffect(() => {
+    // Capture phase + stopPropagation makes this Escape authoritative: it
+    // closes the panel before VillageScene's bubble-phase listener can see an
+    // already-cleared overlay and exit the whole village.
     const onKeyDown = (event) => {
       if (event.key === "Escape") {
         event.preventDefault();
+        event.stopPropagation();
         onClose();
       }
     };
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
+    window.addEventListener("keydown", onKeyDown, true);
+    return () => window.removeEventListener("keydown", onKeyDown, true);
   }, [onClose]);
+
+  // Move focus into the dialog on open, hand it back on close.
+  useEffect(() => {
+    const previous = document.activeElement;
+    dialog.current?.focus();
+    return () => {
+      if (previous instanceof HTMLElement) previous.focus();
+    };
+  }, []);
+
+  // Keep Tab inside the dialog while it's open.
+  const trapTab = (event) => {
+    if (event.key !== "Tab" || !dialog.current) return;
+    const focusable = dialog.current.querySelectorAll(FOCUSABLE);
+    if (focusable.length === 0) {
+      event.preventDefault();
+      return;
+    }
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey) {
+      if (document.activeElement === first || document.activeElement === dialog.current) {
+        event.preventDefault();
+        last.focus();
+      }
+    } else if (document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  };
 
   return (
     <div
@@ -26,10 +65,13 @@ function Panel({ kicker, title, onClose, children, footer }) {
       onClick={(event) => event.target === event.currentTarget && onClose()}
     >
       <div
+        ref={dialog}
         role="dialog"
         aria-modal="true"
         aria-label={title}
-        className="flex max-h-full w-full max-w-3xl flex-col overflow-hidden rounded-2xl border border-amber-200/25 bg-[#1c1712]/97 text-amber-50 shadow-2xl"
+        tabIndex={-1}
+        onKeyDown={trapTab}
+        className="flex max-h-full w-full max-w-3xl flex-col overflow-hidden rounded-2xl border border-amber-200/25 bg-[#1c1712]/97 text-amber-50 shadow-2xl outline-none"
       >
         <header className="flex items-start gap-4 border-b border-amber-100/10 px-5 py-4">
           <div className="min-w-0">
