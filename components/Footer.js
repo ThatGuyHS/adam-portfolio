@@ -16,6 +16,12 @@ export default function Footer() {
 
           <div className="space-x-4 flex flex-row items-center">
             <Link
+              href="/discord-bots"
+              className="text-base font-normal text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100"
+            >
+              Discord Bots
+            </Link>
+            <Link
               href="/webbkonsult"
               lang="sv"
               className="text-base font-normal text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100"
