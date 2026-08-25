@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import userData from "@constants/data";
+import { normalizeImageSrc } from "@lib/projects";
 
 export default function Projects() {
   return (
@@ -32,9 +33,7 @@ export default function Projects() {
 }
 
 const ProjectCard = ({ title, link, imgUrl, number, kind, stack, blurb }) => {
-  const normalizedImageSrc = imgUrl.startsWith("/")
-    ? imgUrl
-    : `/${imgUrl.replace(/^\.\//, "")}`;
+  const normalizedImageSrc = normalizeImageSrc(imgUrl);
 
   return (
     <div className="w-full shadow-2xl bg-white dark:bg-gray-800">

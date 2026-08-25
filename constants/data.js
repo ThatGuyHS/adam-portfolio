@@ -35,6 +35,7 @@ const userData = {
     },
     {
       title: "Rivals League",
+      featured: 1,
       link: "https://rivalsleague.gg",
       imgUrl: "/rivalsleague.png",
       kind: "Esports tournament platform",
@@ -62,6 +63,7 @@ const userData = {
     },
     {
       title: "PXB Media",
+      featured: 2,
       link: "https://pxbmedia.com",
       imgUrl: "/pxbmedia1.png",
       kind: "Company website",
@@ -71,6 +73,7 @@ const userData = {
     },
     {
       title: "Cookbook generator",
+      featured: 5,
       link: "https://cookbookgenerator.com",
       imgUrl: "/cookbookgenerator.png",
       kind: "Web app",
@@ -80,6 +83,7 @@ const userData = {
     },
     {
       title: "Adluelno",
+      featured: 3,
       link: "https://adluelno.se",
       imgUrl: "/adluelno.png",
       kind: "Company website",
@@ -107,6 +111,7 @@ const userData = {
     },
     {
       title: "Weekend in Paris",
+      featured: 4,
       link: "https://weekendparis.com",
       imgUrl: "/weekendparis.PNG",
       kind: "Travel content site",
@@ -125,6 +130,7 @@ const userData = {
     },
     {
       title: "AoE2 Sverige",
+      featured: 7,
       link: "https://www.aoe2sverige.se/",
       imgUrl: "/aoe2sverige.png",
       kind: "Community site",
@@ -134,6 +140,7 @@ const userData = {
     },
     {
       title: "PromptBibliotek",
+      featured: 8,
       link: "https://promptbibliotek.se",
       imgUrl: "/promptbibliotek.png",
       kind: "Web app / directory",
@@ -179,6 +186,7 @@ const userData = {
 
     {
       title: "Portfolio",
+      featured: 6,
       link: "https://www.adampeleback.com",
       imgUrl: "/portfolio.png",
       kind: "Personal site",

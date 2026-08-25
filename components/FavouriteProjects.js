@@ -1,8 +1,91 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import userData from "@constants/data";
+import { toProjectSlug } from "@lib/projectSlug";
+import { normalizeImageSrc, getFeaturedProjects } from "@lib/projects";
+
+// Repeating visual rhythm of the grid: three full-width cards, a 2/3 + 1/3
+// row, a 1/3 + 2/3 row, then full-width again. Badge accents follow the
+// same positions.
+const CARD_LAYOUTS = [
+  {
+    anchor: "col-span-3 shadow-2xl",
+    inner: "",
+    image: "",
+    width: 1600,
+    height: 900,
+    sizes: "(max-width: 768px) 100vw, 1152px",
+    badge: "bg-teal-700 text-white",
+  },
+  {
+    anchor: "col-span-3 shadow-2xl",
+    inner: "",
+    image: "",
+    width: 1600,
+    height: 900,
+    sizes: "(max-width: 768px) 100vw, 1152px",
+    badge: "bg-red-500 text-gray-50",
+  },
+  {
+    anchor: "col-span-3 shadow-2xl",
+    inner: "",
+    image: "",
+    width: 1600,
+    height: 900,
+    sizes: "(max-width: 768px) 100vw, 1152px",
+    badge: "bg-red-500 text-gray-50",
+  },
+  {
+    anchor: "col-span-3 sm:col-span-2 shadow-2xl",
+    inner: "",
+    image: "",
+    width: 1600,
+    height: 900,
+    sizes: "(max-width: 640px) 100vw, 66vw",
+    badge: "bg-red-500 text-gray-50",
+  },
+  {
+    anchor: "col-span-3 sm:col-span-1",
+    inner: "shadow-2xl",
+    image: "object-cover shadow-2xl",
+    width: 900,
+    height: 900,
+    sizes: "(max-width: 640px) 100vw, 33vw",
+    badge: "bg-red-500 text-gray-50",
+  },
+  {
+    anchor: "col-span-3 sm:col-span-1",
+    inner: "shadow-2xl",
+    image: "object-cover shadow-2xl",
+    width: 900,
+    height: 900,
+    sizes: "(max-width: 640px) 100vw, 33vw",
+    badge: "bg-red-500 text-gray-50",
+  },
+  {
+    anchor: "col-span-3 sm:col-span-2 shadow-2xl",
+    inner: "",
+    image: "",
+    width: 1600,
+    height: 900,
+    sizes: "(max-width: 640px) 100vw, 66vw",
+    badge: "bg-red-500 text-gray-50",
+  },
+  {
+    anchor: "col-span-3 shadow-2xl",
+    inner: "",
+    image: "",
+    width: 1600,
+    height: 900,
+    sizes: "(max-width: 768px) 100vw, 1152px",
+    badge: "bg-blue-500 text-gray-50",
+  },
+];
 
 export default function FavouriteProjects() {
+  const featured = getFeaturedProjects(userData.projects);
+
   return (
     <div className="bg-[#F1F1F1] -mt-40 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto">
@@ -34,186 +117,39 @@ export default function FavouriteProjects() {
         </header>
 
         {/* Grid starts here */}
-        <div className="grid md:grid-cols-3 gap-8  pb-40">
-          {/* Single card */}
-          <a
-            href="https://rivalsleague.gg"
-            className="w-full block col-span-3 shadow-2xl"
-          >
-            <div className="relative overflow-hidden">
-              <Image
-                src="/rivalsleague.png"
-                alt="Rivals League project screenshot"
-                width={1600}
-                height={900}
-                sizes="(max-width: 768px) 100vw, 1152px"
-                className="transform hover:scale-125 transition duration-2000 ease-out"
-              />
-              <span className="absolute top-10 left-10 text-white font-bold text-xl bg-teal-700 rounded-md px-2">
-                RIVALS LEAGUE
-              </span>
-              <span aria-hidden="true" className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
-                01
-              </span>
-            </div>
-          </a>
-
-          <a
-            href="https://pxbmedia.com"
-            className="w-full block col-span-3 shadow-2xl"
-          >
-            <div className="relative overflow-hidden">
-              <Image
-                src="/pxbmedia1.png"
-                alt="PXB Media project screenshot"
-                width={1600}
-                height={900}
-                sizes="(max-width: 768px) 100vw, 1152px"
-                className="transform hover:scale-125 transition duration-2000 ease-out"
-              />
-              <span className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
-                PXB MEDIA
-              </span>
-              <span aria-hidden="true" className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
-                02
-              </span>
-            </div>
-          </a>
-
-          <a
-            href="https://adluelno.se"
-            className="w-full block col-span-3 shadow-2xl"
-          >
-            <div className="relative overflow-hidden">
-              <Image
-                src="/adluelno.png"
-                alt="Adluelno project screenshot"
-                width={1600}
-                height={900}
-                sizes="(max-width: 768px) 100vw, 1152px"
-                className="transform hover:scale-125 transition duration-2000 ease-out"
-              />
-              <span className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
-                ADLUELNO
-              </span>
-              <span aria-hidden="true" className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
-                03
-              </span>
-            </div>
-          </a>
-          {/* Single card */}
-          <a
-            href="https://weekendparis.com"
-            className="w-full block col-span-3  sm:col-span-2 shadow-2xl"
-          >
-            <div className="relative overflow-hidden">
-              {/* <div className="overlay absolute inset-0 bg-black bg-opacity-70 z-10"></div> */}
-              <Image
-                src="/weekendparis.PNG"
-                alt="Weekend Paris project screenshot"
-                width={1600}
-                height={900}
-                sizes="(max-width: 640px) 100vw, 66vw"
-                className="transform hover:scale-125 transition duration-2000 ease-out"
-              />
-              <span className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
-                Weekend Paris
-              </span>
-              <span aria-hidden="true" className="absolute bottom-10 left-10 dark:text-white text-black font-bold text-xl">
-                04
-              </span>
-            </div>
-          </a>
-          {/* Single card */}
-          <a
-            href="https://cookbookgenerator.com"
-            className="w-full block col-span-3 sm:col-span-1  object-cover"
-          >
-            <div className="relative overflow-hidden shadow-2xl">
-              {/* <div className="overlay absolute inset-0 bg-black bg-opacity-70 z-10"></div> */}
-              <Image
-                src="/cookbookgenerator.png"
-                alt="Cookbook Generator project screenshot"
-                width={900}
-                height={900}
-                sizes="(max-width: 640px) 100vw, 33vw"
-                className="transform hover:scale-125 transition duration-2000 ease-out object-cover shadow-2xl"
-              />
-              <span className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
-                Cookbook Generator
-              </span>
-              <span aria-hidden="true" className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
-                05
-              </span>
-            </div>
-          </a>
-          {/* Single card */}
-          <a
-            href="https://www.adampeleback.com"
-            className="w-full block col-span-3 sm:col-span-1  object-cover"
-          >
-            <div className="relative overflow-hidden shadow-2xl">
-              {/* <div className="overlay absolute inset-0 bg-black bg-opacity-70 z-10"></div> */}
-              <Image
-                src="/portfolio.png"
-                alt="Adam Peleback portfolio screenshot"
-                width={900}
-                height={900}
-                sizes="(max-width: 640px) 100vw, 33vw"
-                className="transform hover:scale-125 transition duration-2000 ease-out object-cover shadow-2xl"
-              />
-              <span className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
-                Portfolio
-              </span>
-              <span aria-hidden="true" className="absolute bottom-10 left-10  dark:text-white text-black font-bold text-xl">
-                06
-              </span>
-            </div>
-          </a>
-          {/* Single card */}
-          <a
-            href="https://www.aoe2sverige.se/"
-            className="w-full block col-span-3 sm:col-span-2 shadow-2xl"
-          >
-            <div className="relative overflow-hidden">
-              <Image
-                src="/aoe2sverige.png"
-                alt="AoE2 Sverige project screenshot"
-                width={1600}
-                height={900}
-                sizes="(max-width: 640px) 100vw, 66vw"
-                className="transform hover:scale-125 transition duration-2000 ease-out"
-              />
-              <span className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-red-500 rounded-md px-2">
-                AoE2 Sverige
-              </span>
-              <span aria-hidden="true" className="absolute bottom-10 left-10 dark:text-white text-black font-bold text-xl">
-                07
-              </span>
-            </div>
-          </a>
-          {/* Single card */}
-          <a
-            href="https://promptbibliotek.se"
-            className="w-full block col-span-3 shadow-2xl"
-          >
-            <div className="relative overflow-hidden">
-              <Image
-                src="/promptbibliotek.png"
-                alt="PromptBibliotek project screenshot"
-                width={1600}
-                height={900}
-                sizes="(max-width: 768px) 100vw, 1152px"
-                className="transform hover:scale-125 transition duration-2000 ease-out"
-              />
-              <span className="absolute top-10 left-10 text-gray-50 font-bold text-xl bg-blue-500 rounded-md px-2">
-                PromptBibliotek
-              </span>
-              <span aria-hidden="true" className="absolute bottom-10 left-10 dark:text-white text-black font-bold text-xl">
-                08
-              </span>
-            </div>
-          </a>
+        <div className="grid md:grid-cols-3 gap-8 pb-40">
+          {featured.map((project, index) => {
+            const layout = CARD_LAYOUTS[index % CARD_LAYOUTS.length];
+            return (
+              <Link
+                key={project.title}
+                href={`/project/${toProjectSlug(project.title)}`}
+                className={`w-full block ${layout.anchor}`}
+              >
+                <div className={`relative overflow-hidden ${layout.inner}`}>
+                  <Image
+                    src={normalizeImageSrc(project.imgUrl)}
+                    alt={`${project.title} project screenshot`}
+                    width={layout.width}
+                    height={layout.height}
+                    sizes={layout.sizes}
+                    className={`transform hover:scale-125 transition duration-2000 ease-out ${layout.image}`}
+                  />
+                  <span
+                    className={`absolute top-10 left-10 font-bold text-xl rounded-md px-2 ${layout.badge}`}
+                  >
+                    {project.title}
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="absolute bottom-10 left-10 dark:text-white text-black font-bold text-xl"
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>

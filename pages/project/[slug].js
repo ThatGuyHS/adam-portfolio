@@ -4,9 +4,7 @@ import Link from "next/link";
 import ContainerBlock from "../../components/ContainerBlock";
 import userData from "@constants/data";
 import { toProjectSlug, findProjectBySlug } from "@lib/projectSlug";
-
-const normalizeImageSrc = (imgUrl) =>
-  imgUrl.startsWith("/") ? imgUrl : `/${imgUrl.replace(/^\.\//, "")}`;
+import { normalizeImageSrc } from "@lib/projects";
 
 const ProjectPage = ({ project }) => {
   return (
