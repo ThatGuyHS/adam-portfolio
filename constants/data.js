@@ -7,6 +7,78 @@ const userData = {
   address: "Stockholm, Sweden",
   projects: [
     {
+      title: "Dupe Cabinet",
+      link: "https://dupecabinet.com",
+      imgUrl: "/dupecabinet.png",
+      kind: "Data-driven directory site",
+      stack: ["Next.js", "TypeScript", "Tailwind CSS", "Python"],
+      blurb:
+        "Independent index of perfume dupes — thousands of clone products cross-referenced to the originals they copy, with notes, sizes and price per ml. A Python pipeline normalizes seller catalogs into the statically generated site.",
+    },
+    {
+      title: "Slow Cooker Converter",
+      link: "https://slowcookerconverter.com",
+      imgUrl: "/slowcookerconverter.png",
+      kind: "Calculator tool site",
+      stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+      blurb:
+        "Free calculator that converts slow cooker time on Low or High to oven time and back, plus slow cooker to Instant Pot. Single-purpose tool site with statically generated long-tail pages for every common cook time.",
+    },
+    {
+      title: "Sälja elbilen",
+      link: "https://saljaelbilen.se",
+      imgUrl: "/saljaelbilen.png",
+      kind: "Comparison site",
+      stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+      blurb:
+        "Swedish comparison of every way to sell a used EV — direct buyers, bid brokers, auctions and private sale — with terms checked against each company's own conditions. Static export with source-backed guides per situation and model.",
+    },
+    {
+      title: "Yrkesförsäkring",
+      link: "https://yrkesforsakring.se",
+      imgUrl: "/yrkesforsakring.png",
+      kind: "Content site",
+      stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+      blurb:
+        "Swedish guide to business insurance by profession: which coverage matters for 40+ trades, what clients demand and the common mistakes. Pages are generated from structured JSON per profession.",
+    },
+    {
+      title: "Elnätskollen",
+      link: "https://elnatskollen.se",
+      imgUrl: "/elnatskollen.png",
+      kind: "Data comparison site",
+      stack: ["Next.js", "TypeScript", "Tailwind CSS", "Python"],
+      blurb:
+        "Compares electricity grid fees across all 290 Swedish municipalities and grid operators — prices, increases and price lists. Python scripts parse the operators' tariffs into data for a statically exported Next.js site.",
+    },
+    {
+      title: "Bokutgivningar",
+      link: "https://bokutgivningar.se",
+      imgUrl: "/bokutgivningar.png",
+      kind: "Data-driven content site",
+      stack: ["Next.js", "TypeScript", "Python"],
+      blurb:
+        "Upcoming Swedish book releases by author and month, built from harvested pre-order listings. Thousands of static pages generated from a single JSON dataset.",
+    },
+    {
+      title: "Vinterplatsen",
+      link: "https://vinterplatsen.se",
+      imgUrl: "/vinterplatsen.png",
+      kind: "Directory site",
+      stack: ["Next.js", "TypeScript", "Tailwind CSS", "Python"],
+      blurb:
+        "Swedish directory of winter storage for boats, caravans, motorhomes, motorcycles and cars — outdoor spots, cold and heated halls across the country. Harvested listing data rendered as a static Next.js export.",
+    },
+    {
+      title: "Tidningstoppen",
+      link: "https://tidningstoppen.se",
+      imgUrl: "/tidningstoppen.png",
+      kind: "Comparison site + digital product",
+      stack: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "Vercel Blob"],
+      blurb:
+        "Independent comparison of Swedish magazine apps — price, catalogue and trial periods, ranked without paid placements. Also sells its own printable puzzle pack through Stripe Checkout, with the PDF served only after payment verification.",
+    },
+    {
       title: "Robotklipparguiden",
       link: "https://xn--bstarobotgrsklippare-bzbk.se",
       imgUrl: "/robotklipparguiden.png",
