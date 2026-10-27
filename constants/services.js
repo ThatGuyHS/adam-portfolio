@@ -4,20 +4,19 @@
 const services = [
   {
     title: "Web Development",
-    shortDescription: "Creating modern, responsive web applications with cutting-edge technologies.",
-    fullDescription: `I specialize in creating modern, responsive, and user-friendly web applications. With 8+ years of experience, I build scalable solutions using cutting-edge technologies like React, Next.js, and Node.js.
+    shortDescription: "Websites and web apps in React and Next.js that load fast and can be found in search.",
+    fullDescription: `I build websites and web apps in React, Next.js and TypeScript, from small company sites to platforms with payments and a CMS. I worked as a frontend developer at G-Loot and Zaver and have freelanced since 2024.
 
-Key Features:
-• Modern, responsive design
-• Performance optimization
-• SEO best practices
-• Cross-browser compatibility
-• Mobile-first approach
-• Clean, maintainable code
+What you get:
+• Responsive, mobile-first design
+• Performance work on Core Web Vitals
+• Technical SEO and structured data
+• Testing across browsers
+• Code the next developer can pick up
 
-From simple landing pages to complex web applications, I deliver high-quality code that meets your specific needs.`,
+That can be a single landing page or a full web application.`,
     icon: "💻",
-    highlight: "Performance-first builds",
+    highlight: "React · Next.js · TypeScript",
     deliverables: ["Responsive UI", "SEO setup", "Core Web Vitals tuning"],
     accent: {
       cardHover: "hover:border-blue-200 hover:-translate-y-1",
@@ -29,20 +28,20 @@ From simple landing pages to complex web applications, I deliver high-quality co
   },
   {
     title: "Test Automation",
-    shortDescription: "Streamlining testing processes through automation and robust test suites.",
-    fullDescription: `I help businesses streamline their testing processes through automation. Using industry-standard tools and frameworks, I create robust test suites that ensure your applications are reliable and bug-free.
+    shortDescription: "Automated tests and a test strategy from someone who has worked in QA since 2018.",
+    fullDescription: `I've worked in QA since 2018: as a QA tester and later QA developer at G-Loot, where I wrote test automation and advised the development teams on testing, and since 2025 as a system tester at Decerno.
 
-Services Include:
+I can help with:
 • Unit testing
 • Integration testing
 • End-to-end testing
 • Performance testing
-• Automated CI/CD pipelines
-• Test coverage optimization
+• Running the tests in your CI/CD pipeline
+• Finding the gaps in your test coverage
 
-My expertise spans across various platforms and testing methodologies to ensure comprehensive quality assurance.`,
+Tests catch regressions before your users do, and I'll tell you where a manual check is the better use of time.`,
     icon: "⚡",
-    highlight: "Confidence in every release",
+    highlight: "QA since 2018",
     deliverables: ["Unit tests", "E2E coverage", "CI pipeline integration"],
     accent: {
       cardHover: "hover:border-yellow-200 hover:-translate-y-1.5",
@@ -54,21 +53,21 @@ My expertise spans across various platforms and testing methodologies to ensure 
   },
   {
     title: "Discord Bot Development",
-    shortDescription: "Building custom Discord bots to enhance your server's functionality and engagement.",
-    fullDescription: `I create custom Discord bots tailored to your specific needs, helping you automate tasks and enhance your server's functionality.
+    shortDescription: "Custom Discord bots for moderation, onboarding, tournaments and integrations.",
+    fullDescription: `I build Discord bots in Node.js and TypeScript with discord.js. The biggest one so far runs match check-ins and score reporting for the Rivals League tournament platform.
 
-Features Include:
+Common requests:
 • Custom commands and interactions
 • Server moderation tools
 • Welcome messages and role management
-• Music playback systems
-• Game integration
+• Music playback
+• Game integrations
 • Analytics and reporting
 • Multi-language support
 
-Whether you need a simple utility bot or a complex multi-feature bot, I can help you create the perfect solution for your Discord community.`,
+It can be a small utility bot or one with many features.`,
     icon: "🤖",
-    highlight: "Community automation",
+    highlight: "Built with discord.js",
     deliverables: ["Custom commands", "Moderation tools", "Role automation"],
     accent: {
       cardHover: "hover:border-purple-200 hover:-translate-y-1 hover:rotate-[0.3deg]",
@@ -80,20 +79,18 @@ Whether you need a simple utility bot or a complex multi-feature bot, I can help
   },
   {
     title: "Esports Tournament Administration",
-    shortDescription: "Comprehensive tournament management services for competitive gaming events.",
-    fullDescription: `With years of experience in esports tournament organization, I provide comprehensive tournament management services. From setting up tournament brackets and managing registrations to handling prize pools and coordinating with teams.
+    shortDescription: "Tournament administration for online competitions: brackets, registrations, scheduling and results.",
+    fullDescription: `I've organized esports tournaments since 2017, starting with the PUBG tournaments on G-Loot's Global Loot League. I'm also on the board of Phoenix Blue, where I helped start the Phoenix Blue Event Series.
 
-Services Offered:
-• Tournament bracket management
-• Registration system setup
+I can take care of:
+• Tournament brackets
+• Registration setup
 • Prize pool administration
-• Team coordination
-• Event scheduling
-• Results tracking and reporting
-
-I ensure smooth execution of competitive gaming events, handling all aspects of tournament administration professionally.`,
+• Contact with the teams
+• Scheduling
+• Results tracking and reporting`,
     icon: "🎮",
-    highlight: "Smooth event operations",
+    highlight: "Running tournaments since 2017",
     deliverables: ["Bracket setup", "Team coordination", "Results reporting"],
     accent: {
       cardHover: "hover:border-red-200 hover:-translate-y-1 hover:rotate-[-0.3deg]",

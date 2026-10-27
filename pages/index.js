@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <ContainerBlock
       title="Adam Peleback | Frontend Developer and Esports Organizer"
-      description="Frontend developer in Stockholm building modern web applications, esports platforms, and digital products with React and Next.js."
+      description="Frontend developer and software tester in Stockholm. I build websites, web apps and esports platforms in React and Next.js."
       keywords="Adam Peleback, frontend developer, React developer, Next.js developer, esports"
       structuredData={{
         "@context": "https://schema.org",

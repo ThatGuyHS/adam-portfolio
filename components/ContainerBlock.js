@@ -11,9 +11,9 @@ export default function ContainerBlock({ children, ...customMeta }) {
 
   const meta = {
     title: "Adam Peleback - Frontend Developer and Esports Organizer",
-    description: `Frontend Developer, Esports Tournament Organizer, and Writer. I've been building web applications for 8+ years and I'm passionate about building products that bring value to people around the globe.`,
+    description: "Adam Peleback is a frontend developer and software tester in Stockholm. He builds websites and web apps in React and Next.js and has worked in esports since 2017.",
     image: "/og-image.png",
-    imageAlt: "Adam Peleback — Frontend Developer, QA Engineer, Esports Organizer",
+    imageAlt: "Adam Peleback: frontend developer, QA engineer, esports organizer",
     type: "website",
     robots: "index, follow",
     ogLocale: "en_US",

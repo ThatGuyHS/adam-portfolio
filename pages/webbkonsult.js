@@ -15,28 +15,28 @@ const offers = [
     icon: "🧑‍💻",
     title: "Webbutveckling",
     blurb:
-      "Nya webbplatser och webbappar i React och Next.js — eller WordPress när det passar bättre. Snabba, responsiva och byggda för att synas i sök från dag ett.",
+      "Nya webbplatser och webbappar i React och Next.js, eller i WordPress när det passar bättre. Sajterna fungerar i mobilen, laddar snabbt och har den tekniska SEO:n på plats från start.",
     points: ["Nya webbplatser", "Webbappar & integrationer", "React/Next.js/WordPress"],
   },
   {
     icon: "⚡",
     title: "Prestanda & teknisk hälsa",
     blurb:
-      "Core Web Vitals, tillgänglighet och teknisk SEO. Jag mäter, hittar flaskhalsarna och åtgärdar dem i koden — ingen rapport som stannar i en byrålåda.",
+      "Core Web Vitals, tillgänglighet och teknisk SEO. Jag mäter, hittar det som gör sajten långsam och rättar det själv i koden.",
     points: ["Core Web Vitals", "Tillgänglighet", "Teknisk genomlysning"],
   },
   {
     icon: "🔍",
     title: "SEO & synlighet",
     blurb:
-      "Sökordsstrategi, innehållsstruktur och optimering för både Google och AI-sök (AI Overviews, ChatGPT, Perplexity). Samma metoder som mina egna guidesajter rankar med.",
+      "Sökordsstrategi, innehållsstruktur och strukturerad data för Google och AI-sök (AI Overviews, ChatGPT, Perplexity). Jag driver egna sajter och följer i Search Console vad som fungerar och inte.",
     points: ["Sökordsstrategi", "AI-sök (GEO)", "Strukturerad data"],
   },
   {
     icon: "🛠️",
     title: "Förvaltning & vidareutveckling",
     blurb:
-      "Löpande support, nya funktioner och kvalitetssäkring av befintliga sajter. Med bakgrund som testare bygger jag inte bara — jag ser till att det håller.",
+      "Löpande support, nya funktioner och kvalitetssäkring av befintliga sajter. Jag har jobbat som testare sedan 2018, så det jag bygger testas innan det går live.",
     points: ["Löpande support", "Nya funktioner", "Testning & QA"],
   },
 ];
@@ -45,24 +45,24 @@ const steps = [
   {
     title: "Behov & genomlysning",
     description:
-      "Vi börjar med ett kort samtal om vad ni vill uppnå. Har ni en befintlig sajt går jag igenom den tekniskt: hastighet, struktur, synlighet och vad som håller er tillbaka.",
+      "Vi börjar med ett kort samtal om vad ni vill uppnå. Har ni redan en sajt går jag igenom den tekniskt: hastighet, struktur och synlighet i sök.",
   },
   {
     title: "Prioriterad plan med fast offert",
     description:
-      "Ni får en konkret plan sorterad efter effekt — vad som ger mest först, med tydlig motivering och ett fast pris eller en tydlig timuppskattning. Inga 40-sidiga rapporter.",
+      "Ni får en kort plan där det som ger mest effekt står först. Varje punkt har en motivering och antingen ett fast pris eller en timuppskattning.",
   },
   {
     title: "Leverans & uppföljning",
     description:
-      "Jag bygger och åtgärdar själv, stämmer av löpande och följer upp efter lansering med mätning — så ni ser vad som faktiskt hände.",
+      "Jag gör jobbet själv och stämmer av med er under tiden. Efter lanseringen mäter jag resultatet, så att ni ser vad ändringarna gav.",
   },
 ];
 
 const faqs = [
   {
     q: "Vad kostar en frilansande webbkonsult?",
-    a: "Frilansande webbkonsulter i Sverige tar normalt 900–1 500 kr/h beroende på erfarenhet och inriktning. Mitt timpris är 900 kr/h exkl. moms. Avgränsade projekt offereras till fast pris — till exempel kostar en teknisk genomlysning med prioriterad åtgärdslista 9 500 kr exkl. moms. Löpande samarbeten prissätts per månad efter omfattning.",
+    a: "Frilansande webbkonsulter i Sverige tar normalt 900–1 500 kr/h beroende på erfarenhet och inriktning. Mitt timpris är 900 kr/h exkl. moms. Avgränsade projekt får ett fast pris; en teknisk genomlysning med prioriterad åtgärdslista kostar till exempel 9 500 kr exkl. moms. Löpande samarbeten prissätts per månad efter omfattning.",
   },
   {
     q: "Vilka tekniker arbetar du med?",
@@ -74,7 +74,7 @@ const faqs = [
   },
   {
     q: "Hjälper du till med SEO också?",
-    a: "Ja, SEO är en av mina specialiteter. Jag driver egna innehållssajter i konkurrensutsatta svenska nischer och arbetar med både klassisk Google-SEO och AI-sök — att synas i AI Overviews och i svaren från ChatGPT och Perplexity. Det arbetet ingår naturligt när jag bygger, eftersom samma person skriver koden.",
+    a: "Ja. Jag driver flera egna innehålls- och jämförelsesajter och jobbar med både vanlig Google-SEO och AI-sök, alltså att synas i AI Overviews och i svaren från ChatGPT och Perplexity. När jag bygger en sajt ingår den tekniska SEO:n, eftersom det är jag som skriver koden.",
   },
   {
     q: "Arbetar du på distans?",
@@ -82,7 +82,7 @@ const faqs = [
   },
   {
     q: "Vad skiljer dig från en webbyrå?",
-    a: "Hos en byrå betalar du ofta för projektledning, säljled och juniora utförare. Hos mig pratar du direkt med personen som designar, bygger, testar och optimerar — en utvecklare med bakgrund inom QA och SEO som dessutom driver egna sajter med egna pengar på spel.",
+    a: "Hos en byrå betalar du ofta för projektledning, säljare och juniora utvecklare. Hos mig pratar du direkt med den som gör jobbet: en utvecklare med bakgrund inom QA och SEO som också driver egna sajter.",
   },
 ];
 
@@ -188,28 +188,47 @@ function SwedishContactForm() {
   );
 }
 
-const PROOF_TITLES = [
-  "Svenska Esportförbundet",
-  "Adluelno",
-  "PXB Media",
-  "Robotklipparguiden",
+// The project blurbs in data.js are in English, so this page carries its own
+// Swedish ones. Titles must match data.js for the slug and live link lookup.
+const PROOF = [
+  {
+    title: "Svenska Esportförbundet",
+    blurb:
+      "Förbundets officiella webbplats, byggd som frilansuppdrag i Next.js med ett headless Strapi-CMS. Förbundet publicerar nyheter och uppdaterar sidor själva.",
+  },
+  {
+    title: "Adluelno",
+    blurb:
+      "Webbplats för en svensk konsultfirma inom affärsrådgivning, byggd i Next.js och TypeScript.",
+  },
+  {
+    title: "PXB Media",
+    blurb:
+      "Webbplats för produktionsbolaget PXB Media, som gör esportsändningar. Innehållet redigeras i Contentful.",
+  },
+  {
+    title: "Vinterplatsen",
+    blurb:
+      "Min egen katalog över vinterförvaring för båt, husvagn, husbil, MC och bil i hela Sverige, med riktpriser och guider. Anläggningarna hämtas med skript och kompletteras för hand.",
+  },
 ];
 
 export default function Webbkonsult() {
-  const proofSites = PROOF_TITLES.map((title) =>
-    userData.projects.find((p) => p.title === title)
-  ).filter(Boolean);
+  const proofSites = PROOF.map(({ title, blurb }) => {
+    const project = userData.projects.find((p) => p.title === title);
+    return project && { ...project, blurb };
+  }).filter(Boolean);
 
   const structuredData = [
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "@id": `${siteUrl}/webbkonsult#service`,
-      name: "Adam Peleback — Frilansande webbkonsult",
+      name: "Adam Peleback, frilansande webbkonsult",
       url: `${siteUrl}/webbkonsult`,
       image: `${siteUrl}/adam.png`,
       email: userData.email,
-      priceRange: "900-1500 SEK/h",
+      priceRange: "900 SEK/h",
       areaServed: "SE",
       address: {
         "@type": "PostalAddress",
@@ -244,7 +263,7 @@ export default function Webbkonsult() {
   return (
     <ContainerBlock
       title="Frilansande webbkonsult i Stockholm — webbutveckling, prestanda & SEO | Adam Peleback"
-      description="Frilansande webbkonsult i Stockholm. Bygger snabba webbplatser i React och Next.js, optimerar prestanda och synlighet i Google och AI-sök — en utvecklare som gör hela jobbet, på distans i hela Sverige."
+      description="Frilansande webbkonsult i Stockholm. Jag bygger webbplatser i React och Next.js och förbättrar prestanda och synlighet i Google och AI-sök. 900 kr/h, på distans i hela Sverige."
       ogLocale="sv_SE"
       structuredData={structuredData}
     >
@@ -259,11 +278,12 @@ export default function Webbkonsult() {
               Frilansande webbkonsult — från idé till snabb, synlig webbplats
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-gray-600 dark:text-gray-300 max-w-2xl">
-              Jag heter Adam Peleback och hjälper svenska företag med hela
-              webben: nya webbplatser, vidareutveckling, prestanda och
-              synlighet i Google och AI-sök. Skillnaden mot en byrå? Du pratar
-              direkt med personen som designar, bygger, testar och optimerar —
-              och som driver egna sajter med egna pengar på spel.
+              Jag heter Adam Peleback och bygger webbplatser åt svenska
+              företag. Jag tar också hand om befintliga sajter:
+              vidareutveckling, prestanda och synlighet i Google och AI-sök. Du
+              har kontakt med mig hela vägen, och det är jag som designar,
+              bygger och testar. Vid sidan av kunduppdragen driver jag egna
+              sajter, med egna pengar på spel.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
@@ -286,22 +306,21 @@ export default function Webbkonsult() {
         <section id="bevis" className="bg-[#F1F1F1] dark:bg-gray-900">
           <div className="max-w-6xl mx-auto px-4 py-14 md:py-20">
             <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-red-500 mb-4 font-semibold">
-              Beviset först
+              Urval
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
-              Sajter jag byggt — åt kunder och åt mig själv
+              Sajter jag har byggt åt kunder och åt mig själv
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-gray-600 dark:text-gray-300 max-w-2xl">
-              Kundprojekt som Svenska Esportförbundet och Adluelno, och egna
-              sajter i konkurrensutsatta svenska nischer. Samma hantverk i
-              båda: snabb kod, tydlig struktur och synlighet i sök.
+              Tre kunduppdrag och en av mina egna sajter. Alla fyra är byggda
+              i Next.js.
             </p>
             <ul className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
               {proofSites.map((p) => (
-                <li key={p.title}>
+                <li key={p.title} className="flex flex-col">
                   <Link
                     href={`/project/${toProjectSlug(p.title)}`}
-                    className="block h-full rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                    className="block flex-1 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                   >
                     <h3 className="text-xl font-bold text-gray-800 dark:text-white">
                       {p.title} →
@@ -333,7 +352,7 @@ export default function Webbkonsult() {
               Vad jag gör
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
-              Hela webben — från analys till färdig kod
+              Från analys till färdig kod
             </h2>
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
               {offers.map((o) => (
@@ -376,7 +395,7 @@ export default function Webbkonsult() {
               Så går det till
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
-              Tre steg, inga 40-sidiga rapporter
+              Från första samtal till lansering
             </h2>
             <div className="mt-8 grid md:grid-cols-3 gap-4">
               {steps.map((step, index) => (
@@ -396,17 +415,17 @@ export default function Webbkonsult() {
                 </div>
               ))}
             </div>
-            <div className="mt-8 rounded-2xl bg-gray-800 dark:bg-black p-6 md:p-8 flex flex-wrap items-baseline gap-x-10 gap-y-3">
+            <div className="mt-8 rounded-2xl bg-gray-800 dark:bg-black p-6 md:p-8 flex flex-col md:flex-row md:items-start gap-x-12 gap-y-5">
               <p className="text-2xl md:text-3xl font-bold text-white">
                 900 kr/h
-                <span className="ml-2 text-sm font-normal text-gray-300">
+                <span className="mt-1 block text-sm font-normal text-gray-300">
                   exkl. moms
                 </span>
               </p>
               <p className="text-2xl md:text-3xl font-bold text-white">
                 Fast pris per projekt
-                <span className="ml-2 text-sm font-normal text-gray-300">
-                  offert efter ett kort samtal — t.ex. teknisk genomlysning
+                <span className="mt-1 block text-sm font-normal text-gray-300">
+                  offert efter ett kort samtal, t.ex. teknisk genomlysning för
                   9 500 kr
                 </span>
               </p>
@@ -452,11 +471,12 @@ export default function Webbkonsult() {
                 Säg hej
               </p>
               <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
-                Har du ett webbprojekt — stort eller litet?
+                Har du ett webbprojekt, stort eller litet?
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-gray-600 dark:text-gray-300 max-w-md">
-                Berätta kort om er sajt eller idé så återkommer jag inom en dag
-                med en första bedömning — kostnadsfritt och utan förpliktelser.
+                Berätta kort om er sajt eller idé, så återkommer jag inom en dag
+                med en första bedömning. Det kostar ingenting och ni binder er
+                inte till något.
               </p>
               <div className="mt-8 space-y-2 text-sm">
                 <p>

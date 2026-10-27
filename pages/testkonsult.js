@@ -21,38 +21,38 @@ const offers = [
     icon: "🔁",
     title: "CI/CD & kvalitetsgrindar",
     blurb:
-      "Testerna gör mest nytta när de körs på varje ändring. Jag sätter upp testkörningar i er CI-pipeline med tydliga kvalitetsgrindar — så att en röd bygge stoppar felet, inte releasen efteråt.",
+      "Testerna gör mest nytta när de körs vid varje ändring. Jag lägger in dem i er CI-pipeline med kvalitetsgrindar, så att ett rött bygge stoppar felet innan det hamnar i en release.",
     points: ["Tester i CI-pipelinen", "Kvalitetsgrindar före release", "Snabb återkoppling till utvecklare"],
   },
   {
     icon: "🔍",
     title: "Manuell & utforskande testning",
     blurb:
-      "Allt kan inte automatiseras. Jag testar era kritiska användarflöden på riktigt — betalningar, registrering, det som inte får gå sönder — och rapporterar buggar utvecklare förstår.",
+      "Allt går inte att automatisera. Jag testar era viktigaste flöden för hand, som betalning och registrering, och skriver buggrapporter som utvecklarna kan agera på direkt.",
     points: ["Kritiska användarflöden", "Utforskande testning", "Tydliga buggrapporter"],
   },
   {
     icon: "🧭",
     title: "Teststrategi & rådgivning",
     blurb:
-      "Vad ska automatiseras först? Vad ska inte testas alls? Jag har varit rådgivare åt utvecklingsteam i testfrågor och hjälper er lägga en strategi som teamet faktiskt följer.",
+      "Vad ska automatiseras först, och vad är inte värt att testa alls? På G-Loot gav jag utvecklingsteamen råd i testfrågor, och jag hjälper er ta fram en strategi som passar hur ni jobbar.",
     points: ["Teststrategi", "Rådgivning till utvecklingsteam", "Prioritering efter risk"],
   },
 ];
 
 const roles = [
   {
-    role: "Systemtestare — Decerno",
+    role: "Systemtestare, Decerno",
     period: "2025–",
     text: "Systemtestning och mjukvarutestning av verksamhetssystem, som anställd testare i pågående utvecklingsprojekt.",
   },
   {
-    role: "QA Developer — G-Loot",
+    role: "QA Developer, G-Loot",
     period: "2021–2022",
     text: "Testautomatisering och manuell testning av kritiska användarflöden på en esportplattform med riktiga pengar i omlopp, plus rådgivning till utvecklingsteamen i testfrågor.",
   },
   {
-    role: "QA Tester — G-Loot Esports",
+    role: "QA Tester, G-Loot Esports",
     period: "2018–2021",
     text: "Kvalitetssäkring av Global Loot League-plattformen genom turneringar och releaser, i tätt samarbete med tech-teamet.",
   },
@@ -67,27 +67,27 @@ const steps = [
   {
     title: "Prioriterad testplan",
     description:
-      "Ni får en konkret plan sorterad efter risk: vilka flöden som automatiseras först, vad som testas manuellt och hur det kopplas in i er pipeline — med fast pris eller tydlig timuppskattning.",
+      "Ni får en plan sorterad efter risk: vilka flöden som automatiseras först, vad som testas manuellt och hur testerna kopplas in i er pipeline. Planen har ett fast pris eller en timuppskattning.",
   },
   {
     title: "Genomförande & överlämning",
     description:
-      "Jag skriver testerna, sätter upp körningarna i CI och lämnar över så att ert team kan äga och bygga vidare på dem — dokumenterat och utan konsultberoende.",
+      "Jag skriver testerna, sätter upp körningarna i CI och dokumenterar allt, så att ert team kan ta över och bygga vidare utan mig.",
   },
 ];
 
 const faqs = [
   {
     q: "Vad kostar en testkonsult?",
-    a: "Mitt timpris är 900 kr/h exkl. moms. Avgränsade insatser — till exempel en genomgång av ert nuvarande testarbete med en prioriterad plan, eller ett första automatiserat testpaket för era viktigaste flöden — offereras till fast pris efter ett kort samtal.",
+    a: "Mitt timpris är 900 kr/h exkl. moms. Avgränsade insatser får ett fast pris efter ett kort samtal, till exempel en genomgång av ert nuvarande testarbete med en prioriterad plan, eller ett första automatiserat testpaket för era viktigaste flöden.",
   },
   {
     q: "Behöver vi verkligen testautomatisering?",
-    a: "Om ni släpper ofta och testar manuellt inför varje release: förmodligen. Automatisering lönar sig snabbast för flöden som testas om och om igen — inloggning, betalning, registrering. Men allt ska inte automatiseras, och en del av mitt jobb är att säga var det inte är värt det.",
+    a: "Om ni släpper ofta och testar för hand inför varje release: förmodligen. Automatisering lönar sig snabbast för flöden som testas om och om igen, som inloggning, betalning och registrering. Allt är inte värt att automatisera, och en del av mitt jobb är att säga var gränsen går.",
   },
   {
     q: "Vilka verktyg och ramverk använder du?",
-    a: "Jag väljer verktyg efter er stack i stället för tvärtom — för webben handlar det typiskt om moderna ramverk som Playwright eller Cypress för end-to-end-tester, kompletterat med enhetstester i det ramverk ni redan använder, och testkörningar i er befintliga CI-miljö som GitHub Actions eller GitLab CI.",
+    a: "Jag väljer verktyg efter er stack. För webben blir det oftast Playwright eller Cypress för end-to-end-tester, enhetstester i det ramverk ni redan använder och testkörningar i er befintliga CI-miljö, till exempel GitHub Actions eller GitLab CI.",
   },
   {
     q: "Kan du förstärka vårt befintliga team?",
@@ -207,7 +207,7 @@ export default function Testkonsult() {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "@id": `${siteUrl}/testkonsult#service`,
-      name: "Adam Peleback — Testkonsult & testautomatisering",
+      name: "Adam Peleback, testkonsult och testautomatisering",
       url: `${siteUrl}/testkonsult`,
       image: `${siteUrl}/adam.png`,
       email: userData.email,
@@ -244,7 +244,7 @@ export default function Testkonsult() {
   return (
     <ContainerBlock
       title="Testkonsult & testautomatisering i Stockholm | Adam Peleback"
-      description="Testkonsult i Stockholm med bakgrund som QA-utvecklare och systemtestare. Testautomatisering, CI/CD-integration, manuell testning och teststrategi — på distans i hela Sverige."
+      description="Testkonsult i Stockholm med bakgrund som QA-utvecklare och systemtestare. Testautomatisering, CI/CD-integration, manuell testning och teststrategi på distans i hela Sverige."
       ogLocale="sv_SE"
       structuredData={structuredData}
     >
@@ -260,10 +260,10 @@ export default function Testkonsult() {
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-gray-600 dark:text-gray-300 max-w-2xl">
               Jag heter Adam Peleback och har testat mjukvara professionellt
-              sedan 2018 — som QA-testare och QA-utvecklare på G-Loot och i dag
-              som systemtestare på Decerno. Jag är dessutom utvecklare, så jag
-              skriver testautomatiseringen själv, kopplar in den i er pipeline
-              och pratar med era utvecklare på deras villkor.
+              sedan 2018, först som QA-testare och QA-utvecklare på G-Loot och
+              i dag som systemtestare på Decerno. Jag är också utvecklare, så
+              jag skriver testautomatiseringen själv och kopplar in den i er
+              pipeline.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
@@ -289,12 +289,12 @@ export default function Testkonsult() {
               Bakgrund
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
-              Sju år av testning — som anställd, inte bara som konsult
+              Testare sedan 2018, som anställd i utvecklingsteam
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-gray-600 dark:text-gray-300 max-w-2xl">
-              Min QA-erfarenhet kommer från riktiga roller i riktiga team: en
-              esportplattform med pengar i omlopp och verksamhetssystem där
-              fel kostar på riktigt.
+              Erfarenheten kommer från två arbetsplatser: en esportplattform
+              där användarnas pengar fanns i systemet, och verksamhetssystem
+              där fel blir dyra.
             </p>
             <ul className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
               {roles.map((r) => (
@@ -324,7 +324,7 @@ export default function Testkonsult() {
               Vad jag gör
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
-              Kvalitet från strategi till körande tester
+              Från teststrategi till tester som körs
             </h2>
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
               {offers.map((o) => (
@@ -367,7 +367,7 @@ export default function Testkonsult() {
               Så går det till
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
-              Tre steg till tester ni litar på
+              Från nulägesgenomgång till överlämning
             </h2>
             <div className="mt-8 grid md:grid-cols-3 gap-4">
               {steps.map((step, index) => (
@@ -387,16 +387,16 @@ export default function Testkonsult() {
                 </div>
               ))}
             </div>
-            <div className="mt-8 rounded-2xl bg-gray-800 dark:bg-black p-6 md:p-8 flex flex-wrap items-baseline gap-x-10 gap-y-3">
+            <div className="mt-8 rounded-2xl bg-gray-800 dark:bg-black p-6 md:p-8 flex flex-col md:flex-row md:items-start gap-x-12 gap-y-5">
               <p className="text-2xl md:text-3xl font-bold text-white">
                 900 kr/h
-                <span className="ml-2 text-sm font-normal text-gray-300">
+                <span className="mt-1 block text-sm font-normal text-gray-300">
                   exkl. moms
                 </span>
               </p>
               <p className="text-2xl md:text-3xl font-bold text-white">
                 Fast pris på avgränsade insatser
-                <span className="ml-2 text-sm font-normal text-gray-300">
+                <span className="mt-1 block text-sm font-normal text-gray-300">
                   offert efter ett kort samtal
                 </span>
               </p>
@@ -442,12 +442,12 @@ export default function Testkonsult() {
                 Säg hej
               </p>
               <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
-                Testas era releaser för hand? Låt oss ändra på det.
+                Testar ni varje release för hand?
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-gray-600 dark:text-gray-300 max-w-md">
                 Berätta kort om er produkt och hur ni testar i dag, så
-                återkommer jag inom en dag med en första bedömning —
-                kostnadsfritt och utan förpliktelser.
+                återkommer jag inom en dag med en första bedömning. Det kostar
+                ingenting och ni binder er inte till något.
               </p>
               <div className="mt-8 space-y-2 text-sm">
                 <p>

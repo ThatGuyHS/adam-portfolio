@@ -14,28 +14,28 @@ const offers = [
     icon: "🛡️",
     title: "Moderation & community",
     blurb:
-      "Auto-moderation, role management, welcome flows and custom commands that keep a growing server healthy without a mod team working around the clock.",
+      "Auto-moderation, role management, welcome flows and custom commands, so a growing server doesn't need moderators online around the clock.",
     points: ["Auto-moderation", "Role & onboarding automation", "Custom commands"],
   },
   {
     icon: "🏆",
     title: "Esports & tournament bots",
     blurb:
-      "Match check-ins, bracket updates, results reporting and announcements — built by someone who has run tournaments professionally and built the match-ops bot behind Rivals League.",
+      "Match check-ins, bracket updates, results reporting and announcements. I've run tournaments professionally and built the match-ops bot behind Rivals League.",
     points: ["Match operations", "Bracket & results flows", "Scheduled announcements"],
   },
   {
     icon: "🔌",
     title: "Integrations & automation",
     blurb:
-      "Connect Discord to the rest of your stack: your website, database, CMS, payment flow or third-party APIs. Notifications in, slash commands out.",
+      "Connect Discord to your website, database, CMS, payment flow or third-party APIs. Events from those systems show up in your server, and slash commands can act on them.",
     points: ["Website & API integrations", "Webhooks & notifications", "Slash commands"],
   },
   {
     icon: "🚀",
     title: "Hosting, upkeep & support",
     blurb:
-      "Deployment, monitoring and updates so the bot keeps working when Discord changes. With a QA background, I test what I ship — and keep it shipped.",
+      "Deployment, monitoring and updates, so the bot keeps working when Discord changes things. I've worked in QA since 2018, and bots get tested before they go live.",
     points: ["Deployment & hosting setup", "Monitoring & updates", "Ongoing support"],
   },
 ];
@@ -44,7 +44,7 @@ const steps = [
   {
     title: "Scope call",
     description:
-      "A short call about your server or product: what should the bot do, who uses it, and what does success look like? You get a clear feature list back.",
+      "A short call about your server or product: what the bot should do and who will use it. Afterwards you get a feature list.",
   },
   {
     title: "Fixed quote & build",
@@ -61,7 +61,7 @@ const steps = [
 const faqs = [
   {
     q: "What does a custom Discord bot cost?",
-    a: "Small utility bots — a few commands, a welcome flow, some automation — are usually a fixed quote after a short call. Larger bots with integrations, databases or tournament logic are priced per project or at my hourly rate of 900 SEK/hour (approx. €80, excl. VAT). You always know the price before I start building.",
+    a: "Small utility bots (a few commands, a welcome flow, some automation) usually get a fixed quote after a short call. Larger bots with integrations, databases or tournament logic are priced per project or at my hourly rate of 900 SEK/hour (about €80, excl. VAT). You know the price before I start building.",
   },
   {
     q: "What can a Discord bot actually do?",
@@ -69,7 +69,7 @@ const faqs = [
   },
   {
     q: "What do you build bots with?",
-    a: "Node.js and TypeScript with discord.js — the same stack behind the match-operations bot I built for the Rivals League tournament platform. For bots that need data I typically use Supabase or PostgreSQL, and I integrate with services like Stripe when payments are involved.",
+    a: "Node.js and TypeScript with discord.js, the same stack as the match-operations bot I built for the Rivals League tournament platform. For bots that store data I usually use Supabase or PostgreSQL, and Stripe when payments are involved.",
   },
   {
     q: "Do you host the bot too?",
@@ -200,7 +200,7 @@ export default function DiscordBots() {
       "@type": "Service",
       "@id": `${siteUrl}/discord-bots#service`,
       serviceType: "Custom Discord bot development",
-      name: "Adam Peleback — Custom Discord Bot Development",
+      name: "Adam Peleback, custom Discord bot development",
       url: `${siteUrl}/discord-bots`,
       provider: {
         "@type": "Person",
@@ -227,7 +227,7 @@ export default function DiscordBots() {
   return (
     <ContainerBlock
       title="Custom Discord Bot Development | Adam Peleback"
-      description="Custom Discord bots for communities, esports organizations and products — moderation, tournament operations, integrations and hosting. Built with discord.js by the developer behind Rivals League's match-ops bot."
+      description="Custom Discord bots for communities, esports organizations and products: moderation, tournament operations, integrations and hosting. Built with discord.js by the developer behind Rivals League's match-ops bot."
       structuredData={structuredData}
     >
       <div>
@@ -241,11 +241,11 @@ export default function DiscordBots() {
               Custom Discord bots that run your server for you
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-gray-600 dark:text-gray-300 max-w-2xl">
-              I&apos;m Adam Peleback — a developer and former esports
-              tournament admin. I build Discord bots that moderate communities,
-              run tournaments and connect Discord to the rest of your stack,
-              from a few custom commands to the match-operations bot behind an
-              entire tournament platform.
+              I&apos;m Adam Peleback, a developer and former esports tournament
+              admin. I build Discord bots that moderate communities, run
+              tournaments and connect Discord to your other systems. The
+              biggest one so far runs match operations for a whole tournament
+              platform.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
@@ -268,10 +268,10 @@ export default function DiscordBots() {
         <section id="proof" className="bg-[#F1F1F1] dark:bg-gray-900">
           <div className="max-w-6xl mx-auto px-4 py-14 md:py-20">
             <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-indigo-500 mb-4 font-semibold">
-              Proof first
+              In production
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
-              Bots doing real work in production
+              Bots running on live servers
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-gray-600 dark:text-gray-300 max-w-2xl">
               The Rivals League tournament platform runs its match operations
@@ -280,10 +280,10 @@ export default function DiscordBots() {
             </p>
             <ul className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
               {proofProjects.map((p) => (
-                <li key={p.title}>
+                <li key={p.title} className="flex flex-col">
                   <Link
                     href={`/project/${toProjectSlug(p.title)}`}
-                    className="block h-full rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                    className="block flex-1 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                   >
                     <h3 className="text-xl font-bold text-gray-800 dark:text-white">
                       {p.title} →
@@ -378,16 +378,16 @@ export default function DiscordBots() {
                 </div>
               ))}
             </div>
-            <div className="mt-8 rounded-2xl bg-gray-800 dark:bg-black p-6 md:p-8 flex flex-wrap items-baseline gap-x-10 gap-y-3">
+            <div className="mt-8 rounded-2xl bg-gray-800 dark:bg-black p-6 md:p-8 flex flex-col md:flex-row md:items-start gap-x-12 gap-y-5">
               <p className="text-2xl md:text-3xl font-bold text-white">
                 Fixed quote per bot
-                <span className="ml-2 text-sm font-normal text-gray-300">
+                <span className="mt-1 block text-sm font-normal text-gray-300">
                   agreed before the build starts
                 </span>
               </p>
               <p className="text-2xl md:text-3xl font-bold text-white">
                 900 SEK/h
-                <span className="ml-2 text-sm font-normal text-gray-300">
+                <span className="mt-1 block text-sm font-normal text-gray-300">
                   approx. €80 · excl. VAT · for ongoing work
                 </span>
               </p>
@@ -437,8 +437,8 @@ export default function DiscordBots() {
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-gray-600 dark:text-gray-300 max-w-md">
                 Tell me what your community or product needs and I&apos;ll get
-                back within a day with a first assessment — free, no strings
-                attached.
+                back within a day with a first assessment. It&apos;s free and
+                you aren&apos;t committing to anything.
               </p>
               <div className="mt-8 space-y-2 text-sm">
                 <p>

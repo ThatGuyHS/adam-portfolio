@@ -7,7 +7,7 @@ export default function projects() {
   return (
     <ContainerBlock
       title="Projects | Adam Peleback"
-      description="Browse selected web projects built by Adam Peleback, including SaaS products, portfolios, and esports platforms."
+      description="Web projects by Adam Peleback: client sites, my own comparison and guide sites, web apps and esports platforms."
       keywords="Adam Peleback projects, portfolio projects, Next.js projects"
       structuredData={{
         "@context": "https://schema.org",

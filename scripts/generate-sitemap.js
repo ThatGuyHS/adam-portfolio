@@ -47,13 +47,13 @@ function toRoute(filePath) {
   return route ? `/${route}` : "/";
 }
 
+// No <lastmod>: the build date would mark every URL as changed on every
+// deploy, whether its content changed or not.
 function buildSitemapXml(routes) {
-  const lastmod = new Date().toISOString();
   const urls = routes
     .map(
       (route) => `  <url>
     <loc>${SITE_URL}${route}</loc>
-    <lastmod>${lastmod}</lastmod>
   </url>`
     )
     .join("\n");

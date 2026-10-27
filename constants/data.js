@@ -13,7 +13,7 @@ const userData = {
       kind: "Data-driven directory site",
       stack: ["Next.js", "TypeScript", "Tailwind CSS", "Python"],
       blurb:
-        "Independent index of perfume dupes — thousands of clone products cross-referenced to the originals they copy, with notes, sizes and price per ml. A Python pipeline normalizes seller catalogs into the statically generated site.",
+        "An index of perfume dupes. Thousands of clone perfumes are matched to the originals they copy, with notes, bottle sizes and price per ml. A Python pipeline cleans up seller catalogs and feeds the statically generated site.",
     },
     {
       title: "Slow Cooker Converter",
@@ -22,7 +22,7 @@ const userData = {
       kind: "Calculator tool site",
       stack: ["Next.js", "TypeScript", "Tailwind CSS"],
       blurb:
-        "Free calculator that converts slow cooker time on Low or High to oven time and back, plus slow cooker to Instant Pot. Single-purpose tool site with statically generated long-tail pages for every common cook time.",
+        "A free calculator that converts slow cooker times on Low or High to oven times and back, and slow cooker recipes to Instant Pot. Each common cook time also has its own static page.",
     },
     {
       title: "Sälja elbilen",
@@ -31,7 +31,7 @@ const userData = {
       kind: "Comparison site",
       stack: ["Next.js", "TypeScript", "Tailwind CSS"],
       blurb:
-        "Swedish comparison of every way to sell a used EV — direct buyers, bid brokers, auctions and private sale — with terms checked against each company's own conditions. Static export with source-backed guides per situation and model.",
+        "Compares the ways to sell a used EV in Sweden: direct buyers, bidding services, auctions and private sale. Each company's terms are checked against its own published conditions, and the guides for different situations and car models cite their sources.",
     },
     {
       title: "Yrkesförsäkring",
@@ -49,7 +49,7 @@ const userData = {
       kind: "Data comparison site",
       stack: ["Next.js", "TypeScript", "Tailwind CSS", "Python"],
       blurb:
-        "Compares electricity grid fees across all 290 Swedish municipalities and grid operators — prices, increases and price lists. Python scripts parse the operators' tariffs into data for a statically exported Next.js site.",
+        "Compares electricity grid fees in all 290 Swedish municipalities: prices, increases and each grid operator's price list. Python scripts parse the operators' tariffs into data for a statically exported Next.js site.",
     },
     {
       title: "Bokutgivningar",
@@ -67,7 +67,7 @@ const userData = {
       kind: "Directory site",
       stack: ["Next.js", "TypeScript", "Tailwind CSS", "Python"],
       blurb:
-        "Swedish directory of winter storage for boats, caravans, motorhomes, motorcycles and cars — outdoor spots, cold and heated halls across the country. Harvested listing data rendered as a static Next.js export.",
+        "Swedish directory of winter storage for boats, caravans, motorhomes, motorcycles and cars, from outdoor spots to cold and heated halls across the country. Listings are collected by script and rendered as a static Next.js export.",
     },
     {
       title: "Tidningstoppen",
@@ -76,7 +76,7 @@ const userData = {
       kind: "Comparison site + digital product",
       stack: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "Vercel Blob"],
       blurb:
-        "Independent comparison of Swedish magazine apps — price, catalogue and trial periods, ranked without paid placements. Also sells its own printable puzzle pack through Stripe Checkout, with the PDF served only after payment verification.",
+        "Compares Swedish magazine apps on price, catalogue and trial period, with no paid placements. The site also sells its own printable puzzle pack through Stripe Checkout, and the PDF is only served once the payment is verified.",
     },
     {
       title: "Robotklipparguiden",
@@ -85,7 +85,7 @@ const userData = {
       kind: "Affiliate content site",
       stack: ["Next.js", "TypeScript", "Tailwind CSS"],
       blurb:
-        "Swedish buying guide for robot lawn mowers, living on the internationalized domain bästarobotgräsklippare.se. Server-rendered comparison content built for organic search.",
+        "Swedish buying guide for robot lawn mowers on the åäö domain bästarobotgräsklippare.se. Mowers can be filtered by lawn size and needs, and every page is rendered on the server.",
     },
     {
       title: "Robotdammsugarguiden",
@@ -94,7 +94,7 @@ const userData = {
       kind: "Affiliate content site",
       stack: ["Next.js", "TypeScript", "Tailwind CSS"],
       blurb:
-        "Swedish comparison site for robot vacuum cleaners — reviews and buying guides, part of the same family of SEO-driven guide sites.",
+        "Swedish comparison site for robot vacuums, with a top list, a quiz that suggests a model and a guide to running costs. It runs on the same system as Robotklipparguiden.",
     },
     {
       title: "Luftrenarguiden",
@@ -103,7 +103,7 @@ const userData = {
       kind: "Affiliate content site",
       stack: ["Next.js", "TypeScript", "Tailwind CSS"],
       blurb:
-        "Swedish buying guide for air purifiers — the third of the SEO-focused comparison sites, sharing the same server-rendered Next.js setup.",
+        "Swedish buying guide for air purifiers, with pages that filter by room size and needs such as pets. Same server-rendered Next.js setup as my other two guide sites.",
     },
     {
       title: "Rivals League",
@@ -151,7 +151,7 @@ const userData = {
       kind: "Web app",
       stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase", "Stripe"],
       blurb:
-        "Turns your recipes into a print-ready cookbook — PDF generation in the browser, Supabase for storage, and Stripe-powered checkout.",
+        "Turns your recipes into a print-ready cookbook. The PDF is generated in the browser, recipes are stored in Supabase and checkout runs through Stripe.",
     },
     {
       title: "Adluelno",
@@ -161,7 +161,7 @@ const userData = {
       kind: "Company website",
       stack: ["Next.js", "TypeScript", "Tailwind CSS"],
       blurb:
-        "Website for a Swedish business advisory and consulting firm — a clean, fast, SEO-optimized Next.js build.",
+        "Website for a Swedish business advisory and consulting firm, built in Next.js with the technical SEO in place from launch.",
     },
     {
       title: "Book Report Template",
@@ -170,7 +170,7 @@ const userData = {
       kind: "AI web app",
       stack: ["React", "TypeScript", "Vite", "shadcn/ui", "Stripe"],
       blurb:
-        "AI-powered book report generator — pick a template, let the AI draft the report, pay through Stripe.",
+        "Book report generator: pick a template and an AI model drafts the report. Payment goes through Stripe.",
     },
     {
       title: "Webbdoktorn",
@@ -189,7 +189,7 @@ const userData = {
       kind: "Travel content site",
       stack: ["Next.js", "TypeScript", "Tailwind CSS", "MDX"],
       blurb:
-        "Curated weekend itineraries for Paris — statically generated, with the guides written in MDX.",
+        "Weekend itineraries for Paris. The guides are written in MDX and the site is statically generated.",
     },
     {
       title: "Svenska Esportförbundet",
@@ -218,7 +218,7 @@ const userData = {
       kind: "Web app / directory",
       stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase"],
       blurb:
-        "A Swedish library of AI prompts — browse, search and share prompts, all stored in Supabase.",
+        "A Swedish library of AI prompts that you can browse, search and share. The prompts are stored in Supabase.",
     },
     {
       title: "Cryptoskatt",
@@ -227,7 +227,7 @@ const userData = {
       kind: "Fintech web app",
       stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Stripe"],
       blurb:
-        "Helps Swedish crypto traders sort out their taxes — a Next.js app with Supabase for data and Stripe for payments.",
+        "Helps Swedish crypto traders do their taxes. A Next.js app with Supabase for data and Stripe for payments.",
     },
     {
       title: "Remote Work Radar",
@@ -236,7 +236,7 @@ const userData = {
       kind: "Content site / blog",
       stack: ["Next.js", "TypeScript", "Tailwind CSS", "Markdown"],
       blurb:
-        "Statically generated blog about all things remote work, with posts written in Markdown.",
+        "Blog about remote work. Posts are written in Markdown and the site is statically generated.",
     },
     {
       title: "Nexus Collegiate",
@@ -250,10 +250,10 @@ const userData = {
       title: "Best Travel Route",
       link: "https://besttravelroute.com",
       imgUrl: "/in-progress.jpeg",
-      kind: "AI web app — in progress",
+      kind: "AI web app (in progress)",
       stack: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
       blurb:
-        "An AI travel companion for planning the best route between destinations. Currently in development.",
+        "Uses AI to plan the best route between travel destinations. Still in development.",
     },
 
     {
@@ -264,16 +264,16 @@ const userData = {
       kind: "Personal site",
       stack: ["Next.js", "React", "Tailwind CSS", "Three.js", "React Three Fiber"],
       blurb:
-        "This site — including a walkable 3D village version of my CV built with React Three Fiber.",
+        "This site. It also has a walkable 3D village version of my CV, built with React Three Fiber.",
     },
     {
       title: "Stryda",
       link: "https://play.stryda.gg",
       imgUrl: "/stryda.png",
-      kind: "Esports platform — professional work",
+      kind: "Esports platform (employer)",
       stack: ["TypeScript", "React", "Next.js"],
       blurb:
-        "G-Loot's esports platform, now part of Challengermode. Not a personal project — I worked on it professionally as QA Developer and later Frontend Developer.",
+        "G-Loot's esports platform, now part of Challengermode. This was my day job: I worked on it as QA Developer and later as Frontend Developer.",
     },
     {
       title: "Phoenix Blue",
@@ -287,9 +287,11 @@ const userData = {
   ],
   about: {
     title:
-      "I'm a software developer that loves building products and web applications that provide value and fun to people around the globe",
+      "I'm a web developer and software tester in Stockholm, and most of my career so far has been in esports",
     description: [
-      "I began my journey in the esports and tech industry as a Tournament Administrator, diving deep into the competitive gaming world. My passion for technology led me to roles in QA testing, where I honed my skills in test automation and manual testing, ensuring the best user experience for gaming platforms. Transitioning to a Frontend Developer role, I've mastered tools and languages like Typescript, Next.JS, JavaScript, and React.js. My experience isn't just limited to coding; I've been a pivotal part of teams, advising on testing strategies and ensuring the seamless operation of platforms like G-Loot. In addition to my technical roles, I've been involved in the growth and success of organizations like Phoenix Blue, contributing to the esports community and helping broadcast events. My diverse experience in both the technical and administrative aspects of the esports world has given me a unique perspective, allowing me to bridge the gap between technology and gaming. Today, I'm not just a developer; I'm an esports enthusiast, a tech aficionado, and a dedicated professional committed to enhancing the gaming experience for all.",
+      "I started in esports in 2017, writing event coverage for Znipe Esports and running the PUBG tournaments on G-Loot's Global Loot League. At G-Loot I moved into QA in 2018. I tested the platform by hand at first, then wrote test automation and advised the development teams on testing. In 2022 I switched to frontend development on the same platform, working in TypeScript, React and Next.js.",
+      "After G-Loot I spent a few months as a frontend engineer at Zaver, working in Angular, and then a year freelancing. That year I built internal tools in Nest.js for Clutch Group, made the PXB Media website and built the first version of the Swedish Esports Federation's site, which I later rebuilt for them on Next.js and Strapi. Since September 2025 I work as a system tester at Decerno.",
+      "I've been on the board of the non-profit esports organization Phoenix Blue since 2017 and helped start the Phoenix Blue Event Series. I also run a number of my own comparison and guide sites, which is where most of my SEO experience comes from.",
     ],
     currentProject: "PXB Media",
     currentProjectUrl: "https://pxbmedia.com",

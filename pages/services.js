@@ -14,17 +14,17 @@ export default function Services() {
     {
       title: "Discover",
       description:
-        "We define goals, scope, and success metrics so the outcome is clear from day one.",
+        "We agree on what you need, what is out of scope and what it will cost.",
     },
     {
       title: "Build",
       description:
-        "I deliver in focused iterations with regular updates and measurable progress.",
+        "I build in short iterations and show you working versions along the way.",
     },
     {
       title: "Launch",
       description:
-        "We validate quality, performance, and handoff details for a confident release.",
+        "I test everything before launch and hand over the code with documentation, so you aren't tied to me.",
     },
   ];
 
@@ -36,7 +36,7 @@ export default function Services() {
   return (
     <ContainerBlock
       title="Services | Adam Peleback"
-      description="Explore my professional services including web development, test automation, and esports tournament administration."
+      description="Freelance web development, test automation, Discord bots and esports tournament administration by Adam Peleback in Stockholm."
       keywords="frontend development services, test automation services, esports tournament administration"
       structuredData={{
         "@context": "https://schema.org",
@@ -64,12 +64,12 @@ export default function Services() {
               </p>
               <div className="grid md:grid-cols-2 gap-8 items-end">
                 <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
-                  Practical services for shipping quality digital products.
+                  Web, testing, Discord bots and esports.
                 </h2>
                 <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-                  I help teams and founders with frontend development, testing,
-                  automation, and esports operations through clear scopes and reliable
-                  delivery.
+                  I take freelance work alongside my job as a system tester at
+                  Decerno. You get a scope and a price before I start, and you
+                  deal with me directly the whole way.
                 </p>
               </div>
             </header>
@@ -177,11 +177,12 @@ export default function Services() {
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-2">
-                Need something tailored?
+                Something else in mind?
               </h2>
               <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
-                If your project needs a custom setup, we can define a bespoke scope
-                around your team, stack, and timeline.
+                If your project doesn&apos;t fit one of these, send me a short
+                description and we&apos;ll work out a scope that fits your team,
+                stack and timeline.
               </p>
             </div>
             <Link
