@@ -1,15 +1,13 @@
+import profile from "./profile";
+
 const userData = {
-  githubUsername: "ThatGuyHS",
-  name: "Adam Peleback",
-  designation: "Frontend Developer, Esports Tournament Organizer",
-  avatarUrl: "/adam.png",
-  email: "adampeleback@gmail.com",
-  address: "Stockholm, Sweden",
+  ...profile,
   projects: [
     {
       title: "Dupe Cabinet",
+      group: "own-site",
       link: "https://dupecabinet.com",
-      imgUrl: "/dupecabinet.png",
+      imgUrl: "/projects/dupecabinet.jpg",
       kind: "Data-driven directory site",
       stack: ["Next.js", "TypeScript", "Tailwind CSS", "Python"],
       blurb:
@@ -17,8 +15,9 @@ const userData = {
     },
     {
       title: "Slow Cooker Converter",
+      group: "own-site",
       link: "https://slowcookerconverter.com",
-      imgUrl: "/slowcookerconverter.png",
+      imgUrl: "/projects/slowcookerconverter.jpg",
       kind: "Calculator tool site",
       stack: ["Next.js", "TypeScript", "Tailwind CSS"],
       blurb:
@@ -26,8 +25,9 @@ const userData = {
     },
     {
       title: "Sälja elbilen",
+      group: "own-site",
       link: "https://saljaelbilen.se",
-      imgUrl: "/saljaelbilen.png",
+      imgUrl: "/projects/saljaelbilen.jpg",
       kind: "Comparison site",
       stack: ["Next.js", "TypeScript", "Tailwind CSS"],
       blurb:
@@ -35,8 +35,9 @@ const userData = {
     },
     {
       title: "Yrkesförsäkring",
+      group: "own-site",
       link: "https://yrkesforsakring.se",
-      imgUrl: "/yrkesforsakring.png",
+      imgUrl: "/projects/yrkesforsakring.jpg",
       kind: "Content site",
       stack: ["Next.js", "TypeScript", "Tailwind CSS"],
       blurb:
@@ -44,8 +45,9 @@ const userData = {
     },
     {
       title: "Elnätskollen",
+      group: "own-site",
       link: "https://elnatskollen.se",
-      imgUrl: "/elnatskollen.png",
+      imgUrl: "/projects/elnatskollen.jpg",
       kind: "Data comparison site",
       stack: ["Next.js", "TypeScript", "Tailwind CSS", "Python"],
       blurb:
@@ -53,8 +55,9 @@ const userData = {
     },
     {
       title: "Bokutgivningar",
+      group: "own-site",
       link: "https://bokutgivningar.se",
-      imgUrl: "/bokutgivningar.png",
+      imgUrl: "/projects/bokutgivningar.jpg",
       kind: "Data-driven content site",
       stack: ["Next.js", "TypeScript", "Python"],
       blurb:
@@ -62,8 +65,10 @@ const userData = {
     },
     {
       title: "Vinterplatsen",
+      group: "own-site",
+      featured: 3,
       link: "https://vinterplatsen.se",
-      imgUrl: "/vinterplatsen.png",
+      imgUrl: "/projects/vinterplatsen.jpg",
       kind: "Directory site",
       stack: ["Next.js", "TypeScript", "Tailwind CSS", "Python"],
       blurb:
@@ -71,8 +76,9 @@ const userData = {
     },
     {
       title: "Tidningstoppen",
+      group: "own-site",
       link: "https://tidningstoppen.se",
-      imgUrl: "/tidningstoppen.png",
+      imgUrl: "/projects/tidningstoppen.jpg",
       kind: "Comparison site + digital product",
       stack: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "Vercel Blob"],
       blurb:
@@ -80,8 +86,9 @@ const userData = {
     },
     {
       title: "Robotklipparguiden",
+      group: "own-site",
       link: "https://xn--bstarobotgrsklippare-bzbk.se",
-      imgUrl: "/robotklipparguiden.png",
+      imgUrl: "/projects/robotklipparguiden.jpg",
       kind: "Affiliate content site",
       stack: ["Next.js", "TypeScript", "Tailwind CSS"],
       blurb:
@@ -89,8 +96,9 @@ const userData = {
     },
     {
       title: "Robotdammsugarguiden",
+      group: "own-site",
       link: "https://www.basta-robotdammsugare.se",
-      imgUrl: "/robotdammsugarguiden.png",
+      imgUrl: "/projects/robotdammsugarguiden.jpg",
       kind: "Affiliate content site",
       stack: ["Next.js", "TypeScript", "Tailwind CSS"],
       blurb:
@@ -98,8 +106,9 @@ const userData = {
     },
     {
       title: "Luftrenarguiden",
+      group: "own-site",
       link: "https://bastaluftrenaren.se",
-      imgUrl: "/luftrenarguiden.png",
+      imgUrl: "/projects/luftrenarguiden.jpg",
       kind: "Affiliate content site",
       stack: ["Next.js", "TypeScript", "Tailwind CSS"],
       blurb:
@@ -107,9 +116,10 @@ const userData = {
     },
     {
       title: "Rivals League",
+      group: "product",
       featured: 1,
       link: "https://rivalsleague.gg",
-      imgUrl: "/rivalsleague.png",
+      imgUrl: "/projects/rivalsleague.jpg",
       kind: "Esports tournament platform",
       stack: [
         "React",
@@ -126,8 +136,9 @@ const userData = {
     },
     {
       title: "Create Discord Bot",
+      group: "product",
       link: "https://creatediscordbot.com",
-      imgUrl: "/creatediscordbot.PNG",
+      imgUrl: "/projects/creatediscordbot.jpg",
       kind: "Productized service site",
       stack: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "Resend"],
       blurb:
@@ -135,9 +146,10 @@ const userData = {
     },
     {
       title: "PXB Media",
-      featured: 2,
+      group: "client",
+      featured: 5,
       link: "https://pxbmedia.com",
-      imgUrl: "/pxbmedia1.png",
+      imgUrl: "/projects/pxbmedia.jpg",
       kind: "Company website",
       stack: ["Next.js", "TypeScript", "Tailwind CSS", "Contentful"],
       blurb:
@@ -145,9 +157,9 @@ const userData = {
     },
     {
       title: "Cookbook generator",
-      featured: 5,
+      group: "product",
       link: "https://cookbookgenerator.com",
-      imgUrl: "/cookbookgenerator.png",
+      imgUrl: "/projects/cookbookgenerator.jpg",
       kind: "Web app",
       stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase", "Stripe"],
       blurb:
@@ -155,37 +167,20 @@ const userData = {
     },
     {
       title: "Adluelno",
-      featured: 3,
+      group: "client",
+      featured: 6,
       link: "https://adluelno.se",
-      imgUrl: "/adluelno.png",
+      imgUrl: "/projects/adluelno.jpg",
       kind: "Company website",
       stack: ["Next.js", "TypeScript", "Tailwind CSS"],
       blurb:
-        "Website for a Swedish business advisory and consulting firm, built in Next.js with the technical SEO in place from launch.",
-    },
-    {
-      title: "Book Report Template",
-      link: "https://bookreporttemplate.com",
-      imgUrl: "/bookreporttemplate.PNG",
-      kind: "AI web app",
-      stack: ["React", "TypeScript", "Vite", "shadcn/ui", "Stripe"],
-      blurb:
-        "Book report generator: pick a template and an AI model drafts the report. Payment goes through Stripe.",
-    },
-    {
-      title: "Webbdoktorn",
-      link: "https://webbdoktorn.se",
-      imgUrl: "./webbdoktorn.PNG",
-      kind: "Agency website",
-      stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase"],
-      blurb:
-        "Swedish web agency that builds, maintains and optimizes websites for small businesses.",
+        "Website for Adluelno, a Swedish firm offering board and management advisory as well as software development. Built in Next.js with the technical SEO in place from launch.",
     },
     {
       title: "Weekend in Paris",
-      featured: 4,
+      group: "own-site",
       link: "https://weekendparis.com",
-      imgUrl: "/weekendparis.PNG",
+      imgUrl: "/projects/weekendparis.jpg",
       kind: "Travel content site",
       stack: ["Next.js", "TypeScript", "Tailwind CSS", "MDX"],
       blurb:
@@ -193,8 +188,10 @@ const userData = {
     },
     {
       title: "Svenska Esportförbundet",
+      group: "client",
+      featured: 2,
       link: "https://svenskesport.se",
-      imgUrl: "/sesf.png",
+      imgUrl: "/projects/sesf.jpg",
       kind: "Federation website + custom CMS",
       stack: ["Next.js", "TypeScript", "Tailwind CSS", "Strapi", "Resend"],
       blurb:
@@ -202,9 +199,9 @@ const userData = {
     },
     {
       title: "AoE2 Sverige",
-      featured: 7,
+      group: "work",
       link: "https://www.aoe2sverige.se/",
-      imgUrl: "/aoe2sverige.png",
+      imgUrl: "/projects/aoe2sverige.jpg",
       kind: "Community site",
       stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase"],
       blurb:
@@ -212,55 +209,30 @@ const userData = {
     },
     {
       title: "PromptBibliotek",
-      featured: 8,
+      group: "product",
       link: "https://promptbibliotek.se",
-      imgUrl: "/promptbibliotek.png",
+      imgUrl: "/projects/promptbibliotek.jpg",
       kind: "Web app / directory",
       stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase"],
       blurb:
-        "A Swedish library of AI prompts that you can browse, search and share. The prompts are stored in Supabase.",
+        "A Swedish library of AI prompts, skills and instruction files for AI agents, which you can browse, search and share. The content is stored in Supabase.",
     },
     {
       title: "Cryptoskatt",
+      group: "product",
+      featured: 4,
       link: "https://cryptoskatt.se",
-      imgUrl: "/cryptoskatt.png",
+      imgUrl: "/projects/cryptoskatt.jpg",
       kind: "Fintech web app",
       stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Stripe"],
       blurb:
         "Helps Swedish crypto traders do their taxes. A Next.js app with Supabase for data and Stripe for payments.",
     },
     {
-      title: "Remote Work Radar",
-      link: "https://remoteworkradar.com",
-      imgUrl: "/remoteworkradar.png",
-      kind: "Content site / blog",
-      stack: ["Next.js", "TypeScript", "Tailwind CSS", "Markdown"],
-      blurb:
-        "Blog about remote work. Posts are written in Markdown and the site is statically generated.",
-    },
-    {
-      title: "Nexus Collegiate",
-      link: "https://nexuscollegiate.com",
-      imgUrl: "/nexus-collegiate.png",
-      kind: "Esports organization site",
-      stack: [],
-      blurb: "Website for a collegiate esports organization.",
-    },
-    {
-      title: "Best Travel Route",
-      link: "https://besttravelroute.com",
-      imgUrl: "/in-progress.jpeg",
-      kind: "AI web app (in progress)",
-      stack: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
-      blurb:
-        "Uses AI to plan the best route between travel destinations. Still in development.",
-    },
-
-    {
       title: "Portfolio",
-      featured: 6,
+      group: "product",
       link: "https://www.adampeleback.com",
-      imgUrl: "/portfolio.png",
+      imgUrl: "/projects/portfolio.jpg",
       kind: "Personal site",
       stack: ["Next.js", "React", "Tailwind CSS", "Three.js", "React Three Fiber"],
       blurb:
@@ -268,8 +240,9 @@ const userData = {
     },
     {
       title: "Stryda",
+      group: "work",
       link: "https://play.stryda.gg",
-      imgUrl: "/stryda.png",
+      imgUrl: "/projects/stryda.jpg",
       kind: "Esports platform (employer)",
       stack: ["TypeScript", "React", "Next.js"],
       blurb:
@@ -277,8 +250,9 @@ const userData = {
     },
     {
       title: "Phoenix Blue",
+      group: "work",
       link: "https://pxb.gg",
-      imgUrl: "/pxb.png",
+      imgUrl: "/projects/pxb.jpg",
       kind: "Esports organization",
       stack: ["WordPress"],
       blurb:
@@ -300,76 +274,70 @@ const userData = {
     {
       title: "System Tester",
       company: "Decerno AB",
-      year: "sep. 2025–now",
-      desc: "System testing and software testing.",
+      year: "Sep 2025–present",
+      desc: "System testing and software testing of business systems.",
     },
     {
       title: "Freelance Web Developer",
       company: "Svenska E-sportförbundet",
-      year: "mar. 2025–aug. 2025",
-      desc: "Freelance web development using Typescript and React.js.",
+      year: "Mar–Aug 2025",
+      desc: "Freelance web development in TypeScript and React, including the federation's website on Next.js and Strapi.",
     },
     {
       title: "Freelance Web Developer",
       company: "Self-employed",
-      year: "apr. 2024–apr. 2025",
-      desc: "Developed new solutions and internal tools using Nest.js at Clutch Group. Created the PXB Media brand website using Next.js. Developed the first iteration of the Swedish Esports Association website, including a custom CMS solution.",
+      year: "Apr 2024–Apr 2025",
+      desc: "Built internal tools in Nest.js for Clutch Group, the PXB Media website in Next.js, and the first version of the Swedish Esports Federation's website with a custom CMS.",
     },
     {
       title: "Frontend Engineer",
       company: "Zaver",
-      year: "feb. 2024–apr. 2024",
-      desc: "Skills: Typescript, Angular",
+      year: "Feb–Apr 2024",
+      desc: "Frontend work in TypeScript and Angular.",
     },
     {
       title: "Frontend Developer",
       company: "G-Loot",
-      year: "oct. 2022–feb. 2024",
-      desc: "Skills: Typescript, Next.JS, JavaScript, React.js",
+      year: "Oct 2022–Feb 2024",
+      desc: "Frontend development on the G-Loot esports platform in TypeScript, React and Next.js.",
     },
     {
       title: "QA Developer",
       company: "G-Loot",
-      year: "may 2021–nov. 2022",
-      desc: "Test automation, Manual testing of crucial user flows, Advising development teams within testing",
+      year: "May 2021–Nov 2022",
+      desc: "Test automation, manual testing of critical user flows, and advising the development teams on testing.",
     },
     {
       title: "QA Tester",
       company: "G-Loot Esports",
-      year: "may 2018–may 2021",
-      desc: "Worked as a QA tester and tournament administrator for the Global Loot League. Supported the tech team and utilized knowledge from previous ventures within esports.",
+      year: "May 2018–May 2021",
+      desc: "QA tester and tournament administrator for the Global Loot League, working closely with the tech team.",
     },
     {
       title: "Tournament Administrator",
       company: "G-Loot",
-      year: "aug. 2017–may 2018",
+      year: "Aug 2017–May 2018",
       desc: "Responsible for the PUBG tournaments on the Global Loot League platform.",
     },
     {
       title: "General Member Board",
       company: "Phoenix Blue",
-      year: "2017–now",
-      desc: "Board member for the non-profit organization Phoenix Blue. Helped grow the organization and was involved in the creation of the Phoenix Blue Event Series.",
+      year: "2017–present",
+      desc: "Board member of the non-profit esports organization Phoenix Blue. Helped grow the organization and start the Phoenix Blue Event Series.",
     },
     {
       title: "Director of Social Media and Written Content",
       company: "Crimson Esports",
-      year: "nov. 2017–may 2018",
-      desc: "In charge of all social media and content operations. Helped write sponsorship proposals.",
+      year: "Nov 2017–May 2018",
+      desc: "Ran social media and written content, and helped write sponsorship proposals.",
     },
     {
       title: "Esports Copywriter",
       company: "Znipe Esports",
-      year: "jan. 2017–apr. 2018",
-      desc: "Responsible for producing written content on event pages, writing summaries, news articles, and recaps.",
+      year: "Jan 2017–Apr 2018",
+      desc: "Wrote event pages, match summaries, news articles and recaps.",
     },
   ],
-  resumeUrl: "/experience",
-  socialLinks: {
-    instagram: "https://instagram.com/adampeleback",
-    linkedin: "https://www.linkedin.com/in/adam-p-507593113/",
-    github: "https://github.com/ThatGuyHS",
-  },
 };
 
 export default userData;
