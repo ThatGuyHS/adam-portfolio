@@ -1,180 +1,148 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import userData from "@constants/data";
+import { GitHubIcon, InstagramIcon, LinkedInIcon } from "./Icons";
+
+const STACK = [
+  { name: "JavaScript", logo: "/logos/javascript.png" },
+  { name: "TypeScript", logo: "/logos/typescript.png" },
+  { name: "React", logo: "/logos/react.png" },
+  { name: "Next.js", logo: "/logos/nextjs.png" },
+  { name: "Tailwind CSS", logo: "/logos/tailwind.png" },
+  { name: "HTML", logo: "/logos/html.png" },
+  { name: "CSS", logo: "/logos/css.png" },
+  { name: "Git", logo: "/logos/git.png" },
+];
+
+// Tools that show up across the projects on this site.
+const ALSO_USED = [
+  "Supabase",
+  "Strapi",
+  "Contentful",
+  "Stripe",
+  "Express",
+  "discord.js",
+  "Python",
+  "Three.js",
+  "Angular",
+  "Nest.js",
+];
+
+const SOCIAL = [
+  { href: userData.socialLinks.linkedin, label: "LinkedIn", Icon: LinkedInIcon },
+  { href: userData.socialLinks.github, label: "GitHub", Icon: GitHubIcon },
+  { href: userData.socialLinks.instagram, label: "Instagram", Icon: InstagramIcon },
+];
 
 export default function AboutMe() {
   return (
     <section className="bg-white dark:bg-gray-800">
-      <div className="max-w-6xl mx-auto h-48 bg-white dark:bg-gray-800">
-        <h1 className=" text-5xl md:text-9xl font-bold py-20 text-center md:text-left">
+      <div className="max-w-6xl mx-auto px-4 pt-6 pb-12 md:pt-10">
+        <h1 className="text-5xl md:text-8xl font-bold tracking-tight text-gray-900 dark:text-white">
           About Me.
         </h1>
+        <p className="mt-8 max-w-4xl text-2xl md:text-4xl font-semibold leading-snug text-gray-900 dark:text-white">
+          {userData.about.title}.
+        </p>
       </div>
-      <div className="bg-[#F1F1F1] -mt-10 dark:bg-gray-900">
-        <div className="text-container max-w-6xl mx-auto pt-20">
-          <p
-            className="leading-loose text-2xl md:text-4xl font-semibold  mx-4"
-            style={{ lineHeight: "3rem" }}
-          >
-            {userData.about.title}. Currently working as a system tester at
-            Decerno, and taking on freelance web development and SEO work on
-            the side.
-          </p>
-        </div>
-      </div>
-      <div className="bg-[#F1F1F1] dark:bg-gray-900 px-4">
-        <div className="pt-20 grid grid-cols-1 md:grid-cols-3 max-w-6xl mx-auto gap-y-20 gap-x-20">
-          {/* Social Buttons */}
-          <div className="inline-flex flex-col">
+      <div className="bg-[#F1F1F1] dark:bg-gray-900">
+        <div className="max-w-6xl mx-auto px-4 py-16 md:py-20 grid gap-12 md:grid-cols-3 md:gap-16">
+          <aside className="space-y-10">
             <div>
-              <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-200">
+              <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
                 Contact
               </h2>
-              <p className="text-lg text-gray-500 mt-4 dark:text-gray-300">
-                For any sort of help / enquiry, shoot a{" "}
+              <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
+                For any sort of help or enquiry, shoot a{" "}
                 <a
                   href={`mailto:${userData.email}`}
-                  className="text-gray-800 border-b-2 border-gray-800 dark:border-gray-300 font-bold dark:text-gray-300"
+                  className="font-semibold text-gray-900 underline decoration-2 underline-offset-4 dark:text-white"
                 >
                   mail
                 </a>{" "}
-                and I'll get back. I swear.
+                and I&apos;ll get back. I swear.
               </p>
             </div>
-            <div className="mt-8">
-              <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-200">
-                Freelance Work
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+                Freelance work
               </h2>
-              <p className="text-lg text-gray-500 mt-4 dark:text-gray-300">
-                I work as a system tester at Decerno and build web projects on
-                the side. I&apos;m available for freelance web development and
-                SEO work. Please check out my{"      "}
+              <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
+                Alongside my job I take freelance web development, testing and
+                SEO work. See the{" "}
+                <Link
+                  href="/services"
+                  className="font-semibold text-gray-900 underline decoration-2 underline-offset-4 dark:text-white"
+                >
+                  services
+                </Link>{" "}
+                or download my{" "}
                 <a
                   href="/Adam_Peleback_CV.pdf"
                   download
-                  className="text-gray-800 border-b-2 border-gray-800 dark:border-gray-300 font-bold dark:text-gray-300 hover:text-gray-600 dark:hover:text-gray-400 transition-colors cursor-pointer pr-2"
+                  className="font-semibold text-gray-900 underline decoration-2 underline-offset-4 dark:text-white"
                 >
-                  resume {"   "}
+                  resume (PDF)
                 </a>
-                and reach out if you want to know more.
+                .
               </p>
             </div>
-            {/* Social Links */}
-            <h2 className="text-xl font-semibold text-gray-700 mt-8 dark:text-gray-200">
-              Social Links
-            </h2>
-            <div className="mt-4 ml-4">
-              <div className="flex flex-row justify-start items-center"></div>
-              <div className="flex flex-row justify-start items-center">
-                <a
-                  href={userData.socialLinks.github}
-                  className="flex flex-row items-center space-x-4 group"
-                >
-                  <div className="my-4">&rarr;</div>
-                  <div className="text-lg text-gray-500 font-mono relative overflow-hidden dark:text-gray-300">
-                    <div className="absolute h-0.5 w-full bg-gray-400 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300"></div>
-                    GitHub
-                  </div>
-                </a>
-              </div>
-              <div className="flex flex-row justify-start items-center">
-                <a
-                  href={userData.socialLinks.linkedin}
-                  className="flex flex-row items-center space-x-4 group"
-                >
-                  <div className="my-4">&rarr;</div>
-                  <div className="text-lg text-gray-500 font-mono relative overflow-hidden dark:text-gray-300">
-                    <div className="absolute h-0.5 w-full bg-gray-400 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300"></div>
-                    LinkedIn
-                  </div>
-                </a>
-              </div>
-              <div className="flex flex-row justify-start items-center">
-                <a
-                  href={userData.socialLinks.instagram}
-                  className="flex flex-row items-center space-x-4 group"
-                >
-                  <div className="my-4">&rarr;</div>
-                  <div className="text-lg text-gray-500 font-mono relative overflow-hidden dark:text-gray-300">
-                    <div className="absolute h-0.5 w-full bg-gray-400 bottom-0 transform -translate-x-28 group-hover:translate-x-0 transition duration-300"></div>
-                    Instagram
-                  </div>
-                </a>
-              </div>
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+                Elsewhere
+              </h2>
+              <ul className="mt-3 space-y-1">
+                {SOCIAL.map(({ href, label, Icon }) => (
+                  <li key={label}>
+                    <a
+                      href={href}
+                      className="inline-flex items-center gap-3 py-1.5 text-lg text-gray-700 hover:text-gray-900 hover:underline dark:text-gray-300 dark:hover:text-white"
+                    >
+                      <Icon className="h-5 w-5" />
+                      {label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
-          {/* Text area */}
-          <div className="col-span-1 md:col-span-2">
-            {userData.about.description?.map((desc, idx) => (
-              <p
-                key={idx}
-                className="text-xl text-gray-700 mb-4 dark:text-gray-300 "
-              >
-                {desc}
-              </p>
-            ))}
+          </aside>
+          <div className="md:col-span-2">
+            <div className="space-y-5 text-lg md:text-xl leading-relaxed text-gray-800 dark:text-gray-300">
+              {userData.about.description?.map((desc, idx) => (
+                <p key={idx}>{desc}</p>
+              ))}
+            </div>
 
-            <h2 className="bg-red-500 text-3xl rounded-md px-2 py-1 inline-block font-bold text-gray-50">
-              Tech Stack
+            <h2 className="mt-14 text-2xl font-bold text-gray-900 dark:text-white">
+              Tech stack
             </h2>
-            <div className="flex flex-row flex-wrap mt-8">
-              <Image
-                src="/logos/javascript.png"
-                alt="JavaScript logo"
-                width={80}
-                height={80}
-                className="h-20 w-20 mx-4 my-4"
-              />
-              <Image
-                src="/logos/typescript.png"
-                alt="TypeScript logo"
-                width={80}
-                height={80}
-                className="h-20 w-20 mx-4 my-4"
-              />
-              <Image
-                src="/logos/html.png"
-                alt="HTML5 logo"
-                width={80}
-                height={80}
-                className="h-20 w-20 mx-4 my-4"
-              />
-              <Image
-                src="/logos/css.png"
-                alt="CSS3 logo"
-                width={80}
-                height={80}
-                className="h-20 w-20 mx-4 my-4"
-              />
-              <Image
-                src="/logos/git.png"
-                alt="Git logo"
-                width={80}
-                height={80}
-                className="h-20 w-20 mx-4 my-4"
-              />
-              <Image
-                src="/logos/react.png"
-                alt="React logo"
-                width={80}
-                height={80}
-                className="h-20 w-20 mx-4 my-4"
-              />
-              <Image
-                src="/logos/nextjs.png"
-                alt="Next.js logo"
-                width={80}
-                height={80}
-                className="h-20 w-20 mx-4 my-4"
-              />
-              <Image
-                src="/logos/tailwind.png"
-                alt="Tailwind CSS logo"
-                width={80}
-                height={80}
-                className="h-20 w-20 mx-4 my-4"
-              />
-            </div>
+            <ul className="mt-6 grid grid-cols-3 gap-4 sm:grid-cols-4">
+              {STACK.map(({ name, logo }) => (
+                <li
+                  key={name}
+                  className="flex flex-col items-center gap-2 rounded-xl bg-white p-4 text-center dark:bg-gray-800"
+                >
+                  <Image src={logo} alt="" width={48} height={48} className="h-12 w-12 object-contain" />
+                  <span className="text-sm font-medium text-gray-800 dark:text-gray-200">
+                    {name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-8 text-sm font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-400">
+              Also in my projects
+            </p>
+            <ul className="mt-3 flex flex-wrap gap-2">
+              {ALSO_USED.map((tool) => (
+                <li
+                  key={tool}
+                  className="rounded-md bg-white px-3 py-1.5 text-sm font-medium text-gray-700 dark:bg-gray-800 dark:text-gray-200"
+                >
+                  {tool}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

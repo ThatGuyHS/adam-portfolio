@@ -2,8 +2,9 @@ import React from "react";
 import ContainerBlock from "../components/ContainerBlock";
 import Projects from "../components/Projects";
 import { SITE_URL as siteUrl } from "@constants/site";
+import caseStudies from "@constants/caseStudies";
 
-export default function projects() {
+export default function projects({ caseStudySlugs }) {
   return (
     <ContainerBlock
       title="Projects | Adam Peleback"
@@ -16,7 +17,11 @@ export default function projects() {
         url: `${siteUrl}/projects`,
       }}
     >
-      <Projects />
+      <Projects caseStudySlugs={caseStudySlugs} />
     </ContainerBlock>
   );
 }
+
+export const getStaticProps = async () => ({
+  props: { caseStudySlugs: Object.keys(caseStudies) },
+});

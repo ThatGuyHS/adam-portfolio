@@ -192,7 +192,7 @@ function SwedishContactForm() {
         {status === "submitting" ? "Skickar…" : "Skicka"}
       </button>
       {status === "error" && (
-        <p role="alert" className="text-sm text-red-500">
+        <p role="alert" className="text-sm text-red-700 dark:text-red-400">
           Meddelandet gick inte fram. Försök igen, eller mejla mig direkt på{" "}
           {userData.email}.
         </p>
@@ -251,8 +251,8 @@ export default function Testkonsult() {
       <div lang="sv">
         {/* Hero */}
         <section className="bg-white dark:bg-gray-800">
-          <div className="max-w-6xl mx-auto px-4 py-20">
-            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-amber-700 dark:text-amber-500 mb-4 font-semibold">
+          <div className="max-w-6xl mx-auto px-4 pt-8 pb-16 md:pt-12 md:pb-20">
+            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-amber-700 dark:text-amber-400 mb-4 font-semibold">
               Stockholm & distans i hela Sverige
             </p>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight text-gray-800 dark:text-white max-w-3xl">
@@ -274,7 +274,7 @@ export default function Testkonsult() {
               </a>
               <a
                 href="#bakgrund"
-                className="rounded-lg border border-amber-600 px-6 py-3 font-semibold text-amber-700 dark:text-amber-500 hover:bg-amber-50 dark:hover:bg-gray-700 transition-colors duration-300"
+                className="rounded-lg border border-amber-600 px-6 py-3 font-semibold text-amber-700 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-gray-700 transition-colors duration-300"
               >
                 Se min QA-bakgrund ↓
               </a>
@@ -285,7 +285,7 @@ export default function Testkonsult() {
         {/* Proof: QA background */}
         <section id="bakgrund" className="bg-[#F1F1F1] dark:bg-gray-900">
           <div className="max-w-6xl mx-auto px-4 py-14 md:py-20">
-            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-amber-700 dark:text-amber-500 mb-4 font-semibold">
+            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-amber-700 dark:text-amber-400 mb-4 font-semibold">
               Bakgrund
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
@@ -302,7 +302,7 @@ export default function Testkonsult() {
                   key={r.role}
                   className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 shadow-lg"
                 >
-                  <p className="text-sm font-semibold text-amber-700 dark:text-amber-500">
+                  <p className="text-sm font-semibold text-amber-700 dark:text-amber-400">
                     {r.period}
                   </p>
                   <h3 className="mt-1 text-xl font-bold text-gray-800 dark:text-white">
@@ -320,7 +320,7 @@ export default function Testkonsult() {
         {/* What I do */}
         <section className="bg-white dark:bg-gray-800">
           <div className="max-w-6xl mx-auto px-4 py-14 md:py-20">
-            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-amber-700 dark:text-amber-500 mb-4 font-semibold">
+            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-amber-700 dark:text-amber-400 mb-4 font-semibold">
               Vad jag gör
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
@@ -363,7 +363,7 @@ export default function Testkonsult() {
         {/* Process + pricing */}
         <section className="bg-[#F1F1F1] dark:bg-gray-900">
           <div className="max-w-6xl mx-auto px-4 py-14 md:py-20">
-            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-amber-700 dark:text-amber-500 mb-4 font-semibold">
+            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-amber-700 dark:text-amber-400 mb-4 font-semibold">
               Så går det till
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
@@ -375,7 +375,7 @@ export default function Testkonsult() {
                   key={step.title}
                   className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5"
                 >
-                  <p className="text-sm text-amber-700 dark:text-amber-500 mb-2 font-semibold">
+                  <p className="text-sm text-amber-700 dark:text-amber-400 mb-2 font-semibold">
                     0{index + 1}
                   </p>
                   <h3 className="text-xl font-semibold mb-3 text-gray-800 dark:text-white">
@@ -407,7 +407,7 @@ export default function Testkonsult() {
         {/* FAQ */}
         <section className="bg-white dark:bg-gray-800">
           <div className="max-w-3xl mx-auto px-4 py-14 md:py-20">
-            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-amber-700 dark:text-amber-500 mb-4 font-semibold">
+            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-amber-700 dark:text-amber-400 mb-4 font-semibold">
               Vanliga frågor
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
@@ -420,7 +420,7 @@ export default function Testkonsult() {
                   className="group rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 shadow-sm"
                 >
                   <summary className="cursor-pointer list-none text-lg font-bold text-gray-800 dark:text-white">
-                    <span className="mr-2 inline-block text-amber-700 dark:text-amber-500 transition-transform duration-200 group-open:rotate-90">
+                    <span className="mr-2 inline-block text-amber-700 dark:text-amber-400 transition-transform duration-200 group-open:rotate-90">
                       ›
                     </span>
                     {f.q}
@@ -438,7 +438,7 @@ export default function Testkonsult() {
         <section id="kontakt" className="bg-[#F1F1F1] dark:bg-gray-900">
           <div className="max-w-6xl mx-auto px-4 py-14 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-10">
             <div>
-              <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-amber-700 dark:text-amber-500 mb-4 font-semibold">
+              <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-amber-700 dark:text-amber-400 mb-4 font-semibold">
                 Säg hej
               </p>
               <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
@@ -453,7 +453,7 @@ export default function Testkonsult() {
                 <p>
                   <a
                     href={`mailto:${userData.email}`}
-                    className="text-amber-700 dark:text-amber-500 font-semibold hover:underline"
+                    className="text-amber-700 dark:text-amber-400 font-semibold hover:underline"
                   >
                     {userData.email}
                   </a>

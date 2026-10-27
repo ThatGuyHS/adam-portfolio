@@ -3,7 +3,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import userData from "@constants/data";
+import userData from "@constants/profile";
 import { SITE_URL as siteUrl } from "@constants/site";
 
 export default function ContainerBlock({ children, ...customMeta }) {
@@ -44,6 +44,9 @@ export default function ContainerBlock({ children, ...customMeta }) {
     // Always the portrait — the og image is a branded share card, not a photo.
     image: `${siteUrl}/adam.png`,
     jobTitle: userData.designation,
+    worksFor: { "@type": "Organization", name: "Decerno" },
+    homeLocation: { "@type": "Place", name: "Stockholm, Sweden" },
+    knowsAbout: ["React", "Next.js", "TypeScript", "Software testing", "Test automation", "SEO", "Esports"],
     email: userData.email,
     address: {
       "@type": "PostalAddress",
@@ -121,8 +124,14 @@ export default function ContainerBlock({ children, ...customMeta }) {
         ))}
       </Head>
       <div className="dark:bg-gray-800 w-full">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:font-semibold focus:text-gray-900 focus:shadow-lg"
+        >
+          Skip to content
+        </a>
         <Navbar />
-        <main>{children}</main>
+        <main id="main">{children}</main>
         <Footer />
       </div>
     </div>

@@ -117,7 +117,7 @@ function SwedishContactForm() {
   }
 
   const inputClass =
-    "w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 px-4 py-3 text-gray-800 dark:text-gray-100 placeholder-gray-400 focus:border-red-500 focus:outline-none";
+    "w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 px-4 py-3 text-gray-800 dark:text-gray-100 placeholder-gray-400 focus:border-red-600 focus:outline-none";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
@@ -174,12 +174,12 @@ function SwedishContactForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="rounded-lg bg-red-500 text-white px-6 py-3 font-semibold hover:bg-red-600 transition-colors duration-300 disabled:opacity-60"
+        className="rounded-lg bg-red-600 text-white px-6 py-3 font-semibold hover:bg-red-700 transition-colors duration-300 disabled:opacity-60"
       >
         {status === "submitting" ? "Skickar…" : "Skicka"}
       </button>
       {status === "error" && (
-        <p role="alert" className="text-sm text-red-500">
+        <p role="alert" className="text-sm text-red-700 dark:text-red-400">
           Meddelandet gick inte fram. Försök igen, eller mejla mig direkt på{" "}
           {userData.email}.
         </p>
@@ -270,8 +270,8 @@ export default function Webbkonsult() {
       <div lang="sv">
         {/* Hero */}
         <section className="bg-white dark:bg-gray-800">
-          <div className="max-w-6xl mx-auto px-4 py-20">
-            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-red-500 mb-4 font-semibold">
+          <div className="max-w-6xl mx-auto px-4 pt-8 pb-16 md:pt-12 md:pb-20">
+            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-red-700 dark:text-red-400 mb-4 font-semibold">
               Stockholm & distans i hela Sverige
             </p>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight text-gray-800 dark:text-white max-w-3xl">
@@ -288,13 +288,13 @@ export default function Webbkonsult() {
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="#kontakt"
-                className="rounded-lg bg-red-500 text-white px-6 py-3 font-semibold hover:bg-red-600 transition-colors duration-300"
+                className="rounded-lg bg-red-600 text-white px-6 py-3 font-semibold hover:bg-red-700 transition-colors duration-300"
               >
                 Boka kostnadsfritt samtal
               </a>
               <a
                 href="#bevis"
-                className="rounded-lg border border-red-300 px-6 py-3 font-semibold text-red-500 hover:bg-red-50 dark:hover:bg-gray-700 transition-colors duration-300"
+                className="rounded-lg border border-red-300 px-6 py-3 font-semibold text-red-700 dark:text-red-400 hover:bg-red-50 dark:hover:bg-gray-700 transition-colors duration-300"
               >
                 Se ett urval av projekt ↓
               </a>
@@ -305,7 +305,7 @@ export default function Webbkonsult() {
         {/* Proof: selected projects */}
         <section id="bevis" className="bg-[#F1F1F1] dark:bg-gray-900">
           <div className="max-w-6xl mx-auto px-4 py-14 md:py-20">
-            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-red-500 mb-4 font-semibold">
+            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-red-700 dark:text-red-400 mb-4 font-semibold">
               Urval
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
@@ -334,7 +334,7 @@ export default function Webbkonsult() {
                       href={p.link}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-sm font-semibold text-red-500 hover:underline"
+                      className="text-sm font-semibold text-red-700 dark:text-red-400 hover:underline"
                     >
                       Besök live-sajten ↗
                     </a>
@@ -348,7 +348,7 @@ export default function Webbkonsult() {
         {/* What I do */}
         <section className="bg-white dark:bg-gray-800">
           <div className="max-w-6xl mx-auto px-4 py-14 md:py-20">
-            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-red-500 mb-4 font-semibold">
+            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-red-700 dark:text-red-400 mb-4 font-semibold">
               Vad jag gör
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
@@ -377,7 +377,7 @@ export default function Webbkonsult() {
                         key={item}
                         className="text-sm text-gray-700 dark:text-gray-200 flex items-center gap-2"
                       >
-                        <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
+                        <span className="h-1.5 w-1.5 rounded-full bg-red-600" />
                         {item}
                       </li>
                     ))}
@@ -391,7 +391,7 @@ export default function Webbkonsult() {
         {/* Process + pricing */}
         <section className="bg-[#F1F1F1] dark:bg-gray-900">
           <div className="max-w-6xl mx-auto px-4 py-14 md:py-20">
-            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-red-500 mb-4 font-semibold">
+            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-red-700 dark:text-red-400 mb-4 font-semibold">
               Så går det till
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
@@ -403,7 +403,7 @@ export default function Webbkonsult() {
                   key={step.title}
                   className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5"
                 >
-                  <p className="text-sm text-red-500 mb-2 font-semibold">
+                  <p className="text-sm text-red-700 dark:text-red-400 mb-2 font-semibold">
                     0{index + 1}
                   </p>
                   <h3 className="text-xl font-semibold mb-3 text-gray-800 dark:text-white">
@@ -436,7 +436,7 @@ export default function Webbkonsult() {
         {/* FAQ */}
         <section className="bg-white dark:bg-gray-800">
           <div className="max-w-3xl mx-auto px-4 py-14 md:py-20">
-            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-red-500 mb-4 font-semibold">
+            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-red-700 dark:text-red-400 mb-4 font-semibold">
               Vanliga frågor
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
@@ -449,7 +449,7 @@ export default function Webbkonsult() {
                   className="group rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 shadow-sm"
                 >
                   <summary className="cursor-pointer list-none text-lg font-bold text-gray-800 dark:text-white">
-                    <span className="mr-2 inline-block text-red-500 transition-transform duration-200 group-open:rotate-90">
+                    <span className="mr-2 inline-block text-red-700 dark:text-red-400 transition-transform duration-200 group-open:rotate-90">
                       ›
                     </span>
                     {f.q}
@@ -467,7 +467,7 @@ export default function Webbkonsult() {
         <section id="kontakt" className="bg-[#F1F1F1] dark:bg-gray-900">
           <div className="max-w-6xl mx-auto px-4 py-14 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-10">
             <div>
-              <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-red-500 mb-4 font-semibold">
+              <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-red-700 dark:text-red-400 mb-4 font-semibold">
                 Säg hej
               </p>
               <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
@@ -482,7 +482,7 @@ export default function Webbkonsult() {
                 <p>
                   <a
                     href={`mailto:${userData.email}`}
-                    className="text-red-500 font-semibold hover:underline"
+                    className="text-red-700 dark:text-red-400 font-semibold hover:underline"
                   >
                     {userData.email}
                   </a>

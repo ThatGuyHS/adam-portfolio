@@ -5,7 +5,7 @@ const { SITE_URL } = require("../constants/site");
 const caseStudies = require("../constants/caseStudies");
 const PAGES_DIR = path.join(process.cwd(), "pages");
 const OUTPUT_PATH = path.join(process.cwd(), "public", "sitemap.xml");
-const EXCLUDED_ROUTES = new Set(["/thanks"]);
+const EXCLUDED_ROUTES = new Set(["/thanks", "/404"]);
 
 function getAllPageFiles(dir) {
   const entries = fs.readdirSync(dir, { withFileTypes: true });

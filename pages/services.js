@@ -50,8 +50,8 @@ export default function Services() {
       }}
     >
       <section className="bg-white dark:bg-gray-800">
-        <div className="max-w-6xl mx-auto h-48 bg-white dark:bg-gray-800">
-          <h1 className="text-5xl md:text-9xl font-bold py-20 text-center md:text-left">
+        <div className="max-w-6xl mx-auto px-4 pt-6 pb-12 md:pt-10">
+          <h1 className="text-5xl md:text-8xl font-bold tracking-tight text-gray-900 dark:text-white">
             Services
           </h1>
         </div>
@@ -59,8 +59,8 @@ export default function Services() {
         <div className="bg-[#F1F1F1] dark:bg-gray-900">
           <div className="max-w-6xl mx-auto px-4 py-14 md:py-20">
             <header className="mb-14">
-              <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-red-500 mb-4 font-semibold">
-                What I Offer
+              <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-red-700 dark:text-red-400 mb-4 font-semibold">
+                What I offer
               </p>
               <div className="grid md:grid-cols-2 gap-8 items-end">
                 <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
@@ -89,7 +89,7 @@ export default function Services() {
                         {service.icon}
                       </div>
                       <div>
-                        <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                        <p className="text-xs uppercase tracking-wider text-gray-600 dark:text-gray-400">
                           {service.highlight}
                         </p>
                         <h2 className="text-2xl font-bold text-gray-800 dark:text-white">
@@ -99,7 +99,7 @@ export default function Services() {
                     </div>
                   </div>
 
-                  <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                  <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
                     {service.shortDescription}
                   </p>
 
@@ -120,15 +120,23 @@ export default function Services() {
                       onClick={() => handleReadMore(service)}
                       className={`flex-1 rounded-lg px-4 py-3 font-semibold transition-colors duration-300 ${service.accent.secondaryBtn}`}
                     >
-                      Read Details
+                      Read details
                     </button>
                     <Link
                       href="/contact"
                       className={`flex-1 rounded-lg px-4 py-3 font-semibold text-center transition-colors duration-300 ${service.accent.primaryBtn}`}
                     >
-                      Start a Project
+                      Start a project
                     </Link>
                   </div>
+                  {service.page && (
+                    <Link
+                      href={service.page}
+                      className="mt-4 inline-block text-sm font-semibold text-red-700 hover:underline dark:text-red-400"
+                    >
+                      {service.pageLabel} →
+                    </Link>
+                  )}
                 </article>
               ))}
             </section>
@@ -136,7 +144,7 @@ export default function Services() {
             <section className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 md:p-10">
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
                 <div>
-                  <p className="uppercase tracking-[0.2em] text-xs text-gray-500 dark:text-gray-400 mb-3">
+                  <p className="uppercase tracking-[0.2em] text-xs text-gray-600 dark:text-gray-400 mb-3">
                     Process
                   </p>
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
@@ -145,7 +153,7 @@ export default function Services() {
                 </div>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-lg border border-red-300 px-5 py-3 text-red-500 hover:bg-red-50 dark:hover:bg-gray-700 transition-colors duration-300"
+                  className="inline-flex items-center justify-center rounded-lg border border-red-300 px-5 py-3 font-semibold text-red-700 hover:bg-red-50 dark:border-red-400/40 dark:text-red-300 dark:hover:bg-gray-700 transition-colors duration-300"
                 >
                   Book a conversation
                 </Link>
@@ -157,7 +165,7 @@ export default function Services() {
                     key={step.title}
                     className="rounded-xl border border-gray-200 dark:border-gray-700 bg-[#F9F9F9] dark:bg-gray-900 p-5"
                   >
-                    <p className="text-sm text-red-500 mb-2 font-semibold">0{index + 1}</p>
+                    <p className="text-sm text-red-700 dark:text-red-400 mb-2 font-semibold">0{index + 1}</p>
                     <h3 className="text-xl font-semibold mb-3 text-gray-800 dark:text-white">
                       {step.title}
                     </h3>
@@ -187,7 +195,7 @@ export default function Services() {
             </div>
             <Link
               href="/contact"
-              className="rounded-lg bg-red-500 text-white px-6 py-3 font-semibold hover:bg-red-600 transition-colors duration-300"
+              className="rounded-lg bg-red-600 text-white px-6 py-3 font-semibold hover:bg-red-700 transition-colors duration-300"
             >
               Contact Me
             </Link>

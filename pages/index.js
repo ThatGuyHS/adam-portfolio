@@ -1,9 +1,12 @@
 import ContainerBlock from "../components/ContainerBlock";
-import FavouriteProjects from "../components/FavouriteProjects";
 import Hero from "../components/Hero";
+import HomeServices from "../components/HomeServices";
+import SelectedWork from "../components/SelectedWork";
+import ContactBand from "../components/ContactBand";
 import { SITE_URL as siteUrl } from "@constants/site";
+import caseStudies from "@constants/caseStudies";
 
-export default function Home() {
+export default function Home({ caseStudySlugs }) {
   return (
     <ContainerBlock
       title="Adam Peleback | Frontend Developer and Esports Organizer"
@@ -18,7 +21,13 @@ export default function Home() {
       }}
     >
       <Hero />
-      <FavouriteProjects />
+      <SelectedWork caseStudySlugs={caseStudySlugs} />
+      <HomeServices />
+      <ContactBand />
     </ContainerBlock>
   );
 }
+
+export const getStaticProps = async () => ({
+  props: { caseStudySlugs: Object.keys(caseStudies) },
+});

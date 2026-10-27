@@ -1,73 +1,127 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
-import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
-import { RainbowHighlight } from "./RainbowHighlight";
-import userData from "@constants/data";
+import Link from "next/link";
+import { useTheme } from "next-themes";
+import { annotate, annotationGroup } from "rough-notation";
+import userData from "@constants/profile";
+
+const ROLES = [
+  "Frontend Developer.",
+  "QA Engineer.",
+  "Tournament organizer.",
+  "Copywriter.",
+];
+
+// Light mode marks dark text with bright highlights; dark mode uses deeper
+// shades so white text stays readable on top of them.
+const COLORS = {
+  light: ["#F59E0B", "#84CC16", "#10B981", "#60A5FA"],
+  dark: ["#B45309", "#4D7C0F", "#047857", "#1D4ED8"],
+};
+
+function HighlightedRoles() {
+  const refs = useRef([]);
+  const { resolvedTheme } = useTheme();
+
+  useEffect(() => {
+    const palette = resolvedTheme === "dark" ? COLORS.dark : COLORS.light;
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    let annotations = [];
+    let cancelled = false;
+    // Measure after Inter has loaded; with the fallback font the text is
+    // narrower and the highlights would stop short of the last letters.
+    const fontsReady = document.fonts ? document.fonts.ready : Promise.resolve();
+    fontsReady.then(() => {
+      if (cancelled) return;
+      annotations = refs.current.map((el, i) =>
+        annotate(el, {
+          type: "highlight",
+          color: palette[i],
+          multiline: true,
+          padding: [2, 6],
+          iterations: 1,
+          animationDuration: 700,
+          animate: !reduceMotion,
+        })
+      );
+      annotationGroup(annotations).show();
+    });
+    return () => {
+      cancelled = true;
+      annotations.forEach((a) => a.remove());
+    };
+  }, [resolvedTheme]);
+
+  return ROLES.map((role, i) => (
+    <span key={role} className="block">
+      <span
+        ref={(el) => (refs.current[i] = el)}
+        className="text-gray-900 dark:text-white"
+      >
+        {role}
+      </span>
+    </span>
+  ));
+}
 
 export default function Hero() {
-  const colors = ["#F59E0B", "#84CC16", "#10B981", "#3B82F6"];
   return (
-    <div className="flex flex-row justify-center items-start overflow-hidden">
-      {/* Text container */}
-
-      <div className="w-full md:w-1/2 mx-auto text-center md:text-left lg:p-20">
-        {/* One h1 for the page; each role renders as its own highlighted line. */}
-        <h1>
-          <RoughNotationGroup show={true}>
-            <RainbowHighlight color={colors[0]}>
-              <span className="block text-4xl md:text-8xl font-bold text-gray-700 dark:text-gray-200 my-2">
-                Frontend Developer.
-              </span>
-            </RainbowHighlight>
-            <RainbowHighlight color={colors[1]}>
-              <span className="block text-4xl md:text-8xl font-bold text-gray-700 dark:text-gray-200 my-2">
-                QA Engineer.
-              </span>
-            </RainbowHighlight>
-            <RainbowHighlight color={colors[2]}>
-              <span className="block text-4xl md:text-8xl font-bold text-gray-700 dark:text-gray-200 my-2">
-                Tournament organizer.
-              </span>
-            </RainbowHighlight>
-            <RainbowHighlight color={colors[3]}>
-              <span className="block text-4xl md:text-8xl font-bold text-gray-700 dark:text-gray-200 my-2">
-                Copywriter.
-              </span>
-            </RainbowHighlight>
-          </RoughNotationGroup>
-        </h1>
-      </div>
-      {/* Image container */}
-      <div className="hidden lg:block relative w-full md:w-1/2 -mr-40 mt-20">
-        <div className="w-3/4 ">
+    <section className="bg-white dark:bg-gray-800">
+      <div className="max-w-6xl mx-auto px-4 pt-6 pb-16 md:pt-10 md:pb-24 grid gap-12 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div>
+          <div className="flex items-center gap-4">
+            <Image
+              src={userData.avatarUrl}
+              alt=""
+              width={219}
+              height={228}
+              priority
+              sizes="64px"
+              className="lg:hidden h-16 w-16 rounded-full object-cover object-top"
+            />
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-600 dark:text-red-400">
+              Stockholm · Open to freelance work
+            </p>
+          </div>
+          <h1 className="mt-6 space-y-1 text-[2.5rem] sm:text-6xl lg:text-7xl font-bold leading-[1.15] tracking-tight">
+            <HighlightedRoles />
+          </h1>
+          <p className="mt-8 max-w-2xl text-lg md:text-xl leading-relaxed text-gray-700 dark:text-gray-300">
+            I&apos;m Adam Peleback. I build websites and web apps in React and
+            Next.js, test software for a living as a system tester at Decerno,
+            and have organized esports tournaments since 2017.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              href="/contact"
+              className="rounded-lg bg-red-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-red-700"
+            >
+              Get in touch
+            </Link>
+            <Link
+              href="/projects"
+              className="rounded-lg border border-gray-300 px-6 py-3 font-semibold text-gray-800 transition-colors hover:border-gray-400 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-100 dark:hover:bg-gray-700"
+            >
+              See my work
+            </Link>
+          </div>
+        </div>
+        <figure className="hidden lg:block">
           <Image
             src={userData.avatarUrl}
             alt="Portrait of Adam Peleback"
-            width={700}
-            height={700}
+            width={219}
+            height={228}
             priority
-            className="shadow"
+            className="rounded-2xl shadow-xl ring-1 ring-black/5"
           />
-          <div className="flex flex-row justify-between mt-4">
-            <div className="flex flex-row space-x-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                className="bi bi-arrow-90deg-up"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M4.854 1.146a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L4 2.707V12.5A2.5 2.5 0 0 0 6.5 15h8a.5.5 0 0 0 0-1h-8A1.5 1.5 0 0 1 5 12.5V2.707l3.146 3.147a.5.5 0 1 0 .708-.708l-4-4z"
-                />
-              </svg>
-              <p className="font-mono">That's me</p>
-            </div>
-          </div>
-        </div>
+          <figcaption className="mt-3 font-mono text-sm text-gray-600 dark:text-gray-300">
+            ↑ That&apos;s me
+          </figcaption>
+        </figure>
       </div>
-    </div>
+    </section>
   );
 }

@@ -173,12 +173,12 @@ function BotContactForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="rounded-lg bg-indigo-500 text-white px-6 py-3 font-semibold hover:bg-indigo-600 transition-colors duration-300 disabled:opacity-60"
+        className="rounded-lg bg-indigo-600 text-white px-6 py-3 font-semibold hover:bg-indigo-700 transition-colors duration-300 disabled:opacity-60"
       >
         {status === "submitting" ? "Sending…" : "Send"}
       </button>
       {status === "error" && (
-        <p role="alert" className="text-sm text-red-500">
+        <p role="alert" className="text-sm text-red-700 dark:text-red-400">
           The message didn&apos;t go through. Try again, or email me directly
           at {userData.email}.
         </p>
@@ -233,8 +233,8 @@ export default function DiscordBots() {
       <div>
         {/* Hero */}
         <section className="bg-white dark:bg-gray-800">
-          <div className="max-w-6xl mx-auto px-4 py-20">
-            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-indigo-500 mb-4 font-semibold">
+          <div className="max-w-6xl mx-auto px-4 pt-8 pb-16 md:pt-12 md:pb-20">
+            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-indigo-700 dark:text-indigo-300 mb-4 font-semibold">
               Communities · Esports · Products
             </p>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight text-gray-800 dark:text-white max-w-3xl">
@@ -250,13 +250,13 @@ export default function DiscordBots() {
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="#contact"
-                className="rounded-lg bg-indigo-500 text-white px-6 py-3 font-semibold hover:bg-indigo-600 transition-colors duration-300"
+                className="rounded-lg bg-indigo-600 text-white px-6 py-3 font-semibold hover:bg-indigo-700 transition-colors duration-300"
               >
                 Get a free scope call
               </a>
               <a
                 href="#proof"
-                className="rounded-lg border border-indigo-300 px-6 py-3 font-semibold text-indigo-500 hover:bg-indigo-50 dark:hover:bg-gray-700 transition-colors duration-300"
+                className="rounded-lg border border-indigo-300 px-6 py-3 font-semibold text-indigo-700 dark:text-indigo-300 hover:bg-indigo-50 dark:hover:bg-gray-700 transition-colors duration-300"
               >
                 See bots in production ↓
               </a>
@@ -267,7 +267,7 @@ export default function DiscordBots() {
         {/* Proof */}
         <section id="proof" className="bg-[#F1F1F1] dark:bg-gray-900">
           <div className="max-w-6xl mx-auto px-4 py-14 md:py-20">
-            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-indigo-500 mb-4 font-semibold">
+            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-indigo-700 dark:text-indigo-300 mb-4 font-semibold">
               In production
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
@@ -297,7 +297,7 @@ export default function DiscordBots() {
                       href={p.link}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-sm font-semibold text-indigo-500 hover:underline"
+                      className="text-sm font-semibold text-indigo-700 dark:text-indigo-300 hover:underline"
                     >
                       Visit the live site ↗
                     </a>
@@ -311,7 +311,7 @@ export default function DiscordBots() {
         {/* What I build */}
         <section className="bg-white dark:bg-gray-800">
           <div className="max-w-6xl mx-auto px-4 py-14 md:py-20">
-            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-indigo-500 mb-4 font-semibold">
+            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-indigo-700 dark:text-indigo-300 mb-4 font-semibold">
               What I build
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
@@ -340,7 +340,7 @@ export default function DiscordBots() {
                         key={item}
                         className="text-sm text-gray-700 dark:text-gray-200 flex items-center gap-2"
                       >
-                        <span className="h-1.5 w-1.5 rounded-full bg-indigo-500" />
+                        <span className="h-1.5 w-1.5 rounded-full bg-indigo-600" />
                         {item}
                       </li>
                     ))}
@@ -354,7 +354,7 @@ export default function DiscordBots() {
         {/* Process + pricing */}
         <section className="bg-[#F1F1F1] dark:bg-gray-900">
           <div className="max-w-6xl mx-auto px-4 py-14 md:py-20">
-            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-indigo-500 mb-4 font-semibold">
+            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-indigo-700 dark:text-indigo-300 mb-4 font-semibold">
               How it works
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
@@ -366,7 +366,7 @@ export default function DiscordBots() {
                   key={step.title}
                   className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5"
                 >
-                  <p className="text-sm text-indigo-500 mb-2 font-semibold">
+                  <p className="text-sm text-indigo-700 dark:text-indigo-300 mb-2 font-semibold">
                     0{index + 1}
                   </p>
                   <h3 className="text-xl font-semibold mb-3 text-gray-800 dark:text-white">
@@ -398,7 +398,7 @@ export default function DiscordBots() {
         {/* FAQ */}
         <section className="bg-white dark:bg-gray-800">
           <div className="max-w-3xl mx-auto px-4 py-14 md:py-20">
-            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-indigo-500 mb-4 font-semibold">
+            <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-indigo-700 dark:text-indigo-300 mb-4 font-semibold">
               Common questions
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
@@ -411,7 +411,7 @@ export default function DiscordBots() {
                   className="group rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 shadow-sm"
                 >
                   <summary className="cursor-pointer list-none text-lg font-bold text-gray-800 dark:text-white">
-                    <span className="mr-2 inline-block text-indigo-500 transition-transform duration-200 group-open:rotate-90">
+                    <span className="mr-2 inline-block text-indigo-700 dark:text-indigo-300 transition-transform duration-200 group-open:rotate-90">
                       ›
                     </span>
                     {f.q}
@@ -429,7 +429,7 @@ export default function DiscordBots() {
         <section id="contact" className="bg-[#F1F1F1] dark:bg-gray-900">
           <div className="max-w-6xl mx-auto px-4 py-14 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-10">
             <div>
-              <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-indigo-500 mb-4 font-semibold">
+              <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-indigo-700 dark:text-indigo-300 mb-4 font-semibold">
                 Say hi
               </p>
               <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
@@ -444,7 +444,7 @@ export default function DiscordBots() {
                 <p>
                   <a
                     href={`mailto:${userData.email}`}
-                    className="text-indigo-500 font-semibold hover:underline"
+                    className="text-indigo-700 dark:text-indigo-300 font-semibold hover:underline"
                   >
                     {userData.email}
                   </a>
