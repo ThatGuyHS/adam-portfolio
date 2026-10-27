@@ -209,7 +209,7 @@ const PROOF = [
   {
     title: "Vinterplatsen",
     blurb:
-      "Min egen katalog över vinterförvaring för båt, husvagn, husbil, MC och bil i hela Sverige, med riktpriser och guider. Anläggningarna hämtas med skript och kompletteras för hand.",
+      "Min egen katalog över vinterförvaring för båt, husvagn, husbil, MC och bil i hela Sverige, med anläggningarnas egna priser och guider. Anläggningarna hämtas med skript och kompletteras för hand.",
   },
 ];
 

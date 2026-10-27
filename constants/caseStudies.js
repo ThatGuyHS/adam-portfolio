@@ -109,6 +109,37 @@ const caseStudies = {
       "One of three guide sites running on the same system",
     ],
   },
+
+  vinterplatsen: {
+    role: "Everything: idea, data pipeline, design, development and SEO",
+    intro:
+      "Vinterplatsen is a Swedish directory of winter storage for boats, caravans, motorhomes, motorcycles and cars. You pick a vehicle type and a town and get the places that store it over winter, with hall type and published prices where the business has them. It went live on 30 August 2026, and I run it myself.",
+    sections: [
+      {
+        heading: "The idea",
+        body: "Every autumn, people across Sweden search for somewhere to keep the boat or the caravan over winter, and most bookings happen between September and November. For searches on a single town, Google showed individual marinas, the map pack, Facebook groups and forum threads. No page listed the options in one town side by side. Launching at the end of August gave the site one full season to show whether that gap was worth filling.",
+      },
+      {
+        heading: "What I built",
+        body: "A Next.js site in TypeScript and Tailwind, exported as static HTML: about 310 pages covering vehicle type and town, town and county overviews, price pages and ten guides, for example on storing a boat on a trailer. The price pages only show prices a business has published itself, grouped by unit, with the cheapest of each named. For boats there's a calculator that applies 24 boatyards' own square-metre rates and area formulas to your boat and shows each yard's price separately, never an average. Storage owners can list themselves for free or buy an extended listing for 1 495 kr per season through Stripe, and insurance partner links are marked as sponsored.",
+      },
+      {
+        heading: "Where the data comes from",
+        body: "Around 1 700 business listings were collected by script from public business directories. Most of the work went into cleaning them: dropping private individuals, removing companies that matched a search but don't store anything, and merging duplicates. On top of that, 191 places have been checked by hand against their own websites, including hall type and prices, and storage owners who email in are added the same way. The directories' own descriptions and ratings are not shown, so every listing only says what the site can back up.",
+      },
+      {
+        heading: "Results so far",
+        body: "From launch on 30 August to 25 October 2026, the site got 2 291 clicks from Google on 23 144 impressions, a click-through rate of 9.9% at an average position of 12.4. Weekly clicks went from about 160 in the first week of September to about 360 in the week of 19 October, close to the peak of the season.",
+      },
+    ],
+    highlights: [
+      "About 310 static pages from one Next.js codebase",
+      "191 listings checked by hand against each business's own website",
+      "Only published prices, plus a boat calculator built on 24 boatyards' own rates",
+      "2 291 Google clicks in the first eight weeks (30 Aug–25 Oct 2026)",
+      "Paid listings through Stripe, with partner links marked as sponsored",
+    ],
+  },
 };
 
 module.exports = caseStudies;
