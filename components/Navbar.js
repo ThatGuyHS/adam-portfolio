@@ -35,11 +35,16 @@ export default function Navbar() {
     setMounted(true);
   }, []);
 
-  // Close the mobile menu after navigating.
+  // Close the mobile menu after navigating or on Escape.
   useEffect(() => {
     const close = () => setMenuOpen(false);
+    const onKey = (e) => e.key === "Escape" && close();
     router.events.on("routeChangeStart", close);
-    return () => router.events.off("routeChangeStart", close);
+    window.addEventListener("keydown", onKey);
+    return () => {
+      router.events.off("routeChangeStart", close);
+      window.removeEventListener("keydown", onKey);
+    };
   }, [router.events]);
 
   const isDark = mounted && resolvedTheme === "dark";

@@ -23,7 +23,7 @@ const OFFERS = [
   },
   {
     title: "Discord bots",
-    text: "Moderation, onboarding and tournament bots built with discord.js, including the match-ops bot behind Rivals League.",
+    text: "Moderation, onboarding and league bots built with discord.js. I've made Discord bots since 2019.",
     href: "/discord-bots",
     cta: "Custom Discord bots",
   },

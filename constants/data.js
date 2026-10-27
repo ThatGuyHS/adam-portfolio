@@ -120,7 +120,7 @@ const userData = {
       featured: 1,
       link: "https://rivalsleague.gg",
       imgUrl: "/projects/rivalsleague.jpg",
-      kind: "Esports tournament platform",
+      kind: "Esports league platform",
       stack: [
         "React",
         "TypeScript",
@@ -129,10 +129,10 @@ const userData = {
         "Supabase",
         "Stripe",
         "Discord.js",
-        "Strapi",
+        "Sanity",
       ],
       blurb:
-        "Full-stack tournament platform: React front end, Express API on Supabase, Stripe payments, a Discord bot for match operations, plus a Strapi CMS and a separate stats backend.",
+        "Platform for a Swedish esports league in League of Legends, CS2 and VALORANT: team registration with Discord login, brackets, match pages, player stats and event tickets through Stripe. Built on React and Supabase, with Discord tooling that sets up the league's server.",
     },
     {
       title: "Create Discord Bot",
@@ -140,9 +140,9 @@ const userData = {
       link: "https://creatediscordbot.com",
       imgUrl: "/projects/creatediscordbot.jpg",
       kind: "Productized service site",
-      stack: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "Resend"],
+      stack: ["Next.js", "TypeScript", "Tailwind CSS", "Resend"],
       blurb:
-        "A service selling custom-built Discord bots, with Stripe checkout and transactional email through Resend.",
+        "Productized service for custom Discord bots, with fixed-price packages, a care plan and a quote form whose leads arrive through Resend.",
     },
     {
       title: "PXB Media",

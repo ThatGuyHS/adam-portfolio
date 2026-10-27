@@ -5,29 +5,33 @@
 
 const caseStudies = {
   "rivals-league": {
-    role: "Design, full-stack development and operations",
+    role: "Lead developer: design, full-stack development and operations",
     intro:
-      "Rivals League is a tournament platform for competitive gaming that handles leagues, brackets, match operations and payments. I built all of it: the frontend, the API, the data model, the payment flow and the Discord bot that runs match day.",
+      "Rivals League is a Swedish esports league for League of Legends, Counter-Strike 2 and VALORANT. The platform handles team registration, brackets, match pages, player stats and tickets for the live event. I'm the lead developer and run it day to day, with a developer from Challengermode and a few others contributing to parts of it.",
     sections: [
       {
         heading: "The problem",
-        body: "Running an esports league means a lot of manual work: registrations, seeding, match check-ins, score reporting, disputes and payouts. Most organizers spread it across spreadsheets, Discord DMs and bracket tools that don't share any data. I administered tournaments at G-Loot and knew where that setup falls apart, so I designed Rivals League to remove those manual steps.",
+        body: "Running an esports league means a lot of manual work: registrations, seeding, Discord channels and roles for every team, match results and player stats. Most organizers spread it across spreadsheets, Discord DMs and bracket tools that don't share any data. I administered tournaments at G-Loot and knew where that setup falls apart, so the platform is built to remove those manual steps.",
       },
       {
         heading: "What I built",
-        body: "The frontend is React on Vite, talking to an Express API on Supabase. Stripe handles entry fees and payments. News, league pages and rules live in a Strapi CMS, so they can change without a deploy, and a separate stats backend turns match results into player and team statistics. The Discord bot is built with discord.js. Teams check in, report scores and get bracket updates in Discord, and the bot syncs everything back to the platform.",
+        body: "The frontend is React on Vite, backed by serverless API routes, an Express server and Supabase. Teams register and sign in with Discord, players link their Riot accounts, and the platform integrates with Challengermode and the Riot API. A separate stats backend turns match data into player and team statistics. News and guides are edited in Sanity, and Stripe Checkout sells tickets to the live event.",
+      },
+      {
+        heading: "Discord operations",
+        body: "Every season the league's Discord server needs announcement and group channels per division, a private voice channel and a role for each team, and the right permissions for admins. I wrote discord.js scripts that build all of that from the roster, with a dry-run mode; the current setup covers 154 teams in 7 divisions. A scheduled job posts to Discord when a team goes live on Twitch, registration changes go to a staff channel, and the admin dashboard tracks how each game's Discord community grows week by week.",
       },
       {
         heading: "Why it's built this way",
-        body: "On match day, teams are already talking to each other in Discord. Ask them to open a website between maps and some of them won't. The API is a thin Express layer over Supabase, so the data model lives in one place. Stripe leaves a record of every payment, which beats collecting Swish screenshots. The stats backend runs on its own so heavy aggregation never slows down match-day traffic.",
+        body: "Players already live in Discord, so login is Discord and the server structure comes from the same roster as the website instead of being clicked together by hand each season. The stats backend runs on its own so heavy aggregation never slows down match-day traffic, and Stripe leaves a record of every ticket sold.",
       },
     ],
     highlights: [
-      "Full tournament lifecycle: registration, seeding, brackets, results, payouts",
-      "Discord bot for match check-ins and score reporting, synced to the platform",
-      "Entry fees and payments through Stripe",
-      "Strapi CMS, so admins edit content without a developer",
-      "Separate stats backend for player and team statistics",
+      "Team registration, brackets, match pages, player stats and leaderboards",
+      "Discord login, plus discord.js scripts that set up channels and roles for 154 teams",
+      "Twitch go-live alerts posted to Discord by a scheduled job",
+      "Riot API and Challengermode integrations",
+      "Stripe Checkout for event tickets, Sanity for editorial content",
     ],
   },
 
@@ -103,6 +107,33 @@ const caseStudies = {
       "Comparison pages built from structured product data",
       "Server-rendered Next.js with structured data",
       "One of three guide sites running on the same system",
+    ],
+  },
+
+  tidningstoppen: {
+    role: "Everything: data pipeline, design, development and SEO",
+    intro:
+      "Tidningstoppen compares the Swedish magazine apps, such as Readly, Wype, Arcy and Nextory, on price, catalogue and trial period. Readers can look up which apps carry a given magazine and roughly when its next issue comes out.",
+    sections: [
+      {
+        heading: "The idea",
+        body: "Someone choosing a magazine app mostly wants to know two things: does it have my magazine, and what does it cost? The apps answer the first question one title at a time on their own sites. Tidningstoppen puts the catalogues and prices side by side, without paid placements.",
+      },
+      {
+        heading: "What I built",
+        body: "A Next.js site with around 500 magazine pages, comparisons between the apps, a price page per service and a release calendar for 222 titles. The calendar dates are estimates based on each title's publishing pace in its digital edition, and the site says so next to them. Scripts rebuild the catalogue data every week through GitHub Actions. The site also sells its own printable puzzle pack through Stripe Checkout, and the PDF is only served once the payment has been verified.",
+      },
+      {
+        heading: "Who uses it",
+        body: "Biblioteken.fi, the Swedish-language portal of the Finnish public libraries, lists Tidningstoppen and its release calendar among its resources for magazines, next to the National Library of Sweden.",
+      },
+    ],
+    highlights: [
+      "Around 500 magazine pages and a release calendar for 222 titles",
+      "Catalogue data rebuilt weekly by scripts in GitHub Actions",
+      "Estimated dates labelled as estimates, never presented as publisher dates",
+      "Own digital product sold through Stripe Checkout, with the PDF behind payment verification",
+      "Listed as a resource by Biblioteken.fi",
     ],
   },
 

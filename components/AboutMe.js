@@ -19,6 +19,7 @@ const STACK = [
 const ALSO_USED = [
   "Supabase",
   "Strapi",
+  "Sanity",
   "Contentful",
   "Stripe",
   "Express",

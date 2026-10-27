@@ -21,8 +21,8 @@ const offers = [
     icon: "🏆",
     title: "Esports & tournament bots",
     blurb:
-      "Match check-ins, bracket updates, results reporting and announcements. I've run tournaments professionally and built the match-ops bot behind Rivals League.",
-    points: ["Match operations", "Bracket & results flows", "Scheduled announcements"],
+      "Map vetoes, team registration, league server setup and announcements. I've run tournaments professionally, co-built a CS2 and VALORANT map-veto bot, and wrote the Discord tooling behind Rivals League.",
+    points: ["Map veto & match flows", "Registration & roles", "League server setup"],
   },
   {
     icon: "🔌",
@@ -69,7 +69,7 @@ const faqs = [
   },
   {
     q: "What do you build bots with?",
-    a: "Node.js and TypeScript with discord.js, the same stack as the match-operations bot I built for the Rivals League tournament platform. For bots that store data I usually use Supabase or PostgreSQL, and Stripe when payments are involved.",
+    a: "Node.js and TypeScript with discord.js, which I've used for bots since 2019, including the Discord tooling for Rivals League. For bots that store data I usually use Supabase or PostgreSQL, and Stripe when payments are involved.",
   },
   {
     q: "Do you host the bot too?",
@@ -227,7 +227,7 @@ export default function DiscordBots() {
   return (
     <ContainerBlock
       title="Custom Discord Bot Development | Adam Peleback"
-      description="Custom Discord bots for communities, esports organizations and products: moderation, tournament operations, integrations and hosting. Built with discord.js by the developer behind Rivals League's match-ops bot."
+      description="Custom Discord bots for communities, esports organizations and products: moderation, tournament operations, integrations and hosting. Built with discord.js by a developer who has made Discord bots since 2019."
       structuredData={structuredData}
     >
       <div>
@@ -243,9 +243,8 @@ export default function DiscordBots() {
             <p className="mt-6 text-lg leading-relaxed text-gray-600 dark:text-gray-300 max-w-2xl">
               I&apos;m Adam Peleback, a developer and former esports tournament
               admin. I build Discord bots that moderate communities, run
-              tournaments and connect Discord to your other systems. The
-              biggest one so far runs match operations for a whole tournament
-              platform.
+              tournaments and connect Discord to your other systems, and
+              I&apos;ve been doing it since 2019.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
@@ -271,12 +270,12 @@ export default function DiscordBots() {
               In production
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
-              Bots running on live servers
+              Discord work in production
             </h2>
-            <p className="mt-4 text-lg leading-relaxed text-gray-600 dark:text-gray-300 max-w-2xl">
-              The Rivals League tournament platform runs its match operations
-              through a Discord bot I built, and Create Discord Bot is my
-              productized service for custom bot builds.
+            <p className="mt-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300 max-w-2xl">
+              Rivals League&apos;s Discord server is set up by tooling I wrote,
+              from team channels and roles to go-live alerts, and Create
+              Discord Bot is my productized service for custom bot builds.
             </p>
             <ul className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
               {proofProjects.map((p) => (
@@ -315,7 +314,7 @@ export default function DiscordBots() {
               What I build
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-gray-800 dark:text-white">
-              From first command to full match operations
+              From one command to a whole league&apos;s server
             </h2>
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
               {offers.map((o) => (

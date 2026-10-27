@@ -40,7 +40,7 @@ function HighlightedRoles() {
           type: "highlight",
           color: palette[i],
           multiline: true,
-          padding: [2, 6],
+          padding: [2, 10],
           iterations: 1,
           animationDuration: 700,
           animate: !reduceMotion,
@@ -75,8 +75,8 @@ export default function Hero() {
             <Image
               src={userData.avatarUrl}
               alt=""
-              width={219}
-              height={228}
+              width={330}
+              height={330}
               priority
               sizes="64px"
               className="lg:hidden h-16 w-16 rounded-full object-cover object-top"
@@ -112,10 +112,11 @@ export default function Hero() {
           <Image
             src={userData.avatarUrl}
             alt="Portrait of Adam Peleback"
-            width={219}
-            height={228}
+            width={330}
+            height={330}
             priority
-            className="rounded-2xl shadow-xl ring-1 ring-black/5"
+            sizes="240px"
+            className="h-60 w-60 rounded-2xl object-cover shadow-xl ring-1 ring-black/5"
           />
           <figcaption className="mt-3 font-mono text-sm text-gray-600 dark:text-gray-300">
             ↑ That&apos;s me
