@@ -97,10 +97,6 @@ const caseStudies = {
         heading: "What I built",
         body: "A Next.js site in TypeScript and Tailwind. Comparison pages and buying guides are built from structured product data, and visitors can filter mowers by lawn size and needs. Everything renders on the server, so crawlers and readers get complete HTML, and structured data marks up the comparisons. The same system runs Robotdammsugarguiden (robot vacuums) and Luftrenarguiden (air purifiers).",
       },
-      {
-        heading: "What running it teaches",
-        body: "Your own affiliate site gives honest feedback: if the SEO thinking is wrong, traffic and revenue show it. This one taught me that Google crawls a new domain slowly and ignores pages that differ only by a number, such as one page per lawn size in square metres. None of those pages ever got an impression, so I merged them into fewer, fuller pages with redirects. Lessons like that, along with the punycode quirks of an åäö domain, go straight into client work.",
-      },
     ],
     highlights: [
       "Exact-match åäö domain: bästarobotgräsklippare.se",
@@ -127,16 +123,11 @@ const caseStudies = {
         heading: "Where the data comes from",
         body: "Around 1 700 business listings were collected by script from public business directories. Most of the work went into cleaning them: dropping private individuals, removing companies that matched a search but don't store anything, and merging duplicates. On top of that, 191 places have been checked by hand against their own websites, including hall type and prices, and storage owners who email in are added the same way. The directories' own descriptions and ratings are not shown, so every listing only says what the site can back up.",
       },
-      {
-        heading: "Results so far",
-        body: "From launch on 30 August to 25 October 2026, the site got 2 291 clicks from Google on 23 144 impressions, a click-through rate of 9.9% at an average position of 12.4. Weekly clicks went from about 160 in the first week of September to about 360 in the week of 19 October, close to the peak of the season.",
-      },
     ],
     highlights: [
       "About 310 static pages from one Next.js codebase",
       "191 listings checked by hand against each business's own website",
       "Only published prices, plus a boat calculator built on 24 boatyards' own rates",
-      "2 291 Google clicks in the first eight weeks (30 Aug–25 Oct 2026)",
       "Paid listings through Stripe, with partner links marked as sponsored",
     ],
   },
