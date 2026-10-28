@@ -110,6 +110,33 @@ const caseStudies = {
     ],
   },
 
+  "create-discord-bot": {
+    role: "Everything: offer, design, development and content",
+    intro:
+      "Create Discord Bot is my productized service for custom Discord bots, sold in English to communities and esports organizers. Every package has a price on the site, and work only starts after a fixed quote.",
+    sections: [
+      {
+        heading: "The idea",
+        body: "Buying a custom bot often starts with a vague brief and an open-ended quote. The site turns that around: prices and scope come first, so a buyer can see what a bot like theirs costs before writing a word.",
+      },
+      {
+        heading: "What I built",
+        body: "A Next.js site of about 50 pages. The packages go from Bot Rescue, a fixed $149 to fix one broken or outdated bot with no fee if it can't be fixed, and a $249 Bot Blueprint, to Starter, Community and Platform bots from $590, $1,490 and $3,500, plus care plans from $49 a month. The quote form sends briefs straight to my inbox through Resend. Five free tools sit alongside the offer: a permissions calculator, a bot cost estimator, a CS2 and VALORANT map-veto simulator, a webhook sender and a timestamp generator.",
+      },
+      {
+        heading: "How the content was made",
+        body: "The guides were drafted with AI-assisted workflows, and a separate checking pass re-ran every code sample and sourced every third-party price before anything was published.",
+      },
+    ],
+    highlights: [
+      "Published prices for every package, and a fixed quote before work starts",
+      "Bot Rescue: $149, no fix, no fee",
+      "Five free tools, including a map-veto simulator",
+      "Quote form that delivers briefs through Resend",
+      "About 50 pages on Next.js",
+    ],
+  },
+
   "dupe-cabinet": {
     role: "Everything: data pipeline, design, development and SEO",
     intro:
