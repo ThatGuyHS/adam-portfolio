@@ -141,7 +141,9 @@ export default function Player() {
       {[-0.17, 0.17].map((offset, i) => (
         <group
           key={offset}
-          ref={(el) => (legs.current[i] = el)}
+          ref={(el) => {
+            legs.current[i] = el;
+          }}
           position={[offset, 0.74, 0]}
         >
           <Piece geometry={boxGeo(0.25, 0.74, 0.27)} color="#3c4763" position={[0, -0.37, 0]} />
@@ -154,7 +156,9 @@ export default function Player() {
         {[-0.38, 0.38].map((offset, i) => (
           <group
             key={offset}
-            ref={(el) => (arms.current[i] = el)}
+            ref={(el) => {
+              arms.current[i] = el;
+            }}
             position={[offset, 0.3, 0]}
           >
             <Piece geometry={boxGeo(0.17, 0.64, 0.19)} color="#2f7f8f" position={[0, -0.32, 0]} />

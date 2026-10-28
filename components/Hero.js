@@ -57,7 +57,9 @@ function HighlightedRoles() {
   return ROLES.map((role, i) => (
     <span key={role} className="block">
       <span
-        ref={(el) => (refs.current[i] = el)}
+        ref={(el) => {
+          refs.current[i] = el;
+        }}
         className="text-gray-900 dark:text-white"
       >
         {role}
