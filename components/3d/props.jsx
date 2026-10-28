@@ -63,7 +63,7 @@ export function Mailbox() {
       <Piece geometry={boxGeo(0.22, 1.5, 0.22)} color={PALETTE.woodDark} position={[0, 0.75, 0]} />
       <Piece geometry={cylGeo(0.4, 0.4, 1.1, 8)} color={PALETTE.roofBlue} position={[0, 1.65, 0]} rotation={[0, 0, Math.PI / 2]} />
       <Piece geometry={boxGeo(1.12, 0.42, 0.06)} color="#2b3d55" position={[0, 1.65, 0.4]} castShadow={false} />
-      <group ref={flag} position={[0.6, 1.75, 0]}>
+      <group ref={flag} position={[0.6, 1.75, 0]} userData={{ dynamic: true }}>
         <Piece geometry={boxGeo(0.06, 0.7, 0.06)} color={PALETTE.woodDark} position={[0, 0.35, 0]} />
         <Piece geometry={boxGeo(0.4, 0.3, 0.04)} color={PALETTE.roofRed} position={[0.2, 0.6, 0]} castShadow={false} />
       </group>
@@ -102,7 +102,7 @@ export function Fountain() {
       <Piece geometry={cylGeo(2.2, 2.2, 0.1, 10)} color="#3f86a8" options={{ opacity: 0.85 }} position={[0, 0.82, 0]} castShadow={false} />
       <Piece geometry={cylGeo(0.45, 0.6, 1.6, 8)} color={PALETTE.stoneDark} position={[0, 1.6, 0]} />
       <Piece geometry={cylGeo(1.1, 0.7, 0.35, 10)} color={PALETTE.stone} position={[0, 2.5, 0]} />
-      <group ref={jets} position={[0, 2.8, 0]}>
+      <group ref={jets} position={[0, 2.8, 0]} userData={{ dynamic: true }}>
         {[0, 1, 2, 3].map((i) => {
           const angle = (i / 4) * Math.PI * 2;
           return (
@@ -304,6 +304,7 @@ export function Campfire({ position }) {
       })}
       <mesh
         ref={flame}
+        userData={{ dynamic: true }}
         geometry={coneGeo(0.35, 1, 5)}
         material={mat("#ff9b3d", { emissive: "#ff6a00", emissiveIntensity: 1.6 })}
         dispose={null}

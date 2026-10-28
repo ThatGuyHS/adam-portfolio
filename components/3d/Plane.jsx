@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import StaticBatch from "@components/3d/StaticBatch";
 import { useFrame, useThree } from "@react-three/fiber";
 import { AIRSTRIP, PALETTE } from "@constants/worldData";
 import {
@@ -274,98 +275,100 @@ export default function Plane() {
       {/* Nose along local +Z, wheels touching local y = 0, same convention as
           the boat: rotation.y = yaw faces it along its own velocity. */}
       <group ref={group}>
-        {/* Fuselage, cowl, spinner and propeller. */}
-        <Piece
-          geometry={cylGeo(0.5, 0.32, 3.4, 8)}
-          color={PALETTE.roofRed}
-          position={[0, 1.02, 0.1]}
-          rotation={[Math.PI / 2, 0, 0]}
-        />
-        <Piece
-          geometry={cylGeo(0.48, 0.51, 0.5, 8)}
-          color={PALETTE.stoneDark}
-          position={[0, 1.02, 1.95]}
-          rotation={[Math.PI / 2, 0, 0]}
-        />
-        <group ref={prop} position={[0, 1.02, 2.24]}>
+        <StaticBatch>
+          {/* Fuselage, cowl, spinner and propeller. */}
           <Piece
-            geometry={coneGeo(0.15, 0.3, 6)}
-            color={PALETTE.gold}
-            position={[0, 0, 0.12]}
-            rotation={[Math.PI / 2, 0, 0]}
-            castShadow={false}
-          />
-          <Piece geometry={boxGeo(0.13, 1.9, 0.07)} color={PALETTE.woodDark} castShadow={false} />
-          <Piece
-            geometry={boxGeo(0.13, 1.9, 0.07)}
-            color={PALETTE.woodDark}
-            rotation={[0, 0, Math.PI / 2]}
-            castShadow={false}
-          />
-        </group>
-
-        {/* High wing on struts, red tips so it reads at a distance. */}
-        <Piece geometry={boxGeo(7.4, 0.14, 1.6)} color={PALETTE.canvas} position={[0, 1.85, 0.35]} />
-        {[-3.55, 3.55].map((x) => (
-          <Piece
-            key={x}
-            geometry={boxGeo(0.5, 0.15, 1.6)}
+            geometry={cylGeo(0.5, 0.32, 3.4, 8)}
             color={PALETTE.roofRed}
-            position={[x, 1.85, 0.35]}
-            castShadow={false}
+            position={[0, 1.02, 0.1]}
+            rotation={[Math.PI / 2, 0, 0]}
           />
-        ))}
-        {[-1, 1].map((s) => (
           <Piece
-            key={s}
-            geometry={boxGeo(0.09, 0.95, 0.09)}
-            color={PALETTE.woodDark}
-            position={[s * 1.05, 1.4, 0.55]}
-            rotation={[0, 0, s * -0.55]}
+            geometry={cylGeo(0.48, 0.51, 0.5, 8)}
+            color={PALETTE.stoneDark}
+            position={[0, 1.02, 1.95]}
+            rotation={[Math.PI / 2, 0, 0]}
           />
-        ))}
-
-        {/* Open cockpit: windshield, and the pilot who appears when you do. */}
-        <Piece
-          geometry={boxGeo(0.72, 0.34, 0.06)}
-          color="#cfe8ec"
-          options={{ opacity: 0.55, transparent: true }}
-          position={[0, 1.52, 0.78]}
-          rotation={[-0.35, 0, 0]}
-          castShadow={false}
-        />
-        <group ref={pilot} position={[0, 1.28, 0.15]} visible={false}>
-          <Piece geometry={cylGeo(0.24, 0.28, 0.5, 7)} color="#2f7f8f" position={[0, 0.1, 0]} />
-          <Piece geometry={sphereGeo(0.22, 8)} color="#e8b98c" position={[0, 0.52, 0]} />
-          <Piece geometry={coneGeo(0.28, 0.3, 8)} color="#9c4a3c" position={[0, 0.73, 0]} />
-        </group>
-
-        {/* Tail feathers. */}
-        <Piece geometry={boxGeo(0.1, 0.88, 0.72)} color={PALETTE.roofRed} position={[0, 1.72, -1.7]} />
-        <Piece geometry={boxGeo(2.3, 0.1, 0.78)} color={PALETTE.canvas} position={[0, 1.32, -1.68]} />
-
-        {/* Undercarriage: two wheels and a tail skid. */}
-        {[-1, 1].map((s) => (
-          <group key={s}>
+          <group ref={prop} position={[0, 1.02, 2.24]} userData={{ dynamic: true }}>
             <Piece
-              geometry={cylGeo(0.3, 0.3, 0.16, 10)}
-              color={PALETTE.stoneDark}
-              position={[s * 0.78, 0.3, 0.55]}
-              rotation={[0, 0, Math.PI / 2]}
+              geometry={coneGeo(0.15, 0.3, 6)}
+              color={PALETTE.gold}
+              position={[0, 0, 0.12]}
+              rotation={[Math.PI / 2, 0, 0]}
+              castShadow={false}
             />
+            <Piece geometry={boxGeo(0.13, 1.9, 0.07)} color={PALETTE.woodDark} castShadow={false} />
             <Piece
-              geometry={boxGeo(0.09, 0.6, 0.09)}
+              geometry={boxGeo(0.13, 1.9, 0.07)}
               color={PALETTE.woodDark}
-              position={[s * 0.6, 0.6, 0.55]}
-              rotation={[0, 0, s * 0.35]}
+              rotation={[0, 0, Math.PI / 2]}
+              castShadow={false}
             />
           </group>
-        ))}
-        <Piece geometry={boxGeo(0.08, 0.34, 0.08)} color={PALETTE.woodDark} position={[0, 0.2, -1.6]} rotation={[0.5, 0, 0]} castShadow={false} />
 
-        {/* The mail itself, lashed behind the cockpit. */}
-        <Piece geometry={boxGeo(0.5, 0.36, 0.6)} color={PALETTE.canvas} position={[0, 1.4, -0.7]} rotation={[0, 0.12, 0]} />
-      </group>
+          {/* High wing on struts, red tips so it reads at a distance. */}
+          <Piece geometry={boxGeo(7.4, 0.14, 1.6)} color={PALETTE.canvas} position={[0, 1.85, 0.35]} />
+          {[-3.55, 3.55].map((x) => (
+            <Piece
+              key={x}
+              geometry={boxGeo(0.5, 0.15, 1.6)}
+              color={PALETTE.roofRed}
+              position={[x, 1.85, 0.35]}
+              castShadow={false}
+            />
+          ))}
+          {[-1, 1].map((s) => (
+            <Piece
+              key={s}
+              geometry={boxGeo(0.09, 0.95, 0.09)}
+              color={PALETTE.woodDark}
+              position={[s * 1.05, 1.4, 0.55]}
+              rotation={[0, 0, s * -0.55]}
+            />
+          ))}
+
+          {/* Open cockpit: windshield, and the pilot who appears when you do. */}
+          <Piece
+            geometry={boxGeo(0.72, 0.34, 0.06)}
+            color="#cfe8ec"
+            options={{ opacity: 0.55, transparent: true }}
+            position={[0, 1.52, 0.78]}
+            rotation={[-0.35, 0, 0]}
+            castShadow={false}
+          />
+          <group ref={pilot} position={[0, 1.28, 0.15]} userData={{ dynamic: true }} visible={false}>
+            <Piece geometry={cylGeo(0.24, 0.28, 0.5, 7)} color="#2f7f8f" position={[0, 0.1, 0]} />
+            <Piece geometry={sphereGeo(0.22, 8)} color="#e8b98c" position={[0, 0.52, 0]} />
+            <Piece geometry={coneGeo(0.28, 0.3, 8)} color="#9c4a3c" position={[0, 0.73, 0]} />
+          </group>
+
+          {/* Tail feathers. */}
+          <Piece geometry={boxGeo(0.1, 0.88, 0.72)} color={PALETTE.roofRed} position={[0, 1.72, -1.7]} />
+          <Piece geometry={boxGeo(2.3, 0.1, 0.78)} color={PALETTE.canvas} position={[0, 1.32, -1.68]} />
+
+          {/* Undercarriage: two wheels and a tail skid. */}
+          {[-1, 1].map((s) => (
+            <group key={s}>
+              <Piece
+                geometry={cylGeo(0.3, 0.3, 0.16, 10)}
+                color={PALETTE.stoneDark}
+                position={[s * 0.78, 0.3, 0.55]}
+                rotation={[0, 0, Math.PI / 2]}
+              />
+              <Piece
+                geometry={boxGeo(0.09, 0.6, 0.09)}
+                color={PALETTE.woodDark}
+                position={[s * 0.6, 0.6, 0.55]}
+                rotation={[0, 0, s * 0.35]}
+              />
+            </group>
+          ))}
+          <Piece geometry={boxGeo(0.08, 0.34, 0.08)} color={PALETTE.woodDark} position={[0, 0.2, -1.6]} rotation={[0.5, 0, 0]} castShadow={false} />
+
+          {/* The mail itself, lashed behind the cockpit. */}
+          <Piece geometry={boxGeo(0.5, 0.36, 0.6)} color={PALETTE.canvas} position={[0, 1.4, -0.7]} rotation={[0, 0.12, 0]} />
+        </StaticBatch>
+            </group>
     </group>
   );
 }

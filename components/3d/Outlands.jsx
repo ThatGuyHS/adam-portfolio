@@ -194,7 +194,7 @@ function Windmill({ x, z }) {
     <group position={[x, y, z]} rotation={[0, Math.atan2(-x, -z), 0]}>
       <Piece geometry={cylGeo(1.1, 1.8, 7, 8)} color={PALETTE.plaster} position={[0, 3.5, 0]} />
       <Piece geometry={coneGeo(1.5, 2, 8)} color={PALETTE.roofRed} position={[0, 8, 0]} />
-      <group ref={sails} position={[0, 7, 1.5]}>
+      <group ref={sails} position={[0, 7, 1.5]} userData={{ dynamic: true }}>
         <Piece geometry={boxGeo(0.5, 9, 0.14)} color={PALETTE.canvas} castShadow={false} />
         <Piece
           geometry={boxGeo(0.5, 9, 0.14)}

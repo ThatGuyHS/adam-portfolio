@@ -132,7 +132,7 @@ export function TournamentTent() {
       {/* Banner pole */}
       <group position={[-4.6, 0, 2.4]}>
         <Piece geometry={cylGeo(0.1, 0.12, 5.4, 6)} color={PALETTE.woodDark} position={[0, 2.7, 0]} />
-        <group ref={flag} position={[0, 4.9, 0]}>
+        <group ref={flag} position={[0, 4.9, 0]} userData={{ dynamic: true }}>
           <Piece geometry={boxGeo(1.6, 0.9, 0.06)} color={PALETTE.roofRed} position={[0.8, -0.2, 0]} castShadow={false} />
         </group>
       </group>
@@ -210,6 +210,7 @@ export function Lighthouse() {
           per-frame pulse never fights another mesh over a shared material. */}
       <mesh
         ref={lamp}
+        userData={{ dynamic: true }}
         geometry={cylGeo(1, 1, 1.5, 10)}
         material={mat("#fff0c4", { emissive: "#ffcf6b", emissiveIntensity: 1.6 })}
         dispose={null}
@@ -219,7 +220,7 @@ export function Lighthouse() {
       <Piece geometry={sphereGeo(0.22, 8)} color={PALETTE.gold} position={[0, 12.3, 0]} />
 
       {/* The sweep of light. Additive, so it reads as glow rather than glass. */}
-      <group ref={beam} position={[0, 10.1, 0]}>
+      <group ref={beam} position={[0, 10.1, 0]} userData={{ dynamic: true }}>
         <mesh
           geometry={coneGeo(2.6, 16, 4)}
           dispose={null}
@@ -274,7 +275,7 @@ export function Workshop() {
       </group>
 
       {/* Water wheel on the river side, because a workshop by a river should. */}
-      <group ref={wheel} position={[5.1, 1.7, 0]} rotation={[0, 0, 0]}>
+      <group ref={wheel} position={[5.1, 1.7, 0]} userData={{ dynamic: true }} rotation={[0, 0, 0]}>
         <Piece geometry={cylGeo(1.6, 1.6, 0.18, 10)} color={PALETTE.woodDark} rotation={[0, 0, Math.PI / 2]} />
         {Array.from({ length: 8 }, (_, i) => (
           <Piece
