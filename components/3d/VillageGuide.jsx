@@ -29,7 +29,7 @@ function asQuestions(dialogue) {
 function Section({ id, kicker, title, children }) {
   return (
     <section id={id} className="mx-auto max-w-3xl px-4 py-10 md:py-14">
-      <p className="text-xs uppercase tracking-[0.25em] text-red-500 font-semibold">
+      <p className="text-xs uppercase tracking-[0.25em] text-red-700 dark:text-red-400 font-semibold">
         {kicker}
       </p>
       <h2 className="mt-3 text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
@@ -44,7 +44,7 @@ export default function VillageGuide({ onEnter, canEnter, reason }) {
   return (
     <article className="bg-white dark:bg-gray-800">
       <header className="mx-auto max-w-3xl px-4 pt-6 pb-2">
-        <p className="text-xs uppercase tracking-[0.25em] text-red-500 font-semibold">
+        <p className="text-xs uppercase tracking-[0.25em] text-red-700 dark:text-red-400 font-semibold">
           An experiment
         </p>
         <h1 className="mt-3 text-4xl md:text-6xl font-bold text-gray-800 dark:text-white">
@@ -91,7 +91,7 @@ export default function VillageGuide({ onEnter, canEnter, reason }) {
                 <span aria-hidden="true" className="mr-2">{dialogue.emoji}</span>
                 {dialogue.name}, {dialogue.title}
               </h3>
-              <p className="mt-1 text-sm uppercase tracking-[0.18em] text-gray-400">
+              <p className="mt-1 text-sm uppercase tracking-[0.18em] text-gray-600 dark:text-gray-400">
                 {dialogue.place}
               </p>
 

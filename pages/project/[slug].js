@@ -34,7 +34,16 @@ const ProjectPage = ({ project, caseStudy, related }) => {
             { "@type": "ListItem", position: 2, name: project.title, item: `${siteUrl}/project/${slug}` },
           ],
         },
-      ]}
+        caseStudy && {
+          "@context": "https://schema.org",
+          "@type": "CreativeWork",
+          name: project.title,
+          url: project.link,
+          description,
+          image: `${siteUrl}${normalizeImageSrc(project.imgUrl)}`,
+          creator: { "@type": "Person", name: "Adam Peleback", url: siteUrl },
+        },
+      ].filter(Boolean)}
     >
       <article className="bg-white dark:bg-gray-800">
         <div className="max-w-6xl mx-auto px-4 pt-6 md:pt-10">

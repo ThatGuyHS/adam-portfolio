@@ -110,6 +110,33 @@ const caseStudies = {
     ],
   },
 
+  "dupe-cabinet": {
+    role: "Everything: data pipeline, design, development and SEO",
+    intro:
+      "Dupe Cabinet is an English-language index of perfume dupes. It matches 3,053 clone products from seven sources to the designer and niche fragrances they say they copy, with notes, bottle sizes and price per ml from the sellers' own catalogs.",
+    sections: [
+      {
+        heading: "The idea",
+        body: "People look for cheaper versions of expensive perfumes all the time, and the answers are scattered across clone houses' product pages, Reddit threads and YouTube reviews. Each clone house only lists its own products. Dupe Cabinet puts every known dupe of a fragrance on one page, sorted by what it costs per ml.",
+      },
+      {
+        heading: "Where the pairings come from",
+        body: "Most pairings come from the clone houses' own product text, where they name the original they imitate, and the site only quotes those claims rather than adding its own. Houses that never name originals, such as Armaf or Lattafa, come from a curated list based on reviewer consensus and are graded close or moderate. Every row says which of the two it is. A Python pipeline normalizes brand names and matches them against a reference list of about 25,000 fragrances to add families, launch years and notes.",
+      },
+      {
+        heading: "What I built",
+        body: "A statically generated Next.js site in TypeScript and Tailwind: a page per original with at least two dupes, pages per brand and clone house, a most-duped list and a price-per-ml tool. Matching is done by rules in code. Short summaries on 150 fragrance pages are written by an AI model from that page's data only, and each one is labelled as an AI-assisted summary. The method page explains all of this, including the date the prices were read.",
+      },
+    ],
+    highlights: [
+      "3,053 clone products from seven sources, matched to the originals they reference",
+      "Seller claims quoted, community pairings graded, and every row labelled with its source",
+      "Python pipeline that normalizes and matches against about 25,000 reference fragrances",
+      "Price per ml from the sellers' catalogs, with the read date shown",
+      "AI summaries limited to page data and labelled as such",
+    ],
+  },
+
   tidningstoppen: {
     role: "Everything: data pipeline, design, development and SEO",
     intro:
