@@ -21,7 +21,7 @@ const offers = [
     icon: "🏆",
     title: "Esports & tournament bots",
     blurb:
-      "Map vetoes, team registration, league server setup and announcements. I've run tournaments professionally, co-built a CS2 and VALORANT map-veto bot, and wrote the Discord tooling behind Rivals League.",
+      "Map vetoes, team registration, league server setup and announcements. I've run tournaments professionally, co-built Clutch Group's map-veto bot and Svenska Onlineligan's registration bot, and wrote the Discord tooling behind Rivals League.",
     points: ["Map veto & match flows", "Registration & roles", "League server setup"],
   },
   {
@@ -55,6 +55,31 @@ const steps = [
     title: "Launch & support",
     description:
       "The bot goes live on your server with hosting sorted. I stay available for tweaks, new features and the occasional Discord API surprise.",
+  },
+];
+
+// Client bots. Facts come from the bots' own repositories; co-built work is
+// credited as such.
+const clientBots = [
+  {
+    client: "Clutch Group",
+    title: "CS2 and VALORANT map-veto bot",
+    text: "Team captains ban and pick maps with buttons. The bot works out the ban and pick order for best-of-one up to best-of-five, handles side picks, picks the decider automatically and posts a summary with the map images. Another developer built the base; I rewrote the veto flow on top of it.",
+    stack: "NestJS · discord.js · MySQL",
+    credit: "Co-built",
+  },
+  {
+    client: "Clutch Group",
+    title: "Support ticket bot",
+    text: "Admins post a control panel with buttons for support, match and custom tickets. Each ticket becomes a private channel that can be closed, reopened or deleted, and deleting it saves an HTML transcript of the conversation.",
+    stack: "discord.js · SQLite",
+  },
+  {
+    client: "Svenska Onlineligan",
+    title: "League registration and setup bot",
+    text: "Teams register through a card with buttons for adding players and requesting subs, seeding syncs with Google Sheets, and the bot creates every team's channels and roles. In July 2025 it set up 138 channels and 123 roles for 131 League of Legends teams.",
+    stack: "discord.js · SQLite · Google Sheets",
+    credit: "Co-built",
   },
 ];
 
@@ -244,7 +269,8 @@ export default function DiscordBots() {
               I&apos;m Adam Peleback, a developer and former esports tournament
               admin. I build Discord bots that moderate communities, run
               tournaments and connect Discord to your other systems, and
-              I&apos;ve been doing it since 2019.
+              I&apos;ve been doing it since 2019. Clients include Clutch Group
+              and Svenska Onlineligan.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
@@ -276,6 +302,7 @@ export default function DiscordBots() {
               Rivals League&apos;s Discord server is set up by tooling I wrote,
               from team channels and roles to go-live alerts, and Create
               Discord Bot is my productized service for custom bot builds.
+              Below them are bots I&apos;ve built for clients.
             </p>
             <ul className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
               {proofProjects.map((p) => (
@@ -300,6 +327,35 @@ export default function DiscordBots() {
                     >
                       Visit the live site ↗
                     </a>
+                  </p>
+                </li>
+              ))}
+            </ul>
+            <h3 className="mt-14 text-2xl font-bold text-gray-800 dark:text-white">
+              Bots built for clients
+            </h3>
+            <ul className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+              {clientBots.map((bot) => (
+                <li
+                  key={bot.title}
+                  className="flex flex-col rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-wider text-indigo-700 dark:text-indigo-300">
+                    {bot.client}
+                    {bot.credit && (
+                      <span className="ml-2 rounded bg-gray-100 px-1.5 py-0.5 normal-case tracking-normal text-gray-700 dark:bg-gray-700 dark:text-gray-200">
+                        {bot.credit}
+                      </span>
+                    )}
+                  </p>
+                  <h4 className="mt-2 text-lg font-bold text-gray-800 dark:text-white">
+                    {bot.title}
+                  </h4>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+                    {bot.text}
+                  </p>
+                  <p className="mt-4 text-xs font-medium text-gray-600 dark:text-gray-400">
+                    {bot.stack}
                   </p>
                 </li>
               ))}

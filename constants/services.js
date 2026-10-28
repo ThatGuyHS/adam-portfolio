@@ -60,7 +60,7 @@ Tests catch regressions before your users do, and I'll tell you where a manual c
     page: "/discord-bots",
     pageLabel: "Discord bot page",
     shortDescription: "Custom Discord bots for moderation, onboarding, tournaments and integrations.",
-    fullDescription: `I build Discord bots in Node.js and TypeScript with discord.js, and have done so since 2019: from a reaction-role bot for Phoenix Blue to a CS2 and VALORANT map-veto bot I co-built and the Discord tooling behind Rivals League.
+    fullDescription: `I build Discord bots in Node.js and TypeScript with discord.js, and have done so since 2019: a reaction-role bot for Phoenix Blue, a map-veto bot and a ticket bot for Clutch Group, a league registration bot for Svenska Onlineligan, and the Discord tooling behind Rivals League. The veto and league bots were co-built with other developers.
 
 Common requests:
 • Custom commands and interactions

@@ -287,7 +287,7 @@ const userData = {
       title: "Freelance Web Developer",
       company: "Self-employed",
       year: "Apr 2024–Apr 2025",
-      desc: "Built internal tools in Nest.js for Clutch Group, the PXB Media website in Next.js, and the first version of the Swedish Esports Federation's website with a custom CMS.",
+      desc: "Built internal tools and Discord bots for Clutch Group in Nest.js and discord.js, the PXB Media website in Next.js, and the first version of the Swedish Esports Federation's website with a custom CMS.",
     },
     {
       title: "Frontend Engineer",
