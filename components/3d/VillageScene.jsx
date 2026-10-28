@@ -1,4 +1,5 @@
 import {
+  Component,
   useCallback,
   useEffect,
   useLayoutEffect,
@@ -26,7 +27,29 @@ function detectQuality() {
   return cores <= 4 || coarsePointer ? "low" : "high";
 }
 
-export default function VillageScene({ onExit }) {
+// If the browser exposes WebGL but can't create a context (a blocklisted
+// GPU, hardware acceleration turned off), three.js throws while the Canvas
+// mounts. Catch that and hand control back to the page.
+class WebGLErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { failed: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+
+  componentDidCatch() {
+    this.props.onError();
+  }
+
+  render() {
+    return this.state.failed ? null : this.props.children;
+  }
+}
+
+export default function VillageScene({ onExit, onWebGLError }) {
   const container = useRef();
   const [ready, setReady] = useState(false);
   const overlay = useVillage((state) => state.overlay);
@@ -130,7 +153,9 @@ export default function VillageScene({ onExit }) {
       ref={container}
       className="fixed inset-0 z-50 touch-none select-none overflow-hidden bg-[#3f6470]"
     >
-      <World quality={environment.quality} onReady={handleReady} />
+      <WebGLErrorBoundary onError={onWebGLError}>
+        <World quality={environment.quality} onReady={handleReady} />
+      </WebGLErrorBoundary>
 
       {ready && (
         <>

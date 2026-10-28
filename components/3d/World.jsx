@@ -1,5 +1,5 @@
-import { Suspense, memo, useEffect, useRef, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Suspense, memo, useCallback, useEffect, useRef, useState } from "react";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { PerformanceMonitor, Sky } from "@react-three/drei";
 import { FOG } from "@constants/worldData";
 import Village from "@components/3d/Village";
@@ -38,18 +38,55 @@ function ReadySignal({ onReady }) {
   return null;
 }
 
+// Compiles the village's shaders before the first frame. compileAsync lets
+// the GPU driver compile in parallel where it supports that, so the main
+// thread isn't blocked the way a first render that compiles everything
+// inline would block it. Rendering waits behind the loading screen; the
+// timeout makes sure a slow or failing compile can never keep it waiting.
+function ShaderPrewarm({ onDone }) {
+  const gl = useThree((state) => state.gl);
+  const scene = useThree((state) => state.scene);
+  const camera = useThree((state) => state.camera);
+
+  useEffect(() => {
+    let finished = false;
+    const done = () => {
+      if (finished) return;
+      finished = true;
+      onDone();
+    };
+    const timeout = setTimeout(done, 4000);
+    Promise.resolve()
+      .then(() => gl.compileAsync(scene, camera))
+      .then(done, done);
+    return () => clearTimeout(timeout);
+  }, [gl, scene, camera, onDone]);
+
+  return null;
+}
+
 // Memoised: VillageScene re-renders on every overlay/HUD store change, and
 // without this each one would reconcile the entire Canvas tree.
 function World({ quality, onReady }) {
   const [degraded, setDegraded] = useState(false);
+  const [warm, setWarm] = useState(false);
+  const markWarm = useCallback(() => setWarm(true), []);
   const shadows = quality === "high" && !degraded;
 
   useEffect(() => {
     if (quality === "low") setDegraded(true);
   }, [quality]);
 
+  // Backstop for ShaderPrewarm: it lives inside the Suspense boundary, so if
+  // the village were to suspend for long it would never mount.
+  useEffect(() => {
+    const timeout = setTimeout(markWarm, 6000);
+    return () => clearTimeout(timeout);
+  }, [markWarm]);
+
   return (
     <Canvas
+      frameloop={warm ? "always" : "never"}
       shadows={shadows}
       dpr={[1, quality === "low" || degraded ? 1 : 1.75]}
       camera={{ fov: 52, near: 0.4, far: 950, position: [-52, 8, -8] }}
@@ -89,6 +126,7 @@ function World({ quality, onReady }) {
       <Suspense fallback={null}>
         <Village quality={degraded ? "low" : quality} />
         <Player />
+        <ShaderPrewarm onDone={markWarm} />
       </Suspense>
 
       <ReadySignal onReady={onReady} />

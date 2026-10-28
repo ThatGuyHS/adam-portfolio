@@ -16,19 +16,16 @@ const NO_WEBGL =
 const REDUCED_MOTION =
   "You've asked your system for reduced motion, so the village won't start on its own.";
 
+// Creating a throwaway WebGL context just to test support costs as much as
+// the real one (hundreds of ms on weak GPUs), so only check that the API
+// exists. If context creation still fails, VillageScene reports it through
+// onWebGLError and the page falls back to the written version.
 function detectWebGL() {
-  try {
-    const canvas = document.createElement("canvas");
-    const context =
-      canvas.getContext("webgl2") ||
-      canvas.getContext("webgl") ||
-      canvas.getContext("experimental-webgl");
-    if (!context) return false;
-    context.getExtension("WEBGL_lose_context")?.loseContext();
-    return true;
-  } catch (error) {
-    return false;
-  }
+  return (
+    typeof window !== "undefined" &&
+    (typeof window.WebGL2RenderingContext !== "undefined" ||
+      typeof window.WebGLRenderingContext !== "undefined")
+  );
 }
 
 export default function ThreeDVillage() {
@@ -49,6 +46,10 @@ export default function ThreeDVillage() {
 
   const enter = useCallback(() => setEntered(true), []);
   const exit = useCallback(() => setEntered(false), []);
+  const webglFailed = useCallback(() => {
+    setEntered(false);
+    setState((prev) => ({ ...prev, supported: false }));
+  }, []);
 
   const reason = !state.checked
     ? null
@@ -83,7 +84,7 @@ export default function ThreeDVillage() {
         />
       </ContainerBlock>
 
-      {entered && <VillageScene onExit={exit} />}
+      {entered && <VillageScene onExit={exit} onWebGLError={webglFailed} />}
     </>
   );
 }
